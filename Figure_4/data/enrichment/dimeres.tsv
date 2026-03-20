@@ -1,0 +1,1101 @@
+﻿GENE PRODUCT DB	GENE PRODUCT ID	SYMBOL	QUALIFIER	GO TERM	GO NAME	ECO ID	GO EVIDENCE CODE	REFERENCE	WITH/FROM	TAXON ID	ASSIGNED BY	ANNOTATION EXTENSION	GO ASPECT
+UniProtKB	A0A0K2S4Q6	CD300H	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26221034		9606	UniProt		F
+UniProtKB	A0JNW5	BLTP3B	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20163565	UniProtKB:A0JNW5	9606	UniProt		F
+UniProtKB	A2RUB6	CCDC66	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6NS45	9606	UniProt		F
+UniProtKB	A2RUC4	TYW5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20972222		9606	UniProt		F
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26687144		9606	UniProt		F
+UniProtKB	A6NHR9	SMCHD1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6P5D8	9606	UniProt		F
+UniProtKB	A6NK06	ACOD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31548418		9606	UniProt		F
+UniProtKB	B2RUZ4	SMIM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23563606		9606	UniProt	occurs_in(CL:0000232)	F
+UniProtKB	D3W0D1	KLRF2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20194751		9606	UniProt		F
+UniProtKB	O00144	FZD9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14688793	UniProtKB:O00144	9606	BHF-UCL		F
+UniProtKB	O00144	FZD9	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:14688793	UniProtKB:Q9ULV1	9606	BHF-UCL		F
+UniProtKB	O00154	ACOT7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10578051	UniProtKB:O00154	9606	BHF-UCL		F
+UniProtKB	O00180	KCNK1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O08581	9606	UniProt		F
+UniProtKB	O00180	KCNK1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23169818		9606	UniProt		F
+UniProtKB	O00206	TLR4	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20037584	UniProtKB:Q9Y2C9	9606	ARUK-UCL		F
+UniProtKB	O00264	PGRMC1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26988023		9606	UniProt		F
+UniProtKB	O00267	SUPT5H	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9450929	UniProtKB:P63272	9606	UniProt		F
+UniProtKB	O00291	HIP1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15533940	UniProtKB:O00291	9606	ParkinsonsUK-UCL		F
+UniProtKB	O00291	HIP1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18790740	UniProtKB:O00291	9606	ParkinsonsUK-UCL		F
+UniProtKB	O00291	HIP1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15533940	UniProtKB:Q9JKY5	9606	ParkinsonsUK-UCL		F
+UniProtKB	O00400	SLC33A1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:24828632		9606	UniProt		F
+UniProtKB	O00408	PDE2A	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:2446107|PANTHER:PTN000886790|UniProtKB:O00408	9606	GO_Central		F
+UniProtKB	O00408	PDE2A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19828435	UniProtKB:O00408	9606	UniProt		F
+UniProtKB	O00429	DNM1L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22265414		9606	UniProt		F
+UniProtKB	O00429	DNM1L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23530241		9606	UniProt		F
+UniProtKB	O00459	PIK3R2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O08908	9606	ParkinsonsUK-UCL		F
+UniProtKB	O00506	STK25	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15037601		9606	UniProt		F
+UniProtKB	O00560	SDCBP	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11152476	UniProtKB:Q9H190	9606	UniProt		F
+UniProtKB	O00628	PEX7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11931631		9606	UniProt		F
+UniProtKB	O00764	PDXK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16600635		9606	UniProt		F
+UniProtKB	O00764	PDXK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17766369		9606	UniProt		F
+UniProtKB	O14503	BHLHE40	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15560782		9606	BHF-UCL		F
+UniProtKB	O14503	BHLHE40	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12397359	UniProtKB:Q9WTL8	9606	BHF-UCL		F
+UniProtKB	O14503	BHLHE40	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15193144	UniProtKB:Q9C0J9	9606	BHF-UCL		F
+UniProtKB	O14503	BHLHE40	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15193144	UniProtKB:Q9WTL8	9606	BHF-UCL		F
+UniProtKB	O14503	BHLHE40	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15560782	UniProtKB:Q99PV5	9606	BHF-UCL		F
+UniProtKB	O14522	PTPRT	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24846175	UniProtKB:O14522	9606	ARUK-UCL		F
+UniProtKB	O14558	HSPB6	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P97541	9606	UniProt		F
+UniProtKB	O14649	KCNK3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23169818		9606	UniProt		F
+UniProtKB	O14672	ADAM10	enables	GO:0042803	protein homodimerization activity	ECO:0000270	IEP	PMID:25349418		9606	DisProt	has_input(UniProtKB:O14672)	F
+UniProtKB	O14672	ADAM10	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25349418	UniProtKB:O14672	9606	DisProt		F
+UniProtKB	O14732	IMPA2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17068342		9606	MGI		F
+UniProtKB	O14744	PRMT5	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:18495660		9606	MGI		F
+UniProtKB	O14746	TERT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11432839		9606	BHF-UCL		F
+UniProtKB	O14746	TERT	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23474713	UniProtKB:O14746	9606	BHF-UCL		F
+UniProtKB	O14920	IKBKB	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	O14920	IKBKB	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	O14958	CASQ2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P51868	9606	BHF-UCL		F
+UniProtKB	O14965	AURKA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20460379	UniProtKB:P24522	9606	CAFA		F
+UniProtKB	O14983	ATP2A1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11402072	UniProtKB:O14983	9606	BHF-UCL		F
+UniProtKB	O15111	CHUK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	O15111	CHUK	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	O15156	ZBTB7B	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q64321	9606	UniProt		F
+UniProtKB	O15169	AXIN1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O35625	9606	UniProt		F
+UniProtKB	O15217	GSTA4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10329152	UniProtKB:O15217	9606	UniProt		F
+UniProtKB	O15303	GRM6	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17405131	UniProtKB:O15303	9606	UniProt		F
+UniProtKB	O15344	MID1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11806752		9606	UniProt		F
+UniProtKB	O15405	TOX3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21172805		9606	UniProt		F
+UniProtKB	O15409	FOXP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16407075		9606	UniProt		F
+UniProtKB	O15554	KCNN4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29953543		9606	UniProt		F
+UniProtKB	O43187	IRAK2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:O43187	9606	BHF-UCL		F
+UniProtKB	O43187	IRAK2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:P51617	9606	BHF-UCL		F
+UniProtKB	O43187	IRAK2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:Q9Y616	9606	BHF-UCL		F
+UniProtKB	O43252	PAPSS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14747722	UniProtKB:O43252	9606	UniProt		F
+UniProtKB	O43283	MAP3K13	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11163770		9606	UniProt		F
+UniProtKB	O43293	DAPK3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18239682		9606	UniProt		F
+UniProtKB	O43353	RIPK2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19337385		9606	BHF-UCL		F
+UniProtKB	O43435	TBX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11111039		9606	UniProt		F
+UniProtKB	O43435	TBX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22095455		9606	UniProt		F
+UniProtKB	O43707	ACTN4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22351778	UniProtKB:O43707	9606	UniProt		F
+UniProtKB	O43708	GSTZ1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10739172	UniProtKB:O43708	9606	UniProt		F
+UniProtKB	O43709	BUD23	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:25851604		9606	UniProt		F
+UniProtKB	O43776	NARS1	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:9421509		9606	UniProt		F
+UniProtKB	O43809	NUDT21	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20479262	UniProtKB:O43809	9606	UniProt		F
+UniProtKB	O43809	NUDT21	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21295486	UniProtKB:O43809	9606	UniProt		F
+UniProtKB	O43914	TYROBP	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9655483		9606	UniProt		F
+UniProtKB	O60238	BNIP3L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10381623		9606	UniProt		F
+UniProtKB	O60494	CUBN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10552972		9606	UniProt		F
+UniProtKB	O60507	TPST1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:28821720	UniProtKB:O60507	9606	UniProt		F
+UniProtKB	O60543	CIDEA	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:17080483	UniProtKB:O70302	9606	BHF-UCL		F
+UniProtKB	O60565	GREM1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:27036124	UniProtKB:O60565	9606	UniProt		F
+UniProtKB	O60656	UGT1A9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	O60704	TPST2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23481380	UniProtKB:O60704	9606	UniProt		F
+UniProtKB	O60749	SNX2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11102511	UniProtKB:O60749	9606	ParkinsonsUK-UCL		F
+UniProtKB	O60749	SNX2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11102511	UniProtKB:Q13596	9606	ParkinsonsUK-UCL		F
+UniProtKB	O60760	HPGDS	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12627223	UniProtKB:O60760	9606	UniProt		F
+UniProtKB	O75027	ABCB7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30765471		9606	UniProt		F
+UniProtKB	O75044	SRGAP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20810653		9606	UniProt		F
+UniProtKB	O75146	HIP1R	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16415883	UniProtKB:O75146	9606	ParkinsonsUK-UCL		F
+UniProtKB	O75150	RNF40	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10944455	UniProtKB:O75150	9606	UniProt		F
+UniProtKB	O75154	RAB11FIP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17030804		9606	UniProt		F
+UniProtKB	O75154	RAB11FIP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17394487		9606	UniProt		F
+UniProtKB	O75192	PEX11A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20826455		9606	UniProt		F
+UniProtKB	O75208	COQ9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25339443		9606	UniProt		F
+UniProtKB	O75223	GGCT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17932939		9606	UniProt		F
+UniProtKB	O75223	GGCT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18515354		9606	UniProt		F
+UniProtKB	O75340	PDCD6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25667979		9606	UniProt		F
+UniProtKB	O75340	PDCD6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11278427	UniProtKB:Q9UBV8	9606	UniProt		F
+UniProtKB	O75340	PDCD6	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:11883899	UniProtKB:Q9UBV8	9606	UniProt		F
+UniProtKB	O75351	VPS4B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16193069		9606	UniProt		F
+UniProtKB	O75449	KATNA1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10751153	UniProtKB:Q9BVA0	9606	UniProt		F
+UniProtKB	O75460	ERN1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9EQY0	9606	UniProt		F
+UniProtKB	O75460	ERN1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21317875	UniProtKB:O75460	9606	ParkinsonsUK-UCL	causally_upstream_of(GO:1990579),part_of(GO:0070054)	F
+UniProtKB	O75460	ERN1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29198525		9606	UniProt		F
+UniProtKB	O75531	BANF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22399800	UniProtKB:O75531	9606	UniProt		F
+UniProtKB	O75569	PRKRA	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17452327	UniProtKB:O75569	9606	UniProt		F
+UniProtKB	O75581	LRP6	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12897152	UniProtKB:O75581	9606	BHF-UCL		F
+UniProtKB	O75838	CIB2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23023331		9606	UniProt		F
+UniProtKB	O75874	IDH1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19935646	UniProtKB:O75874	9606	UniProt		F
+UniProtKB	O75899	GABBR2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15304491	UniProtKB:Q9Z0U4	9606	CAFA		F
+UniProtKB	O76061	STC2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15486227		9606	UniProt		F
+UniProtKB	O76064	RNF8	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22980979		9606	UniProt		F
+UniProtKB	O76096	CST7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15212960	UniProtKB:O76096	9606	ARUK-UCL		F
+UniProtKB	O76096	CST7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15752368	UniProtKB:O76096	9606	ARUK-UCL		F
+UniProtKB	O76096	CST7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18256700	UniProtKB:O76096	9606	ARUK-UCL	has_target_end_location(GO:0005783),has_target_end_location(GO:0005794)	F
+UniProtKB	O94804	STK10	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18239682		9606	UniProt		F
+UniProtKB	O94811	TPPP	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26289831		9606	UniProt		F
+UniProtKB	O94813	SLIT2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19498462		9606	UniProt		F
+UniProtKB	O94923	GLCE	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30872481		9606	UniProt		F
+UniProtKB	O94972	TRIM37	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11279055		9606	UniProt		F
+UniProtKB	O95069	KCNK2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P97438	9606	UniProt		F
+UniProtKB	O95258	SLC25A14	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26182433		9606	UniProt		F
+UniProtKB	O95279	KCNK5	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:36063992		9606	UniProt		F
+UniProtKB	O95292	VAPB	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16227268	UniProtKB:O95292	9606	UniProt		F
+UniProtKB	O95292	VAPB	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17540579	UniProtKB:O95292	9606	UniProt		F
+UniProtKB	O95292	VAPB	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9920726	UniProtKB:O95292	9606	UniProt		F
+UniProtKB	O95292	VAPB	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16227268	UniProtKB:Q9P0L0	9606	UniProt		F
+UniProtKB	O95292	VAPB	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9920726	UniProtKB:Q9P0L0	9606	UniProt		F
+UniProtKB	O95352	ATG7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11096062		9606	UniProt		F
+UniProtKB	O95684	CEP43	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16690081		9606	UniProt		F
+UniProtKB	O95772	STARD3NL	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15718238		9606	UniProt		F
+UniProtKB	O95813	CER1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O55233	9606	BHF-UCL		F
+UniProtKB	O95847	SLC25A27	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26182433		9606	UniProt		F
+UniProtKB	O95935	TBX18	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9EPZ6	9606	BHF-UCL		F
+UniProtKB	O95967	EFEMP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23782690		9606	UniProt		F
+UniProtKB	O96011	PEX11B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20826455		9606	UniProt		F
+UniProtKB	O96017	CHEK2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16794575		9606	UniProt		F
+UniProtKB	P00367	GLUD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11903050	UniProtKB:P00367	9606	BHF-UCL		F
+UniProtKB	P00441	SOD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24567322	UniProtKB:P00441	9606	ParkinsonsUK-UCL		F
+UniProtKB	P01127	PDGFB	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2836953		9606	BHF-UCL		F
+UniProtKB	P01127	PDGFB	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7073684	UniProtKB:P04085	9606	BHF-UCL		F
+UniProtKB	P01591	JCHAIN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21786026		9606	UniProt		F
+UniProtKB	P01730	CD4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12444132		9606	UniProt		F
+UniProtKB	P01730	CD4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9168119		9606	UniProt		F
+UniProtKB	P02458	COL2A1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8660302	UniProtKB:P02458	9606	BHF-UCL		F
+UniProtKB	P02511	CRYAB	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19646995	UniProtKB:P02511	9606	UniProt		F
+UniProtKB	P02647	APOA1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:G5BQH5	9606	UniProt		F
+UniProtKB	P02649	APOE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8089103	UniProtKB:P02649	9606	ARUK-UCL		F
+UniProtKB	P02649	APOE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8245722	UniProtKB:P02649	9606	BHF-UCL		F
+UniProtKB	P02649	APOE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9211985	UniProtKB:P02649	9606	ARUK-UCL	occurs_in(GO:0034364)|occurs_in(GO:0034362)|occurs_in(GO:0034363)|occurs_in(GO:0034361)	F
+UniProtKB	P02649	APOE	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:22138302	UniProtKB:P02649	9606	ARUK-UCL		F
+UniProtKB	P02652	APOA2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17264082		9606	BHF-UCL		F
+UniProtKB	P02652	APOA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7918467	UniProtKB:P05090	9606	UniProt		F
+UniProtKB	P02652	APOA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8245722	UniProtKB:P02649	9606	BHF-UCL		F
+UniProtKB	P02652	APOA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8245722	UniProtKB:P04114	9606	BHF-UCL		F
+UniProtKB	P02730	SLC4A1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:379653	UniProtKB:P02730	9606	BHF-UCL		F
+UniProtKB	P02760	AMBP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11883904	UniProtKB:P02760	9606	UniProt		F
+UniProtKB	P02786	TFRC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9546397	UniProtKB:P02786	9606	BHF-UCL		F
+UniProtKB	P03950	ANG	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25372031		9606	UniProt		F
+UniProtKB	P04040	CAT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10656833		9606	UniProt		F
+UniProtKB	P04085	PDGFA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2836953		9606	BHF-UCL		F
+UniProtKB	P04085	PDGFA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:3754619		9606	BHF-UCL		F
+UniProtKB	P04085	PDGFA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7073684	UniProtKB:P01127	9606	BHF-UCL		F
+UniProtKB	P04264	KRT1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:27595935		9606	UniProt		F
+UniProtKB	P04271	S100B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10913138		9606	UniProt		F
+UniProtKB	P04271	S100B	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9519411	UniProtKB:P04271	9606	UniProt		F
+UniProtKB	P04626	ERBB2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7556068	UniProtKB:P21860	9606	BHF-UCL		F
+UniProtKB	P04629	NTRK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1281417		9606	UniProt		F
+UniProtKB	P04629	NTRK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17196528		9606	UniProt		F
+UniProtKB	P04637	TP53	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10837489	UniProtKB:Q07820	9606	UniProt		F
+UniProtKB	P04792	HSPB1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28144995		9606	UniProt		F
+UniProtKB	P04839	CYBB	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12042318	UniProtKB:P13498	9606	BHF-UCL		F
+UniProtKB	P05023	ATP1A1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P06685	9606	ARUK-UCL	has_output(GO:0005890),occurs_in(UBERON:0003881)	F
+UniProtKB	P05026	ATP1B1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P07340	9606	ARUK-UCL	has_output(GO:0005890),occurs_in(UBERON:0003881)	F
+UniProtKB	P05067-PRO_0000000093	APP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15447668	UniProtKB:P05067-PRO_0000000093	9606	ARUK-UCL		F
+UniProtKB	P05067-PRO_0000000093	APP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22179788	UniProtKB:P05067-PRO_0000000093	9606	ARUK-UCL		F
+UniProtKB	P05067-PRO_0000000093	APP	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:18568035	UniProtKB:P05067-PRO_0000000092	9606	ARUK-UCL		F
+UniProtKB	P05067-PRO_0000000093	APP	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:19660551	UniProtKB:P05067-PRO_0000000092	9606	ARUK-UCL	occurs_in(UBERON:0000955),has_output(ComplexPortal:CPX-1120),has_output(ComplexPortal:CPX-1062),has_input(UniProtKB:P05067-PRO_0000000092)	F
+UniProtKB	P05556	ITGB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:10455171		9606	UniProt		F
+UniProtKB	P06280	GLA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:6256390		9606	UniProt		F
+UniProtKB	P06703	S100A6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10913138		9606	UniProt		F
+UniProtKB	P06703	S100A6	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11937060	UniProtKB:P06703	9606	UniProt		F
+UniProtKB	P06727	APOA4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1935934		9606	BHF-UCL		F
+UniProtKB	P06731	CEACAM5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18086185		9606	UniProt		F
+UniProtKB	P06733	ENO1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:3529090		9606	CAFA		F
+UniProtKB	P06748	NPM1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24106084	UniProtKB:P06748	9606	DisProt		F
+UniProtKB	P06748	NPM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9121481		9606	UniProt		F
+UniProtKB	P06858	LPL	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16179346		9606	UniProt		F
+UniProtKB	P06865	HEXA	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:6230359		9606	MGI		F
+UniProtKB	P07237	P4HB	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23475612		9606	UniProt		F
+UniProtKB	P07333	CSF1R	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:19017797	UniProtKB:P09581	9606	BHF-UCL		F
+UniProtKB	P07550	ADRB2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15123695	UniProtKB:P07550	9606	HGNC-UCL		F
+UniProtKB	P07602	PSAP	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18462685		9606	CAFA		F
+UniProtKB	P07814	EPRS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24100331	UniProtKB:P07814	9606	UniProt		F
+UniProtKB	P07900	HSP90AA1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29127155		9606	UniProt		F
+UniProtKB	P07951	TPM2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P58775	9606	UniProt		F
+UniProtKB	P07951	TPM2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P58775	9606	UniProt		F
+UniProtKB	P07996	THBS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:7679575	UniProtKB:P07996	9606	BHF-UCL		F
+UniProtKB	P08047	SP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10393239		9606	UniProt		F
+UniProtKB	P08195	SLC3A2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:33298890		9606	UniProt		F
+UniProtKB	P08238	HSP90AB1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10811660		9606	CAFA		F
+UniProtKB	P08238	HSP90AB1	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:7588731		9606	UniProt		F
+UniProtKB	P08473	MME	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22183801	UniProtKB:P08473	9606	ARUK-UCL	occurs_in(GO:0045121)	F
+UniProtKB	P08567	PLEK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8694752		9606	BHF-UCL		F
+UniProtKB	P08588	ADRB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12529373	UniProtKB:P18871	9606	BHF-UCL		F
+UniProtKB	P08697	SERPINF2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:134998	UniProtKB:P08697	9606	BHF-UCL		F
+UniProtKB	P08887	IL6R	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12633863	UniProtKB:P08887	9606	BHF-UCL		F
+UniProtKB	P08913	ADRA2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16605244		9606	BHF-UCL		F
+UniProtKB	P08913	ADRA2A	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P18871	9606	BHF-UCL		F
+UniProtKB	P08913	ADRA2A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16605244	UniProtKB:P18825	9606	BHF-UCL		F
+UniProtKB	P09234	SNRPC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8532530	UniProtKB:P09234	9606	UniProt		F
+UniProtKB	P09327	VIL1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17606613		9606	UniProt		F
+UniProtKB	P09488	GSTM1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8373352	UniProtKB:P09488	9606	BHF-UCL		F
+UniProtKB	P09493	TPM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P04692	9606	UniProt		F
+UniProtKB	P09493	TPM1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P04692	9606	UniProt		F
+UniProtKB	P09529	INHBB	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:2575216	UniProtKB:P09529	9606	UniProt		F
+UniProtKB	P09601	HMOX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19556236		9606	UniProt		F
+UniProtKB	P09603	CSF1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:3264878		9606	BHF-UCL		F
+UniProtKB	P09848	LCT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9593732		9606	UniProt		F
+UniProtKB	P09874	PARP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22683995		9606	UniProt		F
+UniProtKB	P0DJJ0	SRGAP2C	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22559944	UniProtKB:P0DJJ0	9606	UniProt		F
+UniProtKB	P0DJJ0	SRGAP2C	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:22559944	UniProtKB:O75044	9606	UniProt		F
+UniProtKB	P10415	BCL2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9111042	UniProtKB:Q07812	9606	UniProt		F
+UniProtKB	P10599	TXN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17260951		9606	UniProt		F
+UniProtKB	P10599	TXN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9369469		9606	UniProt		F
+UniProtKB	P10721	KIT	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21640708	UniProtKB:P10721	9606	UniProt		F
+UniProtKB	P10912	GHR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1549776		9606	BHF-UCL		F
+UniProtKB	P10912	GHR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8137822		9606	BHF-UCL		F
+UniProtKB	P10912	GHR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8943276		9606	CAFA		F
+UniProtKB	P11362	FGFR1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20133753	UniProtKB:P11362	9606	UniProt		F
+UniProtKB	P11388	TOP2A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10473615	UniProtKB:P11388	9606	UniProt		F
+UniProtKB	P11388	TOP2A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10473615	UniProtKB:Q02880	9606	UniProt		F
+UniProtKB	P11413	G6PD	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15858258	UniProtKB:P11413	9606	BHF-UCL		F
+UniProtKB	P11413	G6PD	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:38066190	UniProtKB:P11413	9606	UniProt		F
+UniProtKB	P11831	SRF	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:3203386	UniProtKB:P11831	9606	BHF-UCL		F
+UniProtKB	P11908	PRPS2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P60891	9606	UniProt		F
+UniProtKB	P11926	ODC1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P00860	9606	UniProt		F
+UniProtKB	P12081	HARS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29235198		9606	UniProt		F
+UniProtKB	P12270	TPR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11514627		9606	UniProt		F
+UniProtKB	P12270	TPR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12802065		9606	UniProt		F
+UniProtKB	P12544	GZMA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12819770		9606	UniProt		F
+UniProtKB	P12814	ACTN1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11223950		9606	UniProt	has_input(UniProtKB:Q7TPR4)	F
+UniProtKB	P12838	DEFA4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17088326		9606	UniProt		F
+UniProtKB	P13498	CYBA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12042318	UniProtKB:P04839	9606	BHF-UCL		F
+UniProtKB	P13501	CCL5	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10488085	UniProtKB:P13501	9606	BHF-UCL		F
+UniProtKB	P13645	KRT10	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:27595935		9606	UniProt		F
+UniProtKB	P13688	CEACAM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P16573	9606	UniProt		F
+UniProtKB	P13688	CEACAM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P16573-1	9606	UniProt		F
+UniProtKB	P13688	CEACAM1	enables	GO:0046983	protein dimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P16573	9606	UniProt		F
+UniProtKB	P13945	ADRB3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15123695		9606	HGNC-UCL		F
+UniProtKB	P14061	HSD17B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8994190		9606	UniProt		F
+UniProtKB	P14415	ATP1B2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P13638	9606	ARUK-UCL	has_output(GO:0005890),occurs_in(UBERON:0003881)	F
+UniProtKB	P14415	ATP1B2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P13638	9606	ARUK-UCL	occurs_in(CL:0002604),occurs_in(UBERON:0002421),has_output(GO:0005890)|occurs_in(CL:0002605),occurs_in(UBERON:0000956),has_output(GO:0005890)	F
+UniProtKB	P14679	TYR	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P11344	9606	UniProt		F
+UniProtKB	P14735	IDE	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17613531		9606	UniProt		F
+UniProtKB	P14735	IDE	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19321446		9606	UniProt		F
+UniProtKB	P14923	JUP	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8SPJ1	9606	BHF-UCL		F
+UniProtKB	P15172	MYOD1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P10085	9606	ARUK-UCL		F
+UniProtKB	P15309	ACP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10639192		9606	CAFA		F
+UniProtKB	P15692	VEGFA	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P15691	9606	BHF-UCL		F
+UniProtKB	P15884	TCF4	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q60722	9606	UniProt		F
+UniProtKB	P15907	ST6GAL1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20378551		9606	UniProt		F
+UniProtKB	P15918	RAG1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P15919	9606	UniProt		F
+UniProtKB	P15923	TCF3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10652346	UniProtKB:P15923	9606	ARUK-UCL		F
+UniProtKB	P15923	TCF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10958665		9606	UniProt		F
+UniProtKB	P15923	TCF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:14752053		9606	UniProt		F
+UniProtKB	P15923	TCF3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10545951	UniProtKB:Q13562	9606	BHF-UCL		F
+UniProtKB	P15923	TCF3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:14752053		9606	UniProt		F
+UniProtKB	P16083	NQO2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18254726	UniProtKB:P16083	9606	CAFA		F
+UniProtKB	P16234	PDGFRA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2542288		9606	BHF-UCL		F
+UniProtKB	P16278	GLB1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22128166	UniProtKB:P16278	9606	UniProt		F
+UniProtKB	P16284	PECAM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26702061		9606	UniProt		F
+UniProtKB	P16284	PECAM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27958302		9606	UniProt		F
+UniProtKB	P16298	PPP3CB	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:11005320	UniProtKB:Q08209	9606	UniProt		F
+UniProtKB	P17050	NAGA	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19683538	UniProtKB:P17050	9606	UniProt		F
+UniProtKB	P17342	NPR3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16870210		9606	CAFA		F
+UniProtKB	P17643	TYRP1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P07147	9606	UniProt		F
+UniProtKB	P17676	CEBPB	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P21272	9606	UniProt		F
+UniProtKB	P17693	HLA-G	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12874224		9606	UniProt		F
+UniProtKB	P17693	HLA-G	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22802125		9606	UniProt		F
+UniProtKB	P17861	XBP1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:1903538		9606	UniProt		F
+UniProtKB	P18754	RCC1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11336674	UniProtKB:P62826	9606	CAFA		F
+UniProtKB	P18825	ADRA2C	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16605244		9606	BHF-UCL		F
+UniProtKB	P18825	ADRA2C	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16605244	UniProtKB:P08913	9606	BHF-UCL		F
+UniProtKB	P18847	ATF3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8622660	UniProtKB:P18847	9606	ParkinsonsUK-UCL		F
+UniProtKB	P18847	ATF3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8622660	UniProtKB:P35638	9606	ParkinsonsUK-UCL		F
+UniProtKB	P18848	ATF4	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q06507	9606	UniProt		F
+UniProtKB	P18850	ATF6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16469704	UniProtKB:Q68CJ9	9606	ParkinsonsUK-UCL		F
+UniProtKB	P19224	UGT1A6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:O60656-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P19224-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P22309-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P22310-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P35503-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW7-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW8-1	9606	BHF-UCL		F
+UniProtKB	P19224-3	UGT1A6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW9-1	9606	BHF-UCL		F
+UniProtKB	P19623	SRM	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17585781		9606	UniProt		F
+UniProtKB	P19801	AOC1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19764817	UniProtKB:P19801	9606	UniProt		F
+UniProtKB	P19971	TYMP	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1590793		9606	CAFA		F
+UniProtKB	P20023	CR2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11728339		9606	MGI		F
+UniProtKB	P20132	SDS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15689518		9606	UniProt		F
+UniProtKB	P20264	POU3F3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31303265		9606	UniProt		F
+UniProtKB	P20585	MSH3	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8942985		9606	HGNC-UCL		F
+UniProtKB	P20823	HNF1A	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:12453420	UniProtKB:P20823	9606	UniProt		F
+UniProtKB	P20849	COL9A1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8660302	UniProtKB:P20849	9606	BHF-UCL		F
+UniProtKB	P20963	CD247	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1825220		9606	UniProt		F
+UniProtKB	P20963	CD247	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2532305		9606	UniProt		F
+UniProtKB	P20963	CD247	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28652325		9606	UniProt		F
+UniProtKB	P20963	CD247	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:1825220		9606	UniProt		F
+UniProtKB	P21108	PRPS1L1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P60891	9606	UniProt		F
+UniProtKB	P21266	GSTM3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8373352	UniProtKB:P21266	9606	BHF-UCL		F
+UniProtKB	P21266	GSTM3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9545290		9606	MGI		F
+UniProtKB	P21333	FLNA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2391361		9606	BHF-UCL		F
+UniProtKB	P21549	AGXT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10960483		9606	UniProt		F
+UniProtKB	P21549	AGXT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12777626		9606	UniProt		F
+UniProtKB	P21549	AGXT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12899834		9606	HGNC-UCL		F
+UniProtKB	P21549	AGXT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16971151		9606	UniProt		F
+UniProtKB	P21549	AGXT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20133649		9606	UniProt		F
+UniProtKB	P21675	TAF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:25412659	UniProtKB:Q15545	9606	ParkinsonsUK-UCL	positively_regulates(GO:0008283)	F
+UniProtKB	P21802	FGFR2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16844695	UniProtKB:P21802	9606	UniProt		F
+UniProtKB	P21860	ERBB3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7556068	UniProtKB:P04626	9606	BHF-UCL		F
+UniProtKB	P22004	BMP6	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:7811286		9606	MGI		F
+UniProtKB	P22033	MMUT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20876572		9606	UniProt		F
+UniProtKB	P22301	IL10	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:16982608		9606	UniProt		F
+UniProtKB	P22303	ACHE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12524166	UniProtKB:P22303	9606	HGNC-UCL		F
+UniProtKB	P22309	UGT1A1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	P22310	UGT1A4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	P22310	UGT1A4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt		F
+UniProtKB	P22413	ENPP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28964717		9606	UniProt		F
+UniProtKB	P22413	ENPP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:7830796		9606	BHF-UCL		F
+UniProtKB	P22415	USF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8576131	UniProtKB:P22415	9606	BHF-UCL		F
+UniProtKB	P22415	USF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8576131	UniProtKB:Q15853	9606	BHF-UCL		F
+UniProtKB	P22736	NR4A1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P22829	9606	UniProt		F
+UniProtKB	P22830	FECH	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30765471		9606	UniProt		F
+UniProtKB	P23025	XPA	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8197175	UniProtKB:P23025	9606	UniProt		F
+UniProtKB	P23246	SFPQ	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25765647	UniProtKB:P23246	9606	UniProt		F
+UniProtKB	P23297	S100A1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10913138		9606	UniProt		F
+UniProtKB	P23378	GLDC	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P15505	9606	UniProt		F
+UniProtKB	P23381	WARS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22504299		9606	CAFA		F
+UniProtKB	P23381	WARS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28369220		9606	UniProt		F
+UniProtKB	P23497	SP100	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:9636146	UniProtKB:P23497-2	9606	BHF-UCL		F
+UniProtKB	P24468	NR2F2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18798693	UniProtKB:P24468	9606	UniProt		F
+UniProtKB	P24522	GADD45A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20460379		9606	CAFA		F
+UniProtKB	P24522	GADD45A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20460379	UniProtKB:O14965	9606	CAFA		F
+UniProtKB	P25815	S100P	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11747429		9606	UniProt		F
+UniProtKB	P26006	ITGA3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:10455171		9606	UniProt		F
+UniProtKB	P26678	PLN	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P61014	9606	UniProt		F
+UniProtKB	P27169	PON1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15772423	UniProtKB:P27169	9606	BHF-UCL		F
+UniProtKB	P27487	DPP4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14684150	UniProtKB:P27487	9606	UniProt		F
+UniProtKB	P27487	DPP4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15448155	UniProtKB:P27487	9606	UniProt		F
+UniProtKB	P27540	ARNT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16181639		9606	UniProt		F
+UniProtKB	P27540	ARNT	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:16181639		9606	UniProt		F
+UniProtKB	P27540	ARNT	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:34521881		9606	UniProt	occurs_in(GO:0005634)	F
+UniProtKB	P27540	ARNT	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9079689	UniProtKB:Q16665	9606	BHF-UCL		F
+UniProtKB	P27540	ARNT	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9079689	UniProtKB:Q99814	9606	BHF-UCL		F
+UniProtKB	P27707	DCK	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12808445	UniProtKB:P27707	9606	UniProt		F
+UniProtKB	P28161	GSTM2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8373352	UniProtKB:P28161	9606	BHF-UCL		F
+UniProtKB	P28288	ABCD3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17609205		9606	UniProt		F
+UniProtKB	P28676	GCA	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11717497	UniProtKB:P28676	9606	UniProt		F
+UniProtKB	P28676	GCA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12804766	UniProtKB:P30626	9606	BHF-UCL	occurs_in(CL:0002618)	F
+UniProtKB	P28698	MZF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16950398	UniProtKB:P28698	9606	UniProt		F
+UniProtKB	P28715	ERCC5	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10026181	UniProtKB:P28715	9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15513927		9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17919905		9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18069989		9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18485702		9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18553955		9606	UniProt		F
+UniProtKB	P28845	HSD11B1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19217779		9606	UniProt		F
+UniProtKB	P29218	IMPA1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17068342		9606	MGI		F
+UniProtKB	P29401	TKT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20667822		9606	UniProt		F
+UniProtKB	P29401	TKT	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9357955		9606	UniProt		F
+UniProtKB	P29459	IL12A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:P29460	9606	AgBase		F
+UniProtKB	P29459	IL12A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:P68220	9606	AgBase		F
+UniProtKB	P29459	IL12A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:1674604	UniProtKB:P29460	9606	UniProt		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:E7ENE1	9606	AgBase		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:E9PGR3	9606	AgBase		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:O60595	9606	AgBase		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:P29459	9606	AgBase		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11023671	UniProtKB:Q9TU27	9606	AgBase		F
+UniProtKB	P29460	IL12B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:1674604	UniProtKB:P29459	9606	UniProt		F
+UniProtKB	P29590	PML	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9230084	UniProtKB:P29590	9606	BHF-UCL		F
+UniProtKB	P30153	PPP2R1A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9847399	UniProtKB:P67775	9606	UniProt		F
+UniProtKB	P30273	FCER1G	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28652325		9606	UniProt		F
+UniProtKB	P30411	BDKRB2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10993080	UniProtKB:P30556	9606	BHF-UCL		F
+UniProtKB	P30556	AGTR1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10993080	UniProtKB:P30411	9606	BHF-UCL		F
+UniProtKB	P30626	SRI	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12804766	UniProtKB:P28676	9606	BHF-UCL	occurs_in(CL:0002618)	F
+UniProtKB	P30793	GCH1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16696853	UniProtKB:P30793	9606	UniProt		F
+UniProtKB	P31146	CORO1A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15601263		9606	UniProt		F
+UniProtKB	P31152	MAPK4	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6P5G0	9606	UniProt		F
+UniProtKB	P31749	AKT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10983986		9606	UniProt		F
+UniProtKB	P31939	ATIC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14756553	UniProtKB:P31939	9606	UniProt		F
+UniProtKB	P31939	ATIC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14966129	UniProtKB:P31939	9606	UniProt		F
+UniProtKB	P31949	S100A11	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10913138		9606	UniProt		F
+UniProtKB	P31997	CEACAM8	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26483485		9606	UniProt		F
+UniProtKB	P32320	CDA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15689149		9606	UniProt		F
+UniProtKB	P32455	GBP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10676968		9606	CAFA		F
+UniProtKB	P32455	GBP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21151871		9606	UniProt		F
+UniProtKB	P32456	GBP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21151871		9606	UniProt		F
+UniProtKB	P32754	HPD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1339442		9606	UniProt		F
+UniProtKB	P32926	DSG3	enables	GO:0046983	protein dimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O35902	9606	UniProt		F
+UniProtKB	P33763	S100A5	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19536568	UniProtKB:P33763	9606	UniProt		F
+UniProtKB	P33897	ABCD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17609205		9606	UniProt		F
+UniProtKB	P33897	ABCD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18757502		9606	UniProt		F
+UniProtKB	P33897	ABCD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21145416		9606	UniProt		F
+UniProtKB	P34896	SHMT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9753690		9606	UniProt		F
+UniProtKB	P34913	EPHX2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15096040		9606	UniProt		F
+UniProtKB	P34913	EPHX2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18513744		9606	UniProt		F
+UniProtKB	P35228	NOS2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P29477	9606	BHF-UCL		F
+UniProtKB	P35232	PHB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:28017329	UniProtKB:Q99623	9606	UniProt		F
+UniProtKB	P35348	ADRA1A	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:22120526		9606	UniProt		F
+UniProtKB	P35368	ADRA1B	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:22120526		9606	UniProt		F
+UniProtKB	P35503	UGT1A3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	P35520	CBS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11483494		9606	UniProt		F
+UniProtKB	P35523	CLCN1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26502825		9606	UniProt		F
+UniProtKB	P35579	MYH9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12237319		9606	UniProt		F
+UniProtKB	P35611	ADD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35611	9606	BHF-UCL		F
+UniProtKB	P35611	ADD1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35612	9606	BHF-UCL		F
+UniProtKB	P35611	ADD1	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35611,UniProtKB:P35612	9606	DisProt		F
+UniProtKB	P35612	ADD2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35612	9606	BHF-UCL		F
+UniProtKB	P35612	ADD2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35611	9606	BHF-UCL		F
+UniProtKB	P35612	ADD2	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:7642559	UniProtKB:P35611,UniProtKB:P35612	9606	DisProt		F
+UniProtKB	P35638	DDIT3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18534616		9606	CAFA		F
+UniProtKB	P35638	DDIT3	enables	GO:0046982	protein heterodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:109247|PANTHER:PTN002703959|RGD:62391|UniProtKB:P35638	9606	GO_Central		F
+UniProtKB	P35638	DDIT3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8622660	UniProtKB:P18847	9606	ParkinsonsUK-UCL		F
+UniProtKB	P35712	SOX6	enables	GO:0042803	protein homodimerization activity	ECO:0000315	IMP	PMID:32442410		9606	UniProt		F
+UniProtKB	P35790	CHKA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34077757		9606	UniProt		F
+UniProtKB	P35869	AHR	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P30561	9606	UniProt		F
+UniProtKB	P35869	AHR	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:28602820		9606	UniProt		F
+UniProtKB	P35869	AHR	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:34521881		9606	UniProt	occurs_in(GO:0005634)	F
+UniProtKB	P35916	FLT4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23878260		9606	UniProt		F
+UniProtKB	P36544	CHRNA7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8145738		9606	UniProt		F
+UniProtKB	P36551	CPOX	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16176984		9606	UniProt		F
+UniProtKB	P36894	BMPR1A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18436533		9606	BHF-UCL		F
+UniProtKB	P39905	GDNF	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8493557		9606	UniProt		F
+UniProtKB	P39905	GDNF	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8988018		9606	UniProt		F
+UniProtKB	P40145	ADCY8	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P40146	9606	UniProt		F
+UniProtKB	P40145	ADCY8	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P40146	9606	UniProt		F
+UniProtKB	P40145	ADCY8	enables	GO:0046983	protein dimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P40146	9606	UniProt		F
+UniProtKB	P40199	CEACAM6	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26483485		9606	UniProt		F
+UniProtKB	P40763	STAT3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P42227	9606	UniProt		F
+UniProtKB	P40763	STAT3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15653507		9606	UniProt		F
+UniProtKB	P40763	STAT3	enables	GO:0046983	protein dimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P42227	9606	UniProt		F
+UniProtKB	P41180	CASR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16740594		9606	UniProt		F
+UniProtKB	P41180	CASR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27434672		9606	UniProt		F
+UniProtKB	P41235	HNF4A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12220494		9606	BHF-UCL		F
+UniProtKB	P41250	GARS1	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:17544401		9606	UniProt		F
+UniProtKB	P41250	GARS1	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:17545306		9606	UniProt		F
+UniProtKB	P42224	STAT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28753426		9606	UniProt		F
+UniProtKB	P42224	STAT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9630226		9606	UniProt		F
+UniProtKB	P42892	ECE1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:7805846	UniProtKB:P42892	9606	BHF-UCL		F
+UniProtKB	P43034	PAFAH1B1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P43033	9606	UniProt		F
+UniProtKB	P43246	MSH2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8942985		9606	HGNC-UCL		F
+UniProtKB	P43354	NR4A2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q06219	9606	UniProt		F
+UniProtKB	P45844	ABCG1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16702602		9606	UniProt		F
+UniProtKB	P45844	ABCG1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16870176		9606	BHF-UCL		F
+UniProtKB	P45844	ABCG1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16870176	UniProtKB:Q9H172	9606	BHF-UCL		F
+UniProtKB	P46597	ASMT	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22775292	UniProtKB:P46597	9606	UniProt		F
+UniProtKB	P46976	GYG1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22160680		9606	UniProt		F
+UniProtKB	P46976	GYG1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30356213		9606	UniProt		F
+UniProtKB	P47736	RAP1GAP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18309292	UniProtKB:P47736	9606	UniProt		F
+UniProtKB	P47895	ALDH1A3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11585737		9606	UniProt		F
+UniProtKB	P47989	XDH	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17301077	UniProtKB:P47989	9606	UniProt		F
+UniProtKB	P47992	XCL1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11889129		9606	BHF-UCL		F
+UniProtKB	P48426	PIP4K2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32130941		9606	UniProt		F
+UniProtKB	P48637	GSS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10369661		9606	UniProt		F
+UniProtKB	P48740	MASP1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18596036	UniProtKB:P48740	9606	UniProt		F
+UniProtKB	P49279	SLC11A1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8537108		9606	UniProt		F
+UniProtKB	P49454	CENPF	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:7642639	UniProtKB:P49454	9606	UniProt		F
+UniProtKB	P49591	SARS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:26433229	UniProtKB:P49591	9606	UniProt		F
+UniProtKB	P49715	CEBPA	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P05554	9606	UniProt		F
+UniProtKB	P49815	TSC2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10585443	UniProtKB:P49815	9606	UniProt		F
+UniProtKB	P49842	WHR1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:38252411		9606	UniProt		F
+UniProtKB	P50053	KHK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19237742		9606	UniProt		F
+UniProtKB	P50479	PDLIM4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25158098		9606	UniProt		F
+UniProtKB	P50993	ATP1A2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P06686	9606	ARUK-UCL	occurs_in(CL:0002604),occurs_in(UBERON:0002421),has_output(GO:0005890)|occurs_in(CL:0002605),occurs_in(UBERON:0000956),has_output(GO:0005890)	F
+UniProtKB	P51114	FXR1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	P51114	FXR1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	P51116	FXR2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	P51116	FXR2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	P51617	IRAK1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:P51617	9606	BHF-UCL		F
+UniProtKB	P51617	IRAK1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:O43187	9606	BHF-UCL		F
+UniProtKB	P51617	IRAK1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:Q9Y616	9606	BHF-UCL		F
+UniProtKB	P51636	CAV2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8552590		9606	MGI		F
+UniProtKB	P51648	ALDH3A2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25047030	UniProtKB:P51648	9606	UniProt		F
+UniProtKB	P51659	HSD17B4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15644212		9606	UniProt		F
+UniProtKB	P51659	HSD17B4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9089413		9606	UniProt		F
+UniProtKB	P51665	PSMD7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17559875		9606	UniProt		F
+UniProtKB	P51671	CCL11	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:9712872		9606	CAFA		F
+UniProtKB	P51692	STAT5B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29844444		9606	UniProt		F
+UniProtKB	P51692	STAT5B	enables	GO:0046983	protein dimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P42232	9606	UniProt		F
+UniProtKB	P51843	NR0B1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16709599	UniProtKB:P51843	9606	UniProt		F
+UniProtKB	P52179	MYOM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q62234	9606	UniProt		F
+UniProtKB	P52655	GTF2A1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8626665	UniProtKB:P52657	9606	BHF-UCL		F
+UniProtKB	P52657	GTF2A2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8626665	UniProtKB:P52657	9606	BHF-UCL		F
+UniProtKB	P52657	GTF2A2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8626665	UniProtKB:P52655	9606	BHF-UCL		F
+UniProtKB	P52701	MSH6	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8942985	UniProtKB:P52701	9606	UniProt		F
+UniProtKB	P53602	MVD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8626466		9606	UniProt		F
+UniProtKB	P54132	BLM	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28228481		9606	UniProt		F
+UniProtKB	P54274	TERF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15608617	UniProtKB:P54274	9606	UniProt		F
+UniProtKB	P54274	TERF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9130722	UniProtKB:P54274	9606	BHF-UCL		F
+UniProtKB	P55157	MTTP	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23475612		9606	UniProt		F
+UniProtKB	P55327	TPD52	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9484778		9606	UniProt		F
+UniProtKB	P55345	PRMT2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12039952	UniProtKB:P55345	9606	UniProt		F
+UniProtKB	P55851	UCP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26182433		9606	UniProt		F
+UniProtKB	P55851	UCP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33373220		9606	UniProt		F
+UniProtKB	P57052	RBM11	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21984414		9606	MGI		F
+UniProtKB	P58743	SLC26A5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34390643		9606	UniProt		F
+UniProtKB	P59666	DEFA3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2006422		9606	UniProt		F
+UniProtKB	P60174	TPI1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18562316		9606	UniProt		F
+UniProtKB	P60891	PRPS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16939420	UniProtKB:P60891	9606	UniProt		F
+UniProtKB	P60903	S100A10	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23091277		9606	UniProt		F
+UniProtKB	P61296	HAND2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q61039	9606	BHF-UCL		F
+UniProtKB	P61769	B2M	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:28468825	UniProtKB:P61769	9606	ARUK-UCL	has_input(UniProtKB:P61769)	F
+UniProtKB	P61812	TGFB2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:2119582		9606	UniProt		F
+UniProtKB	P62072	TIMM10	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16387659	UniProtKB:P62072	9606	BHF-UCL		F
+UniProtKB	P62258	YWHAE	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11953308	UniProtKB:Q04917	9606	BHF-UCL		F
+UniProtKB	P62312	LSM6	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12515382		9606	MGI		F
+UniProtKB	P62826	RAN	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11336674	UniProtKB:P18754	9606	CAFA		F
+UniProtKB	P63244	RACK1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24947010	UniProtKB:P63244	9606	ParkinsonsUK-UCL		F
+UniProtKB	P63272	SUPT4H1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9450929	UniProtKB:O00267	9606	UniProt		F
+UniProtKB	P63316	TNNC1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18092822		9606	BHF-UCL		F
+UniProtKB	P67775	PPP2CA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9847399	UniProtKB:P30153	9606	UniProt		F
+UniProtKB	P67936	TPM4	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P09495	9606	UniProt		F
+UniProtKB	P67936	TPM4	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P09495	9606	UniProt		F
+UniProtKB	P68402	PAFAH1B2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P68401	9606	UniProt		F
+UniProtKB	P68402	PAFAH1B2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P68401	9606	UniProt		F
+UniProtKB	P78330	PSPH	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12777757	UniProtKB:P78330	9606	UniProt		F
+UniProtKB	P78356	PIP4K2B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9753329		9606	CAFA		F
+UniProtKB	P80192	MAP3K9	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:8195146	UniProtKB:Q16584	9606	UniProt		F
+UniProtKB	P81133	SIM1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q61045	9606	UniProt		F
+UniProtKB	P82251	SLC7A9	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:32494597		9606	UniProt		F
+UniProtKB	P84022	SMAD3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8774881	UniProtKB:P84022	9606	BHF-UCL		F
+UniProtKB	Q00604	NDP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17955262	UniProtKB:Q00604	9606	BHF-UCL		F
+UniProtKB	Q00613	HSF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:9222587		9606	UniProt		F
+UniProtKB	Q01523	DEFA5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17088326		9606	UniProt		F
+UniProtKB	Q01523	DEFA5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22573326		9606	UniProt		F
+UniProtKB	Q01523	DEFA5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25782105		9606	UniProt		F
+UniProtKB	Q01524	DEFA6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17088326		9606	UniProt		F
+UniProtKB	Q01581	HMGCS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20346956		9606	UniProt		F
+UniProtKB	Q01664	TFAP4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:2123466	UniProtKB:Q01664	9606	UniProt		F
+UniProtKB	Q02078	MEF2A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9858528	UniProtKB:Q63943	9606	UniProt		F
+UniProtKB	Q02779	MAP3K10	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:8195146	UniProtKB:Q16584	9606	UniProt		F
+UniProtKB	Q02846	GUCY2D	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P51840	9606	UniProt		F
+UniProtKB	Q03013	GSTM4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8373352	UniProtKB:Q03013	9606	BHF-UCL		F
+UniProtKB	Q03014	HHEX	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16540119	UniProtKB:Q03014	9606	BHF-UCL		F
+UniProtKB	Q03112-1	MECOM	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15897867		9606	UniProt		F
+UniProtKB	Q03164	KMT2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11313484		9606	UniProt		F
+UniProtKB	Q03431	PTH1R	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27160269		9606	UniProt		F
+UniProtKB	Q03518	TAP1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P36370	9606	UniProt		F
+UniProtKB	Q04206	RELA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18045535		9606	CAFA		F
+UniProtKB	Q04206	RELA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18212740		9606	UniProt		F
+UniProtKB	Q04771	ACVR1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18436533		9606	BHF-UCL		F
+UniProtKB	Q04837	SSBP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31550237		9606	UniProt		F
+UniProtKB	Q04917	YWHAH	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11953308	UniProtKB:P62258	9606	BHF-UCL		F
+UniProtKB	Q05193	DNM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20428113		9606	UniProt		F
+UniProtKB	Q05516	ZBTB16	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:8622986		9606	UniProt		F
+UniProtKB	Q06278	AOX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26322824		9606	UniProt		F
+UniProtKB	Q06278	AOX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26842593		9606	UniProt		F
+UniProtKB	Q06413	MEF2C	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9858528	UniProtKB:Q63943	9606	UniProt		F
+UniProtKB	Q06787	FMR1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	Q06787	FMR1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:7489725		9606	UniProt		F
+UniProtKB	Q07812	BAX	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16608847		9606	HGNC-UCL		F
+UniProtKB	Q07812	BAX	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9111042	UniProtKB:P10415	9606	HGNC-UCL		F
+UniProtKB	Q07820	MCL1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10837489	UniProtKB:P04637	9606	UniProt		F
+UniProtKB	Q07820	MCL1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10837489	UniProtKB:Q16611	9606	UniProt		F
+UniProtKB	Q07837	SLC3A1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:32494597		9606	UniProt		F
+UniProtKB	Q08209	PPP3CA	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:11005320	UniProtKB:P16298	9606	UniProt		F
+UniProtKB	Q08209	PPP3CA	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:11005320	UniProtKB:Q08209	9606	UniProt		F
+UniProtKB	Q10469	MGAT2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20378551		9606	UniProt		F
+UniProtKB	Q10589	BST2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20399176	UniProtKB:Q10589	9606	UniProt		F
+UniProtKB	Q12809	KCNH2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8995352	UniProtKB:Q12809	9606	BHF-UCL		F
+UniProtKB	Q12852	MAP3K12	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q60700	9606	UniProt		F
+UniProtKB	Q12882	DPYD	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q28943	9606	UniProt		F
+UniProtKB	Q12882	DPYD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:1512248		9606	UniProt		F
+UniProtKB	Q12884	FAP	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10455171		9606	UniProt		F
+UniProtKB	Q12904	AIMP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11306575		9606	HGNC-UCL		F
+UniProtKB	Q12983	BNIP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10381623		9606	UniProt		F
+UniProtKB	Q12983	BNIP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9396766		9606	UniProt		F
+UniProtKB	Q13043	STK4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11805089		9606	MGI		F
+UniProtKB	Q13137	CALCOCO2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9230084	UniProtKB:Q13137	9606	BHF-UCL		F
+UniProtKB	Q13253	NOG	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11562478		9606	BHF-UCL		F
+UniProtKB	Q13257	MAD2L1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18022367	UniProtKB:Q13257	9606	UniProt		F
+UniProtKB	Q13428	TCOF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:26399832	UniProtKB:Q14978	9606	UniProt		F
+UniProtKB	Q13459	MYO9B	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11901422		9606	UniProt		F
+UniProtKB	Q13485	SMAD4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8774881	UniProtKB:Q13485	9606	BHF-UCL		F
+UniProtKB	Q13546	RIPK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29440439		9606	UniProt		F
+UniProtKB	Q13554	CAMK2B	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20668654	UniProtKB:Q13554	9606	BHF-UCL		F
+UniProtKB	Q13555	CAMK2G	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20668654	UniProtKB:Q13555	9606	BHF-UCL		F
+UniProtKB	Q13557	CAMK2D	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20668654	UniProtKB:Q13557	9606	BHF-UCL		F
+UniProtKB	Q13562	NEUROD1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10545951	UniProtKB:P15923	9606	BHF-UCL		F
+UniProtKB	Q13562	NEUROD1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:14752053		9606	UniProt		F
+UniProtKB	Q13563	PKD2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:38483987		9606	UniProt		F
+UniProtKB	Q13563	PKD2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9192675		9606	BHF-UCL		F
+UniProtKB	Q13564	NAE1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12740388	UniProtKB:Q8TBC4	9606	UniProt		F
+UniProtKB	Q13596	SNX1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11102511	UniProtKB:Q13596	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q13596	SNX1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11102511	UniProtKB:O60749	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q13613	MTMR1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:27018598	UniProtKB:Q13613	9606	UniProt		F
+UniProtKB	Q13625	TP53BP2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25963096	UniProtKB:Q13625	9606	DisProt		F
+UniProtKB	Q13625	TP53BP2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25963096	UniProtKB:Q13625,UniProtKB:Q13625	9606	DisProt		F
+UniProtKB	Q14050	COL9A3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8660302	UniProtKB:Q14050	9606	BHF-UCL		F
+UniProtKB	Q14055	COL9A2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8660302	UniProtKB:Q14055	9606	BHF-UCL		F
+UniProtKB	Q14108	SCARB2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:29199275	UniProtKB:Q14108	9606	ARUK-UCL		F
+UniProtKB	Q14191	WRN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10783163		9606	UniProt		F
+UniProtKB	Q14249	ENDOG	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O08600	9606	UniProt		F
+UniProtKB	Q14376	GALE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16302980	UniProtKB:Q14376	9606	UniProt		F
+UniProtKB	Q14469	HES1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P35428	9606	UniProt		F
+UniProtKB	Q14653	IRF3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12062447	UniProtKB:Q14653	9606	BHF-UCL		F
+UniProtKB	Q14653	IRF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22394562		9606	UniProt		F
+UniProtKB	Q14653	IRF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30699354		9606	UniProt		F
+UniProtKB	Q14683	SMC1A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11590136	UniProtKB:Q9UQE7	9606	UniProt		F
+UniProtKB	Q14721	KCNB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P15387	9606	UniProt		F
+UniProtKB	Q14831	GRM7	enables	GO:0046983	protein dimerization activity	ECO:0000315	IMP	PMID:33476302		9606	UniProt		F
+UniProtKB	Q14849	STARD3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15718238		9606	UniProt		F
+UniProtKB	Q14894	CRYM	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12590647		9606	UniProt		F
+UniProtKB	Q14978	NOLC1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:26399832	UniProtKB:Q13428	9606	UniProt		F
+UniProtKB	Q15046	KARS1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23159739	UniProtKB:Q15046	9606	UniProt		F
+UniProtKB	Q15067	ACOX1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32169171		9606	UniProt		F
+UniProtKB	Q15070	OXA1L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20601428		9606	UniProt		F
+UniProtKB	Q15070	OXA1L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20739282		9606	UniProt		F
+UniProtKB	Q15075	EEA1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11741531		9606	UniProt		F
+UniProtKB	Q15102	PAFAH1B3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:10542206		9606	UniProt		F
+UniProtKB	Q15102	PAFAH1B3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:10542206		9606	UniProt		F
+UniProtKB	Q15119	PDK2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19833728	UniProtKB:Q15119	9606	UniProt		F
+UniProtKB	Q15165	PON2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15772423	UniProtKB:Q15165	9606	BHF-UCL		F
+UniProtKB	Q15166	PON3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15772423	UniProtKB:Q15166	9606	BHF-UCL		F
+UniProtKB	Q15223	NECTIN1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9JKF6	9606	HGNC-UCL		F
+UniProtKB	Q15257	PTPA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16916641		9606	HGNC-UCL		F
+UniProtKB	Q15276	RABEP1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15378032	UniProtKB:Q15276	9606	UniProt		F
+UniProtKB	Q15303	ERBB4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18334220	UniProtKB:Q15303	9606	UniProt		F
+UniProtKB	Q15406	NR6A1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q64249	9606	UniProt		F
+UniProtKB	Q15466	NR0B2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16709599	UniProtKB:Q15466	9606	UniProt		F
+UniProtKB	Q15517	CDSN	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	PANTHER:PTN000574929|UniProtKB:Q15517	9606	GO_Central		F
+UniProtKB	Q15517	CDSN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15086562		9606	MGI		F
+UniProtKB	Q15545	TAF7	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:25412659	UniProtKB:P21675	9606	ParkinsonsUK-UCL	positively_regulates(GO:0008283)	F
+UniProtKB	Q15554	TERF2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9326950	UniProtKB:Q15554	9606	BHF-UCL		F
+UniProtKB	Q15633	TARBP2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17452327	UniProtKB:Q15633	9606	UniProt		F
+UniProtKB	Q15697	ZNF174	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15629724	UniProtKB:Q15697	9606	UniProt		F
+UniProtKB	Q15717	ELAVL1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17632515	UniProtKB:Q15717	9606	UniProt		F
+UniProtKB	Q15784	NEUROD2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q62414	9606	UniProt		F
+UniProtKB	Q15848	ADIPOQ	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12021245	UniProtKB:Q15848	9606	BHF-UCL		F
+UniProtKB	Q15853	USF2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:8576131	UniProtKB:Q15853	9606	BHF-UCL		F
+UniProtKB	Q15853	USF2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:8576131	UniProtKB:P22415	9606	BHF-UCL		F
+UniProtKB	Q16394	EXT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12907669		9606	BHF-UCL		F
+UniProtKB	Q16394	EXT1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12907669	UniProtKB:Q93063	9606	BHF-UCL		F
+UniProtKB	Q16584	MAP3K11	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9829970	UniProtKB:Q16584	9606	UniProt		F
+UniProtKB	Q16611	BAK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23028632		9606	UniProt		F
+UniProtKB	Q16611	BAK1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10837489	UniProtKB:Q07820	9606	UniProt		F
+UniProtKB	Q16620	NTRK2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q63604	9606	UniProt		F
+UniProtKB	Q16656	NRF1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q90979	9606	AgBase		F
+UniProtKB	Q16656-4	NRF1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q90979	9606	AgBase		F
+UniProtKB	Q16665	HIF1A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12239177	UniProtKB:Q9HBZ2	9606	UniProt		F
+UniProtKB	Q16665	HIF1A	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9079689	UniProtKB:P27540	9606	BHF-UCL		F
+UniProtKB	Q16671	AMHR2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11549681		9606	UniProt		F
+UniProtKB	Q16719	KYNU	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11985583		9606	UniProt		F
+UniProtKB	Q16760	DGKD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12200442		9606	MGI		F
+UniProtKB	Q16760	DGKD	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12200442		9606	MGI		F
+UniProtKB	Q16773	KYAT1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15364907	UniProtKB:Q16773	9606	UniProt		F
+UniProtKB	Q16827	PTPRO	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:E9Q612	9606	UniProt		F
+UniProtKB	Q16842	ST3GAL2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25916169		9606	UniProt		F
+UniProtKB	Q16853	AOC3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:23349812	UniProtKB:Q16853	9606	UniProt		F
+UniProtKB	Q16890	TPD52L1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:9484778		9606	UniProt		F
+UniProtKB	Q17RS7	GEN1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26578604		9606	UniProt		F
+UniProtKB	Q2M3C6	TMEM266	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30810529		9606	UniProt		F
+UniProtKB	Q2PPJ7	RALGAPA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P86411	9606	UniProt		F
+UniProtKB	Q32MZ4	LRRFIP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23099021		9606	UniProt		F
+UniProtKB	Q3V6T2	CCDC88A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16139227	UniProtKB:Q3V6T2	9606	UniProt		F
+UniProtKB	Q4G0N4	NADK2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23212377		9606	UniProt		F
+UniProtKB	Q53FA7	TP53I3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19349281	UniProtKB:Q53FA7	9606	UniProt		F
+UniProtKB	Q53H47	SETMAR	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20521842	UniProtKB:Q53H47	9606	UniProt		F
+UniProtKB	Q5HYI8	RABL3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D4V7	9606	UniProt		F
+UniProtKB	Q5JR59	MTUS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19543227	UniProtKB:Q5JR59	9606	UniProt		F
+UniProtKB	Q5JUK2	SOHLH1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6IUP1	9606	UniProt		F
+UniProtKB	Q5JUK2	SOHLH1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D489	9606	UniProt		F
+UniProtKB	Q5JUK2	SOHLH1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6IUP1	9606	UniProt		F
+UniProtKB	Q5JUK2	SOHLH1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D489	9606	UniProt		F
+UniProtKB	Q5S007	LRRK2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16321986	UniProtKB:Q5S007	9606	UniProt		F
+UniProtKB	Q5T7P8	SYT6	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9R0N8	9606	BHF-UCL		F
+UniProtKB	Q5TCX8	MAP3K21	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q16584	9606	UniProt		F
+UniProtKB	Q5U651	RASIP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26780829		9606	UniProt		F
+UniProtKB	Q5VTT5	MYOM3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:A2ABU4	9606	UniProt		F
+UniProtKB	Q5VUA4	ZNF318	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q99PP2	9606	UniProt		F
+UniProtKB	Q5VWQ8	DAB2IP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12813029	UniProtKB:Q5VWQ8	9606	BHF-UCL		F
+UniProtKB	Q5VZ72	IZUMO3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:A6PWV3	9606	UniProt		F
+UniProtKB	Q5XXA6	ANO1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8BHY3	9606	UniProt		F
+UniProtKB	Q66GS9	CEP135	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27477386		9606	UniProt		F
+UniProtKB	Q68CJ9	CREB3L3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16469704	UniProtKB:Q68CJ9	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q68CJ9	CREB3L3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16469704	UniProtKB:P18850	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q68J44	DUSP29	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21543850		9606	UniProt		F
+UniProtKB	Q6GYQ0	RALGAPA1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:19520869	UniProtKB:Q86X10	9606	UniProt		F
+UniProtKB	Q6ICB4	PHETA2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21233288	UniProtKB:Q6ICB4	9606	UniProt		F
+UniProtKB	Q6J4K2	SLC8B1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20018762	UniProtKB:Q6J4K2	9606	BHF-UCL		F
+UniProtKB	Q6N022	TENM4	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q3UHK6	9606	UniProt		F
+UniProtKB	Q6N022	TENM4	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345184|MGI:MGI:1345185|MGI:MGI:2447063|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q6N022	TENM4	enables	GO:0046982	protein heterodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345183|MGI:MGI:1345184|MGI:MGI:1345185|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q6PI48	DARS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15779907	UniProtKB:Q6PI48	9606	BHF-UCL		F
+UniProtKB	Q6PI48	DARS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23275545	UniProtKB:Q6PI48	9606	UniProt		F
+UniProtKB	Q6PI77	GPRASP3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6PB60	9606	CAFA		F
+UniProtKB	Q6UB35	MTHFD1L	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16171773		9606	BHF-UCL		F
+UniProtKB	Q6UVW9	CLEC2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20194751		9606	UniProt		F
+UniProtKB	Q6UX73	C16orf89	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20578903	UniProtKB:Q6UX73	9606	UniProt		F
+UniProtKB	Q6VVX0	CYP2R1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18511070		9606	UniProt		F
+UniProtKB	Q6ZP01	RBM44	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q3V089	9606	UniProt		F
+UniProtKB	Q6ZPB5	SDIM1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21255413		9606	UniProt		F
+UniProtKB	Q6ZRY4	RBPMS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:25064856	UniProtKB:Q6ZRY4	9606	UniProt		F
+UniProtKB	Q7L4E1	MIGA2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26711011		9606	UniProt		F
+UniProtKB	Q7L4E1	MIGA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26711011		9606	UniProt		F
+UniProtKB	Q7L523	RRAGA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:14660641		9606	UniProt		F
+UniProtKB	Q7L523	RRAGA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11073942	UniProtKB:Q9HB90	9606	UniProt		F
+UniProtKB	Q7L523	RRAGA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:14660641	UniProtKB:Q9HB90	9606	UniProt		F
+UniProtKB	Q7L804	RAB11FIP2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16905101	UniProtKB:Q7L804	9606	UniProt		F
+UniProtKB	Q7RTU4	BHLHA9	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:25466284		9606	UniProt		F
+UniProtKB	Q7Z3Z0	KRT25	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26902920		9606	UniProt		F
+UniProtKB	Q7Z3Z0	KRT25	enables	GO:0046982	protein heterodimerization activity	ECO:0000315	IMP	PMID:28899683		9606	UniProt		F
+UniProtKB	Q86U44	METTL3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:27281194	UniProtKB:Q9HCE5	9606	UniProt		F
+UniProtKB	Q86U44	METTL3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:27373337		9606	UniProt		F
+UniProtKB	Q86U70	LDB1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P70662	9606	UniProt		F
+UniProtKB	Q86UQ8	NFE4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11003662		9606	UniProt		F
+UniProtKB	Q86UW1	SLC51A	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8R000	9606	UniProt		F
+UniProtKB	Q86UW1	SLC51A	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8R000	9606	UniProt		F
+UniProtKB	Q86UW2	SLC51B	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q80WK2	9606	UniProt		F
+UniProtKB	Q86WV6	STING1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19433799		9606	UniProt		F
+UniProtKB	Q86WV6	STING1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21074459		9606	UniProt		F
+UniProtKB	Q86WV6	STING1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22705373		9606	UniProt		F
+UniProtKB	Q86X10	RALGAPB	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P86410	9606	UniProt		F
+UniProtKB	Q86X10	RALGAPB	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:19520869	UniProtKB:Q6GYQ0	9606	UniProt		F
+UniProtKB	Q86XE3	MICU3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:29725115	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q86XE5	HOGA1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21998747		9606	BHF-UCL		F
+UniProtKB	Q86XR8	CEP57	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12717444	UniProtKB:Q86XR8	9606	UniProt		F
+UniProtKB	Q86YS3	RAB11FIP4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12470645		9606	UniProt		F
+UniProtKB	Q86YT9	JAML	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12869515		9606	UniProt		F
+UniProtKB	Q86YW7	GPHB5	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12045258		9606	UniProt		F
+UniProtKB	Q8IUH8	SPPL2C	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15385547		9606	UniProt		F
+UniProtKB	Q8IUM7	NPAS4	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:24465693		9606	UniProt		F
+UniProtKB	Q8IVH4	MMAA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20876572		9606	UniProt		F
+UniProtKB	Q8IW40	DNAAF19	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22581229		9606	BHF-UCL	occurs_in(CL:0002368)	F
+UniProtKB	Q8IWU4	SLC30A8	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8BGG0	9606	BHF-UCL		F
+UniProtKB	Q8IXF0	NPAS3	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9QZQ0	9606	UniProt		F
+UniProtKB	Q8IXQ5	KLHL7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21828050		9606	UniProt		F
+UniProtKB	Q8IY95	TMEM192	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20370317		9606	UniProt		F
+UniProtKB	Q8IYB8	SUPV3L1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19509288	UniProtKB:Q8IYB8	9606	UniProt		F
+UniProtKB	Q8IYM1	SEPTIN12	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9JJM9	9606	UniProt		F
+UniProtKB	Q8IYM1	SEPTIN12	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18443421	UniProtKB:Q8IYM1	9606	UniProt		F
+UniProtKB	Q8IYU8	MICU2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:24560927	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q8IYU8	MICU2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:26387864	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q8IYU8	MICU2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:30699349	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q8IYU8	MICU2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:32148862	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q8IYU8	MICU2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:32790952	UniProtKB:Q9BPX6	9606	UniProt		F
+UniProtKB	Q8IYV9	IZUMO1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D9J7	9606	UniProt		F
+UniProtKB	Q8N0W4	NLGN4X	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18093521		9606	UniProt		F
+UniProtKB	Q8N126	CADM3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:12826663	UniProtKB:Q99N28	9606	HGNC-UCL		F
+UniProtKB	Q8N2A8	PLD6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17028579		9606	UniProt		F
+UniProtKB	Q8N423	LILRB2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24052308	UniProtKB:Q8N423	9606	ARUK-UCL	causally_upstream_of(GO:0001540)	F
+UniProtKB	Q8N4B1	PHETA1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21233288	UniProtKB:Q8N4B1	9606	UniProt		F
+UniProtKB	Q8N4J0	CARNMT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29463897		9606	UniProt		F
+UniProtKB	Q8N5K1	CISD2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19580816		9606	UniProt		F
+UniProtKB	Q8N5Z0	AADAT	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18620547	UniProtKB:Q8N5Z0	9606	UniProt		F
+UniProtKB	Q8N668	COMMD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15799966	UniProtKB:Q8N668	9606	UniProt		F
+UniProtKB	Q8N668	COMMD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17309234	UniProtKB:Q8N668	9606	UniProt		F
+UniProtKB	Q8N6T7	SIRT6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31995034		9606	UniProt		F
+UniProtKB	Q8N6T7	SIRT6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32538779		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29426904		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32911482		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32912999		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33051594		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33542149		9606	UniProt		F
+UniProtKB	Q8N884	CGAS	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:35438208		9606	UniProt		F
+UniProtKB	Q8NAN2	MIGA1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26711011		9606	UniProt		F
+UniProtKB	Q8NAN2	MIGA1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26711011		9606	UniProt		F
+UniProtKB	Q8NAP3	ZBTB38	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16354688		9606	UniProt		F
+UniProtKB	Q8NBS3	SLC4A11	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:22072594		9606	UniProt		F
+UniProtKB	Q8NBZ7	UXS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23656592		9606	UniProt		F
+UniProtKB	Q8NEU8	APPL2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18034774		9606	UniProt		F
+UniProtKB	Q8NF91	SYNE1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6ZWR6	9606	UniProt		F
+UniProtKB	Q8NHL6	LILRB1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21213105	UniProtKB:Q8NHL6	9606	UniProt		F
+UniProtKB	Q8NHP7	EXD1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:H9IUR0	9606	UniProt		F
+UniProtKB	Q8NHV1	GIMAP7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23454188	UniProtKB:Q8NHV1	9606	UniProt		F
+UniProtKB	Q8TAD2	IL17D	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12097364		9606	UniProt		F
+UniProtKB	Q8TBA6	GOLGA5	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9915833	UniProtKB:Q8TBA6	9606	UniProt		F
+UniProtKB	Q8TBC4	UBA3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12740388	UniProtKB:Q13564	9606	UniProt		F
+UniProtKB	Q8TCG1	CIP2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28174209		9606	UniProt		F
+UniProtKB	Q8TCT6	SPPL3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15385547		9606	UniProt		F
+UniProtKB	Q8TCT6	SPPL3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15998642		9606	UniProt		F
+UniProtKB	Q8TCT6	SPPL3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16873890		9606	UniProt		F
+UniProtKB	Q8TCT7	SPPL2B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15385547		9606	UniProt		F
+UniProtKB	Q8TCT7	SPPL2B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15998642		9606	UniProt		F
+UniProtKB	Q8TCT7	SPPL2B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16873890		9606	UniProt		F
+UniProtKB	Q8TCT8	SPPL2A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15385547		9606	UniProt		F
+UniProtKB	Q8TCT9	HM13	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15385547		9606	UniProt		F
+UniProtKB	Q8TCT9	HM13	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15998642		9606	UniProt		F
+UniProtKB	Q8TCT9	HM13	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16873890		9606	UniProt		F
+UniProtKB	Q8TD84	DSCAML1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11453658		9606	UniProt		F
+UniProtKB	Q8TE04	PANK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17631502		9606	UniProt		F
+UniProtKB	Q8WUA7	TBC1D22A	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18186464		9606	UniProt		F
+UniProtKB	Q8WUM4	PDCD6IP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14505570	UniProtKB:Q8WUM4	9606	UniProt		F
+UniProtKB	Q8WUM4	PDCD6IP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q8WUM4	9606	UniProt		F
+UniProtKB	Q8WV22	NSMCE1	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:27427983		9606	UniProt		F
+UniProtKB	Q8WVQ1	CANT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16835225		9606	UniProt		F
+UniProtKB	Q8WXG8	S100Z	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11747429		9606	UniProt		F
+UniProtKB	Q8WYQ5	DGCR8	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15574589		9606	BHF-UCL		F
+UniProtKB	Q8WZ42	TTN	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:9804419	UniProtKB:Q8WZ42	9606	BHF-UCL		F
+UniProtKB	Q92481	TFAP2B	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11505339	UniProtKB:Q92481	9606	UniProt		F
+UniProtKB	Q92481	TFAP2B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11505339	UniProtKB:Q92481	9606	UniProt		F
+UniProtKB	Q92530	PSMF1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18495667	UniProtKB:Q92530	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q92530	PSMF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:18495667	UniProtKB:Q9Y3I1	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q92570	NR4A3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P51179	9606	UniProt		F
+UniProtKB	Q92600	CNOT9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:24768540		9606	BHF-UCL		F
+UniProtKB	Q92781	RDH5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11675386		9606	UniProt		F
+UniProtKB	Q92886	NEUROG1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20102160		9606	CAFA		F
+UniProtKB	Q92902	HPS1	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:12663659	UniProtKB:Q9NQG7	9606	UniProt		F
+UniProtKB	Q92911	SLC5A5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18372236		9606	UniProt		F
+UniProtKB	Q92911	SLC5A5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20797386		9606	UniProt		F
+UniProtKB	Q92911	SLC5A5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31310151		9606	UniProt		F
+UniProtKB	Q92953	KCNB2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q63099	9606	UniProt		F
+UniProtKB	Q93062	RBPMS	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:26347403	UniProtKB:Q93062	9606	UniProt		F
+UniProtKB	Q93063	EXT2	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12907669		9606	BHF-UCL		F
+UniProtKB	Q93063	EXT2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12907669	UniProtKB:Q16394	9606	BHF-UCL		F
+UniProtKB	Q96AT9	RPE	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20923965	UniProtKB:Q96AT9	9606	UniProt		F
+UniProtKB	Q96BF6	NACC2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22926524		9606	BHF-UCL		F
+UniProtKB	Q96BS2	TESC	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9JKL5	9606	UniProt		F
+UniProtKB	Q96C23	GALM	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12753898		9606	MGI		F
+UniProtKB	Q96CF2	CHMP4C	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14505570	UniProtKB:Q96CF2	9606	UniProt		F
+UniProtKB	Q96CF2	CHMP4C	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q96CF2	9606	UniProt		F
+UniProtKB	Q96D96	HVCN1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27859356		9606	UniProt		F
+UniProtKB	Q96DE0	NUDT16	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17567574		9606	UniProt		F
+UniProtKB	Q96DE0	NUDT16	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18820299		9606	UniProt		F
+UniProtKB	Q96DZ7	TM4SF19	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:E9Q9H8	9606	UniProt		F
+UniProtKB	Q96FQ6	S100A16	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17030513	UniProtKB:Q96FQ6	9606	UniProt		F
+UniProtKB	Q96H20	SNF8	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14505570	UniProtKB:Q96H20	9606	UniProt		F
+UniProtKB	Q96H20	SNF8	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q96H20	9606	UniProt		F
+UniProtKB	Q96H72	SLC39A13	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21917916	UniProtKB:Q96H72	9606	BHF-UCL		F
+UniProtKB	Q96LB8	PGLYRP4	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16354652	UniProtKB:Q96LB9	9606	UniProt		F
+UniProtKB	Q96LB9	PGLYRP3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16354652	UniProtKB:Q96LB8	9606	UniProt		F
+UniProtKB	Q96MG7	NSMCE3	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:27427983		9606	UniProt		F
+UniProtKB	Q96N95-2	ZNF396	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12801647	UniProtKB:Q96N95-2	9606	UniProt		F
+UniProtKB	Q96N95-2	ZNF396	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12801647	UniProtKB:Q96N95-1	9606	UniProt		F
+UniProtKB	Q96PD4	IL17F	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11574464		9606	UniProt		F
+UniProtKB	Q96PD7	DGAT2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9DCV3	9606	BHF-UCL		F
+UniProtKB	Q96PM5	RCHY1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19483087	UniProtKB:Q96PM5	9606	UniProt		F
+UniProtKB	Q96PP8	GBP5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21151871		9606	UniProt		F
+UniProtKB	Q96PP8	GBP5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33876762		9606	UniProt		F
+UniProtKB	Q96PP9	GBP4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21151871		9606	UniProt		F
+UniProtKB	Q96Q11	TRNT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30959222		9606	UniProt		F
+UniProtKB	Q96Q42	ALS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15247254	UniProtKB:Q96Q42	9606	UniProt		F
+UniProtKB	Q96Q89	KIF20B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11470801		9606	UniProt		F
+UniProtKB	Q96T54	KCNK17	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:36063992		9606	UniProt		F
+UniProtKB	Q96T55	KCNK16	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:36063992		9606	UniProt		F
+UniProtKB	Q96T91	GPHA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12045258		9606	UniProt		F
+UniProtKB	Q99424	ACOX2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P07872	9606	UniProt		F
+UniProtKB	Q99497	PARK7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18711745		9606	UniProt		F
+UniProtKB	Q99497	PARK7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24144264	UniProtKB:Q99497	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q99497	PARK7	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:24567322	UniProtKB:Q99497	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q99584	S100A13	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12746488	UniProtKB:Q99584	9606	UniProt		F
+UniProtKB	Q99584	S100A13	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16145699	UniProtKB:Q99584	9606	UniProt		F
+UniProtKB	Q99623	PHB2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31522117		9606	UniProt		F
+UniProtKB	Q99623	PHB2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:28017329	UniProtKB:P35232	9606	UniProt		F
+UniProtKB	Q99683	MAP3K5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11920685		9606	UniProt		F
+UniProtKB	Q99685	MGLL	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19957260	UniProtKB:Q99685	9606	UniProt		F
+UniProtKB	Q99728	BARD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15265711	UniProtKB:Q99728	9606	UniProt		F
+UniProtKB	Q99728	BARD1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15265711	UniProtKB:P38398	9606	UniProt		F
+UniProtKB	Q99742	NPAS1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P97459	9606	UniProt		F
+UniProtKB	Q99814	EPAS1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:16181639		9606	UniProt		F
+UniProtKB	Q99814	EPAS1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9079689	UniProtKB:P27540	9606	BHF-UCL		F
+UniProtKB	Q99816	TSG101	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q99816	9606	UniProt		F
+UniProtKB	Q99966	CITED1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21172805		9606	UniProt		F
+UniProtKB	Q99988	GDF15	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29046435		9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:24560927	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:26387864	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:28615291	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:29725115	UniProtKB:Q86XE3	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:30699349	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:32148862	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BPX6	MICU1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:32790952	UniProtKB:Q8IYU8	9606	UniProt		F
+UniProtKB	Q9BQ50	TREX2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11279105	UniProtKB:Q91XB0	9606	UniProt		F
+UniProtKB	Q9BQI3	EIF2AK1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9Z2R9	9606	UniProt		F
+UniProtKB	Q9BRG1	VPS25	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	PANTHER:PTN000322234|UniProtKB:Q9BRG1	9606	GO_Central		F
+UniProtKB	Q9BRG1	VPS25	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q9BRG1	9606	UniProt		F
+UniProtKB	Q9BRJ7	NUDT16L1	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18820299		9606	UniProt		F
+UniProtKB	Q9BUH6	PAXX	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25574025		9606	UniProt		F
+UniProtKB	Q9BUL8	PDCD10	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20489202	UniProtKB:Q9BUL8	9606	UniProt		F
+UniProtKB	Q9BUL8	PDCD10	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21561863	UniProtKB:Q9BUL8	9606	UniProt		F
+UniProtKB	Q9BVA0	KATNB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10751153	UniProtKB:O75449	9606	UniProt		F
+UniProtKB	Q9BVA1	TUBB2B	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23001566		9606	UniProt		F
+UniProtKB	Q9BVA1	TUBB2B	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:26732629		9606	UniProt		F
+UniProtKB	Q9BVA1	TUBB2B	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:28013290		9606	UniProt		F
+UniProtKB	Q9BVA6	FICD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25435325		9606	UniProt		F
+UniProtKB	Q9BVA6	FICD	enables	GO:0042803	protein homodimerization activity	ECO:0000315	IMP	PMID:36136088		9606	UniProt		F
+UniProtKB	Q9BW92	TARS2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26811336		9606	UniProt		F
+UniProtKB	Q9BWV3	CDADC1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26945630		9606	UniProt		F
+UniProtKB	Q9BXR0	QTRT1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20354154		9606	UniProt		F
+UniProtKB	Q9BXR0	QTRT1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:20354154		9606	UniProt		F
+UniProtKB	Q9BXR6	CFHR5	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23487775		9606	UniProt		F
+UniProtKB	Q9BY43	CHMP4A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q9BY43	9606	UniProt		F
+UniProtKB	Q9BY67	CADM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:12826663	UniProtKB:Q8R5M8	9606	UniProt		F
+UniProtKB	Q9BZR9	TRIM8	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11331580	UniProtKB:Q9BZR9	9606	UniProt		F
+UniProtKB	Q9BZS1	FOXP3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16920951	UniProtKB:Q9BZS1	9606	UniProt		F
+UniProtKB	Q9BZS1	FOXP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21458306		9606	UniProt		F
+UniProtKB	Q9BZX4	ROPN1B	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11278869	UniProtKB:P75969	9606	UniProt		F
+UniProtKB	Q9C005	DPY30	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:19556245	UniProtKB:Q9C005	9606	UniProt		F
+UniProtKB	Q9C026	TRIM9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11331580	UniProtKB:Q9C026	9606	UniProt		F
+UniProtKB	Q9C035	TRIM5	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	PANTHER:PTN002515827|UniProtKB:Q9C035	9606	GO_Central		F
+UniProtKB	Q9C035	TRIM5	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11331580	UniProtKB:Q9C035	9606	UniProt		F
+UniProtKB	Q9C0J9	BHLHE41	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q99PV5	9606	BHF-UCL		F
+UniProtKB	Q9C0J9	BHLHE41	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:15193144	UniProtKB:O14503	9606	BHF-UCL		F
+UniProtKB	Q9GZT4	SRR	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20106978	UniProtKB:Q9GZT4	9606	UniProt		F
+UniProtKB	Q9GZY8	MFF	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23530241		9606	UniProt		F
+UniProtKB	Q9GZZ9	UBA5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27653677		9606	UniProt		F
+UniProtKB	Q9GZZ9	UBA5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29295865		9606	UniProt		F
+UniProtKB	Q9H008	LHPP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12801912	UniProtKB:Q9H008	9606	UniProt		F
+UniProtKB	Q9H0R5	GBP3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21151871		9606	UniProt		F
+UniProtKB	Q9H147	DNTTIP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11473582		9606	UniProt		F
+UniProtKB	Q9H172	ABCG4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16870176		9606	BHF-UCL		F
+UniProtKB	Q9H172	ABCG4	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16870176	UniProtKB:P45844	9606	BHF-UCL		F
+UniProtKB	Q9H172	ABCG4	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:27228027		9606	UniProt		F
+UniProtKB	Q9H190	SDCBP2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11152476		9606	UniProt		F
+UniProtKB	Q9H190	SDCBP2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11152476	UniProtKB:O00560	9606	UniProt		F
+UniProtKB	Q9H1K1	ISCU	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29097656		9606	UniProt		F
+UniProtKB	Q9H1K1	ISCU	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34824239		9606	UniProt		F
+UniProtKB	Q9H221	ABCG8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16870176	UniProtKB:Q9H222	9606	BHF-UCL		F
+UniProtKB	Q9H222	ABCG5	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16870176	UniProtKB:Q9H221	9606	BHF-UCL		F
+UniProtKB	Q9H257	CARD9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11053425	UniProtKB:Q9H257	9606	UniProt		F
+UniProtKB	Q9H2G2	SLK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18239682		9606	UniProt		F
+UniProtKB	Q9H2G2	SLK	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22203681		9606	UniProt		F
+UniProtKB	Q9H2S1	KCNN2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17110593	UniProtKB:Q9H2S1	9606	BHF-UCL	occurs_in(UBERON:0000948)	F
+UniProtKB	Q9H2W2	MIXL1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	PMID:22164283	UniProtKB:Q9WUI0	9606	BHF-UCL		F
+UniProtKB	Q9H3R2	MUC13	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11278439		9606	UniProt		F
+UniProtKB	Q9H3U5	MFSD1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9DC37	9606	UniProt		F
+UniProtKB	Q9H444	CHMP4B	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q9H444	9606	UniProt		F
+UniProtKB	Q9H4G4	GLIPR2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15123429		9606	UniProt		F
+UniProtKB	Q9H4I2	ZHX3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12659632		9606	UniProt		F
+UniProtKB	Q9H4I2	ZHX3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12659632		9606	UniProt		F
+UniProtKB	Q9H7V2	SYNDIG1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:A2ANU3	9606	UniProt		F
+UniProtKB	Q9H7X0	NAA60	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27320834		9606	UniProt		F
+UniProtKB	Q9H816	DCLRE1B	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20479256		9606	BHF-UCL		F
+UniProtKB	Q9H8V3	ECT2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15545273		9606	UniProt		F
+UniProtKB	Q9H974	QTRT2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20354154		9606	UniProt		F
+UniProtKB	Q9H974	QTRT2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:20354154		9606	UniProt		F
+UniProtKB	Q9H977	WDR54	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30458214		9606	UniProt		F
+UniProtKB	Q9H999	PANK3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17631502		9606	UniProt		F
+UniProtKB	Q9H999	PANK3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27555321		9606	UniProt		F
+UniProtKB	Q9HAB8	PPCS	enables	GO:0042803	protein homodimerization activity	ECO:0000315	IMP	PMID:29754768		9606	UniProt		F
+UniProtKB	Q9HAW7	UGT1A7	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	Q9HAW8	UGT1A10	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	Q9HAW9	UGT1A8	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17179145		9606	UniProt	occurs_in(GO:0005783)	F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:O60656-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P19224-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P22309-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P22310-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:P35503-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW7-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW8-1	9606	BHF-UCL		F
+UniProtKB	Q9HAW9-2	UGT1A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20610558	UniProtKB:Q9HAW9-1	9606	BHF-UCL		F
+UniProtKB	Q9HB14	KCNK13	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:25148687		9606	UniProt		F
+UniProtKB	Q9HB15	KCNK12	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:25148687		9606	UniProt		F
+UniProtKB	Q9HB71	CACYBP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16085652	UniProtKB:Q9HB71	9606	UniProt		F
+UniProtKB	Q9HB90	RRAGC	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11073942	UniProtKB:Q7L523	9606	UniProt		F
+UniProtKB	Q9HBJ8	CLTRN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22628310		9606	UniProt		F
+UniProtKB	Q9HBZ2	ARNT2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q61324	9606	UniProt		F
+UniProtKB	Q9HBZ2	ARNT2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:12239177	UniProtKB:Q16665	9606	UniProt		F
+UniProtKB	Q9HBZ2	ARNT2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:24465693		9606	UniProt		F
+UniProtKB	Q9HD34	LYRM4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29097656		9606	UniProt		F
+UniProtKB	Q9HD34	LYRM4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34824239		9606	UniProt		F
+UniProtKB	Q9HD42	CHMP1A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14505570	UniProtKB:Q9HD42	9606	UniProt		F
+UniProtKB	Q9HD42	CHMP1A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14519844	UniProtKB:Q9HD42	9606	UniProt		F
+UniProtKB	Q9NNW7	TXNRD2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9Z0J5	9606	UniProt		F
+UniProtKB	Q9NP71	MLXIPL	NOT|enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11230181		9606	BHF-UCL		F
+UniProtKB	Q9NP71	MLXIPL	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11230181	UniProtKB:Q9UH92	9606	BHF-UCL		F
+UniProtKB	Q9NP78	ABCB9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18434309		9606	UniProt		F
+UniProtKB	Q9NP78	ABCB9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18952056	UniProtKB:Q9NP78	9606	UniProt		F
+UniProtKB	Q9NPC2	KCNK9	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23169818		9606	UniProt		F
+UniProtKB	Q9NPP4	NLRC4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15107016		9606	HGNC-UCL		F
+UniProtKB	Q9NQ90	ANO2	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:23576756		9606	UniProt		F
+UniProtKB	Q9NQG7	HPS4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:12663659	UniProtKB:Q9NQG7	9606	UniProt		F
+UniProtKB	Q9NQG7	HPS4	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:12663659	UniProtKB:Q92902	9606	UniProt		F
+UniProtKB	Q9NQH7	XPNPEP3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:28476889	UniProtKB:Q9NQH7	9606	UniProt		F
+UniProtKB	Q9NQL2	RRAGD	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11073942	UniProtKB:Q7L523	9606	UniProt		F
+UniProtKB	Q9NQS3	NECTIN3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9JLB9	9606	HGNC-UCL		F
+UniProtKB	Q9NQV7	PRDM9	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q96EQ9	9606	UniProt		F
+UniProtKB	Q9NQW7	XPNPEP1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18515364	UniProtKB:Q9NQW7	9606	UniProt		F
+UniProtKB	Q9NR22	PRMT8	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16051612	UniProtKB:Q9NR22	9606	HGNC-UCL		F
+UniProtKB	Q9NR96	TLR9	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q2EEY0	9606	UniProt		F
+UniProtKB	Q9NRA1	PDGFC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10806482	UniProtKB:Q9NRA1	9606	BHF-UCL		F
+UniProtKB	Q9NRG1	PRTFDC1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21054786	UniProtKB:Q9NRG1	9606	UniProt		F
+UniProtKB	Q9NRK6	ABCB10	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:30765471		9606	UniProt		F
+UniProtKB	Q9NRR4	DROSHA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15574589		9606	BHF-UCL		F
+UniProtKB	Q9NT68	TENM2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS5	9606	UniProt		F
+UniProtKB	Q9NT68	TENM2	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345184|MGI:MGI:1345185|MGI:MGI:2447063|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9NT68	TENM2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS5	9606	UniProt		F
+UniProtKB	Q9NT68	TENM2	enables	GO:0046982	protein heterodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345183|MGI:MGI:1345184|MGI:MGI:1345185|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9NVH0	EXD2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:31127291		9606	UniProt		F
+UniProtKB	Q9NVS9	PNPO	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12824491		9606	CAFA		F
+UniProtKB	Q9NVV4	MTPAP	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21292163	UniProtKB:Q9NVV4	9606	UniProt		F
+UniProtKB	Q9NVV9	THAP1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:28299530		9606	UniProt		F
+UniProtKB	Q9NWT6	HIF1AN	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12446723		9606	UniProt		F
+UniProtKB	Q9NWW5	CLN6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15010453		9606	UniProt		F
+UniProtKB	Q9NX45	SOHLH2	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D489	9606	UniProt		F
+UniProtKB	Q9NX45	SOHLH2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9D489	9606	UniProt		F
+UniProtKB	Q9NYG2	ZDHHC3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q8R173	9606	UniProt		F
+UniProtKB	Q9NZ45	CISD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17905743		9606	UniProt		F
+UniProtKB	Q9NZ45	CISD1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23758282		9606	UniProt		F
+UniProtKB	Q9NZI5	GRHL1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:29309642	UniProtKB:Q9NZI5	9606	UniProt		F
+UniProtKB	Q9NZK5	ADA2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20147294	UniProtKB:Q9NZK5	9606	UniProt		F
+UniProtKB	Q9NZU0	FLRT3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:26235030		9606	UniProt		F
+UniProtKB	Q9P0L0	VAPA	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33124732		9606	UniProt		F
+UniProtKB	Q9P0L0	VAPA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:16227268	UniProtKB:O95292	9606	UniProt		F
+UniProtKB	Q9P0L0	VAPA	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:9920726	UniProtKB:O95292	9606	UniProt		F
+UniProtKB	Q9P1Z0	ZBTB4	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16354688		9606	UniProt		F
+UniProtKB	Q9P273	TENM3	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS6	9606	UniProt		F
+UniProtKB	Q9P273	TENM3	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345184|MGI:MGI:1345185|MGI:MGI:2447063|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9P273	TENM3	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS6	9606	UniProt		F
+UniProtKB	Q9P273	TENM3	enables	GO:0046982	protein heterodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345183|MGI:MGI:1345184|MGI:MGI:1345185|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9P289	STK26	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:21561863	UniProtKB:Q9P289	9606	UniProt		F
+UniProtKB	Q9UBE0	SAE1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20164921	UniProtKB:Q9UBT2	9606	UniProt		F
+UniProtKB	Q9UBJ2	ABCD2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21145416		9606	UniProt		F
+UniProtKB	Q9UBJ2	ABCD2	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9QY44	9606	UniProt		F
+UniProtKB	Q9UBQ7	GRHPR	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16756993		9606	UniProt		F
+UniProtKB	Q9UBR1	UPB1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29976570		9606	UniProt		F
+UniProtKB	Q9UBT2	UBA2	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20164921	UniProtKB:Q9UBE0	9606	UniProt		F
+UniProtKB	Q9UBV8	PEF1	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11278427	UniProtKB:Q9H553	9606	UniProt		F
+UniProtKB	Q9UBV8	PEF1	enables	GO:0046983	protein dimerization activity	ECO:0000353	IPI	PMID:11883899	UniProtKB:O75340	9606	UniProt		F
+UniProtKB	Q9UBX5	FBLN5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:19617354		9606	UniProt		F
+UniProtKB	Q9UBX5	FBLN5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20007835		9606	UniProt		F
+UniProtKB	Q9UH92	MLX	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11230181	UniProtKB:Q9UH92	9606	BHF-UCL		F
+UniProtKB	Q9UH92	MLX	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11230181	UniProtKB:Q9NP71	9606	BHF-UCL		F
+UniProtKB	Q9UHC9	NPC1L1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34407950		9606	UniProt		F
+UniProtKB	Q9UHI5	SLC7A8	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:33298890		9606	UniProt		F
+UniProtKB	Q9UHY1	NRBP1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q99J45	9606	UniProt		F
+UniProtKB	Q9UI30	TRMT112	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:25851604		9606	UniProt		F
+UniProtKB	Q9UIJ5	ZDHHC2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23793055		9606	UniProt		F
+UniProtKB	Q9UJC3	HOOK1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:32073997		9606	UniProt		F
+UniProtKB	Q9UJJ9	GNPTG	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q6S5C2	9606	UniProt		F
+UniProtKB	Q9UJV3	MID2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:11806752		9606	UniProt		F
+UniProtKB	Q9UJY1	HSPB8	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18006506	UniProtKB:Q9UJY1	9606	ARUK-UCL		F
+UniProtKB	Q9UKG1	APPL1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:18034774		9606	UniProt		F
+UniProtKB	Q9UKK9	NUDT5	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:27257257		9606	UniProt		F
+UniProtKB	Q9UKT5	FBXO4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20181953	UniProtKB:Q9UKT5	9606	UniProt		F
+UniProtKB	Q9UKT9	IKZF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:17646674		9606	UniProt		F
+UniProtKB	Q9UKT9	IKZF3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34155405		9606	UniProt		F
+UniProtKB	Q9UKT9	IKZF3	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:34155405		9606	UniProt		F
+UniProtKB	Q9UKU0	ACSL6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:20429931		9606	UniProt		F
+UniProtKB	Q9UKY1	ZHX1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12659632		9606	UniProt		F
+UniProtKB	Q9UKY1	ZHX1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12741956		9606	UniProt		F
+UniProtKB	Q9UKZ4	TENM1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS4	9606	UniProt		F
+UniProtKB	Q9UKZ4	TENM1	enables	GO:0042803	protein homodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345184|MGI:MGI:1345185|MGI:MGI:2447063|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9UKZ4	TENM1	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WTS4	9606	UniProt		F
+UniProtKB	Q9UKZ4	TENM1	enables	GO:0046982	protein heterodimerization activity	ECO:0000318	IBA	GO_REF:0000033	MGI:MGI:1345183|MGI:MGI:1345184|MGI:MGI:1345185|PANTHER:PTN000131466	9606	GO_Central		F
+UniProtKB	Q9UL45	BLOC1S6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12019270		9606	UniProt		F
+UniProtKB	Q9UL45	BLOC1S6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12191018		9606	UniProt		F
+UniProtKB	Q9UL63	MKLN1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q99PV3	9606	UniProt		F
+UniProtKB	Q9ULV1	FZD4	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14688793	UniProtKB:Q9ULV1	9606	BHF-UCL		F
+UniProtKB	Q9ULV1	FZD4	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:14688793	UniProtKB:O00144	9606	BHF-UCL		F
+UniProtKB	Q9ULZ3	PYCARD	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15030775		9606	HGNC-UCL		F
+UniProtKB	Q9ULZ3	PYCARD	enables	GO:0046983	protein dimerization activity	ECO:0000314	IDA	PMID:24531343		9606	UniProt		F
+UniProtKB	Q9UM21	MGAT4A	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:P21549	9606	UniProt		F
+UniProtKB	Q9UMX3	BOK	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:O35425	9606	UniProt		F
+UniProtKB	Q9UMX3	BOK	enables	GO:0046982	protein heterodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q792S6-1	9606	UniProt		F
+UniProtKB	Q9UNE7	STUB1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q9WUD1	9606	UniProt		F
+UniProtKB	Q9UNE7	STUB1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:23990462	UniProtKB:Q9UNE7	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q9UNH7	SNX6	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11279102	UniProtKB:Q9UNH7	9606	HGNC-UCL		F
+UniProtKB	Q9UNQ0	ABCG2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16870176		9606	BHF-UCL		F
+UniProtKB	Q9UPN4	CEP131	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:24550735		9606	UniProt		F
+UniProtKB	Q9UQE7	SMC3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:11590136	UniProtKB:Q14683	9606	UniProt		F
+UniProtKB	Q9UQM7	CAMK2A	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:20668654	UniProtKB:Q9UQM7	9606	BHF-UCL		F
+UniProtKB	Q9UQQ1	NAALADL1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25752612		9606	UniProt		F
+UniProtKB	Q9Y210	TRPC6	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23291369		9606	UniProt		F
+UniProtKB	Q9Y231	FUT9	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:37202521		9606	UniProt		F
+UniProtKB	Q9Y239	NOD1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:18186648	UniProtKB:Q9Y239	9606	UniProt		F
+UniProtKB	Q9Y2C9	TLR6	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:20037584	UniProtKB:O00206	9606	ARUK-UCL		F
+UniProtKB	Q9Y2G2	CARD8	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:15030775		9606	HGNC-UCL		F
+UniProtKB	Q9Y2H2	INPP5F	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25869669		9606	UniProt		F
+UniProtKB	Q9Y2J8	PADI2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:25621824		9606	UniProt		F
+UniProtKB	Q9Y2K1	ZBTB1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:22753936		9606	UniProt		F
+UniProtKB	Q9Y2K1	ZBTB1	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:22753936		9606	UniProt		F
+UniProtKB	Q9Y2S2	CRYL1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15809331	UniProtKB:Q9Y2S2	9606	UniProt		F
+UniProtKB	Q9Y2Z4	YARS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15779907	UniProtKB:Q6PI48	9606	BHF-UCL		F
+UniProtKB	Q9Y2Z4	YARS2	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17997975	UniProtKB:Q9Y2Z4	9606	BHF-UCL		F
+UniProtKB	Q9Y371	SH3GLB1	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:11161816	UniProtKB:Q9Y371	9606	HGNC-UCL		F
+UniProtKB	Q9Y3I1	FBXO7	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:18495667	UniProtKB:Q92530	9606	ParkinsonsUK-UCL		F
+UniProtKB	Q9Y3M2	CBY1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:21182262		9606	CAFA		F
+UniProtKB	Q9Y448	KNSTRN	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:26242911	UniProtKB:Q9Y448	9606	ARUK-UCL		F
+UniProtKB	Q9Y4B5	MTCL1	enables	GO:0042803	protein homodimerization activity	ECO:0000250	ISS	GO_REF:0000024	UniProtKB:Q3UHU5	9606	UniProt		F
+UniProtKB	Q9Y4U1	MMACHC	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:22642810	UniProtKB:Q9Y4U1	9606	UniProt		F
+UniProtKB	Q9Y4Y9	LSM5	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12515382		9606	MGI		F
+UniProtKB	Q9Y5J7	TIMM9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:16387659	UniProtKB:Q9Y5J7	9606	BHF-UCL		F
+UniProtKB	Q9Y5X1	SNX9	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:17948057	UniProtKB:Q9Y5X1	9606	UniProt		F
+UniProtKB	Q9Y616	IRAK3	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:Q9Y616	9606	BHF-UCL		F
+UniProtKB	Q9Y616	IRAK3	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:33238146		9606	UniProt		F
+UniProtKB	Q9Y616	IRAK3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:O43187	9606	BHF-UCL		F
+UniProtKB	Q9Y616	IRAK3	enables	GO:0046982	protein heterodimerization activity	ECO:0000353	IPI	PMID:10383454	UniProtKB:P51617	9606	BHF-UCL		F
+UniProtKB	Q9Y624	F11R	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:14749337	UniProtKB:Q9Y624	9606	ARUK-UCL		F
+UniProtKB	Q9Y624	F11R	enables	GO:0042803	protein homodimerization activity	ECO:0000353	IPI	PMID:15344881	UniProtKB:Q9Y624	9606	ARUK-UCL	occurs_in(CL:0000233)	F
+UniProtKB	Q9Y646	CPQ	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12675526		9606	UniProt		F
+UniProtKB	Q9Y697	NFS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:16527810		9606	HGNC-UCL		F
+UniProtKB	Q9Y697	NFS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29097656		9606	UniProt		F
+UniProtKB	Q9Y697	NFS1	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:34824239		9606	UniProt		F
+UniProtKB	Q9Y6K9	IKBKG	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	Q9Y6K9	IKBKG	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:23091055		9606	UniProt		F
+UniProtKB	Q9Y6X8	ZHX2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:12741956		9606	UniProt		F
+UniProtKB	Q9Y6X8	ZHX2	enables	GO:0046982	protein heterodimerization activity	ECO:0000314	IDA	PMID:12741956		9606	UniProt		F
+UniProtKB	Q9Y6X9	MORC2	enables	GO:0042803	protein homodimerization activity	ECO:0000314	IDA	PMID:29440755		9606	UniProt		F
