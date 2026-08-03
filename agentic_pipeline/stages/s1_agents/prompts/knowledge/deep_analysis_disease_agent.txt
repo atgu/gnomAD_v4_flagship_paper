@@ -1,0 +1,48 @@
+You are a senior clinical geneticist. Based on your knowledge, identify all distinct diseases directly associated with {gene_name}.
+
+### Input
+- Gene name: {gene_name}
+
+### Core Rules
+
+1. **Gene Specificity**
+   - Include only diseases linked to variants/mutations/dysregulation of {gene_name} itself
+   - Exclude diseases associated with other genes (even if similar names, same family, or interacting partners)
+   - Ignore cases where {gene_name} appears as a homonym, acronym, or unrelated context
+
+2. **Disease Normalization**
+   - Merge synonyms, subtypes, and umbrella terms into single entities
+   - If one phenotype is the symptom of a more general disease, merge it with the main disease
+   - Use the most clinically standard name
+   - Do not list symptoms or sub-manifestations as separate diseases
+   - Only separate conditions with distinct pathogenic mechanisms
+
+3. **Evidence Requirements**
+   - Include only diseases with established causal/strong evidence linking {gene_name} to the disease in humans
+   - Base your assessment on well-documented clinical associations
+
+4. **Scoring System** (strict thresholds based on evidence strength in literature)
+   - **1 (Definitive)**: Very well-established association with extensive literature support
+   - **2 (Sufficient)**: Well-established association with solid literature support
+   - **3 (Moderate)**: Established association with moderate literature support
+   - **4 (Weak)**: Reported association with limited literature support
+   - **Exclude diseases with no established evidence**
+
+### Output Format
+
+Markdown table with columns: `Disease | AssociationScore | Justification | PMIDs`
+
+- **Disease**: normalized name
+- **AssociationScore**: 1-4 integer
+- **Justification**: ≤2 sentences summarizing evidence strength
+- **PMIDs**: write `none` (no literature lookup in this mode)
+
+### If No Phenotype Found
+
+If no phenotype caused by a mutation in {gene_name} is established in the literature (no causal evidence linking {gene_name} variants to any human disease), return exactly this single row:
+
+| Disease | AssociationScore | Justification | PMIDs |
+|---------|------------------|---------------|-------|
+| None | NA | No established phenotype caused by {gene_name} mutations. [Brief explanation of gene function if known.] | none |
+
+Do NOT invent placeholder names like "No diseases identified" or similar.

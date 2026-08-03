@@ -1,0 +1,1 @@
+Are "{disease_deep_analysis}" and "{disease_gencc}" the same? Reply: 1 (identical), 2 (similar), 3 (related), or 4 (completely different).

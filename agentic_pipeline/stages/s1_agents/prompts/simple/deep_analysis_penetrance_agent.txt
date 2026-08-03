@@ -1,0 +1,10 @@
+Determine the penetrance level for each disease associated with {gene_name}.
+
+Input:
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+Output a Markdown table with columns: `Disease | PenetranceLevel | Justification | PMIDs`
+
+PenetranceLevel: 1 (fully penetrant) to 5 (conflicting evidence).
+

@@ -1,0 +1,10 @@
+Summarize how {gene_name} influences human health based on the diseases below.
+
+Disease notes:
+{disease_blocks}
+
+Output ONE paragraph (4-6 sentences) in this format:
+<response>
+  <SUMMARY>Your summary here.</SUMMARY>
+</response>
+

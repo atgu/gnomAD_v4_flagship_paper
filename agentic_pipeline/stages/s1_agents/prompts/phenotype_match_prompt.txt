@@ -1,0 +1,2 @@
+Is "{disease}" identical (1), different (2), or a subset (3) of "{phenotype}"?
+Output only the digit: 1, 2, or 3. No other text.

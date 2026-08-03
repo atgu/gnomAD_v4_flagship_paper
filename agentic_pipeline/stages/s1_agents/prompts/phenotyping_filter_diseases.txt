@@ -1,0 +1,20 @@
+You are reviewing candidate descriptors for the target phenotype "{endpoint_longname}".
+
+Input (one per line):
+{descriptors_text}
+
+All inputs are diseases or syndromes. For each descriptor, decide:
+- SELECTED: if it is the exact same disease/syndrome as {endpoint_longname}.
+- AMBIGUOUS: if unclear or insufficient context.
+- REJECTED: if it is different, broader, or a related/misdiagnosis.
+
+Note: Complication of {endpoint_longname} should be selected.
+
+Output exactly three sections (no extra text), preserving input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>
+

@@ -1,0 +1,11 @@
+Identify all diseases associated with {gene_name} based on the provided articles.
+
+Input:
+- Gene: {gene_name}
+- Articles: {articles_text}
+
+Output a Markdown table with columns: `Disease | AssociationScore | Justification | PMIDs`
+
+AssociationScore: 1 (strongest) to 4 (weakest) based on evidence strength.
+
+If no phenotype caused by a mutation in {gene_name} is found, return: `| None | NA | [3-sentence summary of articles, stating no phenotype was identified] | NA |`

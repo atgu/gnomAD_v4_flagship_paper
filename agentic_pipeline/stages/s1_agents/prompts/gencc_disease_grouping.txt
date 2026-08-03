@@ -1,0 +1,12 @@
+Group these diseases or symptoms by clinical similarity. Output format:
+GROUP: [title]
+- disease1
+- disease2
+- symptom1
+
+GROUP: [title]
+- disease3
+- symptom2
+
+Diseases:
+{diseases_list}

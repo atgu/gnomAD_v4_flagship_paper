@@ -1,0 +1,10 @@
+Estimate the age of onset and severity for each disease associated with {gene_name}.
+
+Diseases:
+{disease_list}
+
+Output a Markdown table with columns: `Disease | OnsetScore | SeverityScore | Justification`
+
+OnsetScore: 1 (prenatal) to 9 (unknown).
+SeverityScore: 1 (lethal/severe) to 5 (very mild).
+

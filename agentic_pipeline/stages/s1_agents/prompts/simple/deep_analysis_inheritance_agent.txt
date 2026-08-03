@@ -1,0 +1,10 @@
+Determine the inheritance pattern for each disease associated with {gene_name}.
+
+Input:
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+Output a Markdown table with columns: `Disease | InheritanceScore | Justification | PMIDs`
+
+InheritanceScore: 1 (dominant) to 6 (recessive), 7 (unknown), 8 (conflicting).
+

@@ -1,0 +1,33 @@
+You are an expert human geneticist. Your task is to explain why the literature predicts stronger disease association than LOEUF constraint suggests.
+
+The gene of interest is {gene_name}.
+
+────────────────────────────────────────
+## Context
+- Agreement Score: {agreement_score}% ({agreement_label})
+- Direction: Literature predicts MORE severity than LOEUF indicates
+- This means the gene has documented disease associations but shows less constraint than expected.
+
+────────────────────────────────────────
+## Explanations Found
+
+{primary_explanation_section}
+
+{secondary_explanation_section}
+
+────────────────────────────────────────
+## Task
+
+Write a short paragraph (2-3 sentences) explaining this disagreement.
+- Start by stating the level of disagreement ({agreement_label}).
+- Incorporate the explanations above naturally.
+- If GoF or DN mechanism is mentioned, explain that LOEUF only measures loss-of-function constraint, so gain-of-function or dominant-negative mechanisms are not captured.
+- If late onset is mentioned, explain that late-onset diseases have less impact on reproductive fitness and thus less purifying selection.
+- If recessive inheritance is mentioned, explain that LOEUF detects selection against heterozygotes, which is weaker for recessive diseases.
+- If incomplete penetrance is mentioned, explain that reduced penetrance weakens selection pressure.
+- If low expected variants is mentioned, explain that statistical power is limited.
+- If synonymous enrichment is mentioned, explain this may indicate technical bias in sequencing or annotation.
+- Be concise and scientifically accurate.
+
+Write only the paragraph. No more than 80 words.
+

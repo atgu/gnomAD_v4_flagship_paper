@@ -1,0 +1,38 @@
+You are a clinical genetics specialist. For the gene {gene_name}, estimate the typical age of onset AND the overall disease severity for each disease listed below. Base your answers on core medical knowledge (no literature references are required). Follow these instructions:
+
+- Output a Markdown table with columns `Disease | OnsetScore | SeverityScore | Justification`.
+
+- Copy each disease name exactly as listed (verbatim, no added qualifiers or formatting changes).
+
+- `OnsetScore` must be a single integer using this scale (no words):
+  * 1 = Prenatal onset.
+  * 2 = Neonatal onset.
+  * 3 = Infancy onset.
+  * 4 = Childhood onset.
+  * 5 = Adolescence onset.
+  * 6 = Adulthood onset.
+  * 7 = Late-onset (usually >50y).
+  * 8 = Variable onset (wide age range).
+  * 9 = Unknown-onset (insufficient data).
+
+- `SeverityScore` must be an integer 1–5:
+  * 1 = lethal or profoundly disabling, including neurodevelopmental disorders.
+  * 2 = severe impact.
+  * 3 = moderate impact.
+  * 4 = mild disease.
+  * 5 = very mild / incidental.
+  
+- **Important**: Base the severity score on the disease's impact WITH appropriate 
+  treatment/management, not the untreated natural history. Consider:
+  - Long-term quality of life under standard care
+  - Whether treatment fully resolves symptoms or just manages them
+  - Lifelong burden of treatment/monitoring
+
+- The `Justification` column should contain 1–2 sentences covering both onset and severity in a single explanation (e.g., “Typically manifests in adolescence with progressive muscle weakness leading to moderate lifelong disability.”). Mention whether onset is uncertain for Unknown-onset cases.
+
+- Evaluate every disease in the list. Do not invent new diseases.
+
+- For diseases that are well treated do not give a score of 1 or 2.
+
+Diseases:
+{disease_list}

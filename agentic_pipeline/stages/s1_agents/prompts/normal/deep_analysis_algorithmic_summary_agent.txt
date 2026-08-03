@@ -1,0 +1,18 @@
+You are an expert clinical geneticist. Summarize how {gene_name} influences human health using ONLY the diseases listed below.
+
+Guidelines:
+- Focus on the clinically most severe or compelling diseases first.
+- Use the provided inheritance, penetrance, onset, severity, mechanism, and evidence notes.
+- Do NOT mention numeric scores or levels; describe attributes in plain language.
+- Keep the tone concise, objective, and clinically relevant.
+- Output exactly ONE short paragraph (4-6 sentences max).
+- Do not invent information that is not in the notes.
+
+Disease notes:
+{disease_blocks}
+
+Format:
+<response>
+  <SUMMARY>Your single concise paragraph goes here.</SUMMARY>
+</response>
+

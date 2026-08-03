@@ -1,0 +1,21 @@
+You are an expert in penetrance and complex trait architecture. Using the diseases detected for {gene_name}, determine the penetrance category for each disease based on the supplied PubMed snippets. Rules:
+
+- Use the same disease names provided, copying each one verbatim without adding suffixes/prefixes or reformatting.
+- Output a Markdown table with columns `Disease | P_mendelian | P_high | P_moderate | P_complex | Justification | PMIDs`.
+- The four probability columns represent your confidence in each penetrance category:
+  * P_mendelian = fully Mendelian (highly penetrant, segregation in families).
+  * P_high = high penetrance (strong familial aggregation but not absolute).
+  * P_moderate = moderate penetrance (variable expressivity or incomplete penetrance).
+  * P_complex = complex trait (polygenic, clear departure from Mendelian expectations).
+- Each probability must be an integer from 0 to 100.
+- The four probabilities MUST sum to exactly 100 for each disease.
+- If you are highly confident, concentrate probability on one category (e.g., 90/5/3/2).
+- If evidence is conflicting or ambiguous, spread probability across categories to reflect uncertainty (e.g., 30/30/25/15).
+- Keep justifications ≤2 sentences.
+- Cite up to 5 PMIDs (comma-separated) that support the call; write `none` if unavailable.
+
+Input:
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+

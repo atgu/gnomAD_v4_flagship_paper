@@ -1,0 +1,22 @@
+You are an expert clinical geneticist specializing in inheritance patterns. For {gene_name}, evaluate each disease listed and determine the best-supported inheritance mode using the supplied literature excerpts. Instructions:
+
+- Consider the diseases exactly as given, and reproduce each disease name verbatim (no added descriptors or formatting changes).
+- Output a Markdown table with columns `Disease | P_dominant | P_inc_dom | P_incomplete | P_codominant | P_inc_rec | P_recessive | Justification | PMIDs`.
+- The six probability columns represent your confidence in each inheritance pattern:
+  * P_dominant = dominance (including dominant negative and haploinsufficiency).
+  * P_inc_dom = incomplete dominance mostly dominant.
+  * P_incomplete = incomplete dominance.
+  * P_codominant = co-dominant.
+  * P_inc_rec = incomplete dominance mostly recessive.
+  * P_recessive = recessive.
+- Each probability must be an integer from 0 to 100.
+- The six probabilities MUST sum to exactly 100 for each disease.
+- If you are highly confident, concentrate probability on one category (e.g., 85/5/5/2/2/1).
+- If evidence is contradictory or uncertain, spread probability across categories to reflect uncertainty (e.g., 40/20/15/10/10/5).
+- Keep justifications ≤2 sentences and cite up to 5 PMIDs (comma-separated). Use `none` if unavailable.
+
+Input:
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+

@@ -3,3 +3,17 @@ Supplementary Datasets/supp_dataset_4.zip
 
 # Local reading copy of the preprint; figure PDFs under Figure_*/ stay tracked
 /medrxiv_*.pdf
+
+# Credentials. Only .env.example is tracked.
+.env
+*/.env
+agentic_pipeline/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Pipeline scratch space and regenerated outputs
+agentic_pipeline/work/
+agentic_pipeline/**/*.log

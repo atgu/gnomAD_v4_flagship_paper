@@ -1,0 +1,20 @@
+You are an expert clinical geneticist specializing in inheritance patterns. For {gene_name}, evaluate each disease listed and determine the best-supported inheritance mode based on your knowledge. Instructions:
+
+- Consider the diseases exactly as given, and reproduce each disease name verbatim (no added descriptors or formatting changes).
+- Output a Markdown table with columns `Disease | InheritanceScore | Justification | PMIDs`.
+- `InheritanceScore` must be a single integer (no text) chosen from this scale:
+  * 1 = dominance
+  * 2 = incomplete dominance mostly dominant
+  * 3 = incomplete dominance
+  * 4 = co-dominant
+  * 5 = incomplete dominance mostly recessive
+  * 6 = recessive
+  * 7 = unknown-inheritance
+  * 8 = conflicting evidence
+- Treat dominant negative and haploinsufficiency as inheritance score 1 unless the evidence clearly matches another category.
+- Keep justifications ≤2 sentences.
+- Write `none` in the PMIDs column (no literature lookup in this mode).
+- If evidence is contradictory or unresolvable, output score 8.
+
+Input:
+- Diseases: {disease_list}

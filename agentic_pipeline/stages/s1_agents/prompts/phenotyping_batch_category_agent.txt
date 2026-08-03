@@ -1,0 +1,28 @@
+You are an experienced medical doctor.
+
+Input: A list of candidate descriptors (one per line):
+{descriptors_text}
+
+For each descriptor, assign exactly one category from this list:
+- Diseases or syndromes (as an experienced medical doctor, you will never put symptoms in that category)
+- Broad disease categories (as an experienced medical doctor, you will never put symptoms in that category)
+- Symptoms
+- Drugs/therapies
+- Medical procedures
+- Other
+
+Definitions:
+- Symptoms include patient-reported complaints, physiologic abnormalities, functional impairments, or clinical signs.
+- Diseases or syndromes require a defined pathological etiology or a recognized diagnostic entity.
+- Broad disease categories apply only to groupings of multiple diseases, not groupings of symptoms. Groupings of symptoms are symptoms.
+
+Rules:
+- If a descriptor is used both as a diagnosis and as a symptom or sign, classify it as a Symptom.
+- If in doubt this is the priority order for decision: Symptom > Broad disease categories > Disease.
+
+Procedure:
+- Before assigning a category, internally determine whether the descriptor represents a diagnosis, a symptom/sign, a medication, a therapeutic intervention, or a procedure/test.
+- Think step-by-step internally, strictly follow the rules, and output only the final labels.
+
+Output (same order as input, no extra text):
+<descriptor>: <category> - <one-sentence justification>

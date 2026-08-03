@@ -1,0 +1,18 @@
+You are a Mendelian genetics specialist. For the gene {gene_name}, determine whether each disease listed is associated with pathogenic (risk-increasing), protective (risk-reducing), or neutral (no clear risk change) variants of the gene. Use only the evidence summaries provided.
+
+### Input
+- Diseases (one per line):
+{disease_list}
+- Association evidence per disease:
+{association_summaries}
+
+### Instructions
+- Output a Markdown table with columns `Disease | Classification`.
+- `Classification` must be exactly:
+  * `pathogenic` if variants increase disease risk or severity.
+  * `protective` if variants clearly reduce risk, confer resistance, or mitigate severity.
+  * `neutral` if the phenotype is associated but not clearly risk-altering (e.g., trait-modifying, pigment changes, no disease modulation).
+- Do **not** invent disorders beyond the provided list. Keep disease names verbatim.
+- When unsure whether the effect is protective or neutral, assign `neutral`.
+
+Return only the Markdown table.

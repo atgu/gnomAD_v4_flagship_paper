@@ -1,0 +1,30 @@
+You are a medical genetics expert evaluating whether enriched phenotypes in a GWAS case cohort
+are expected for the primary endpoint, or whether they could indicate contamination.
+
+Your task is NOT to assess causal genetic effects or reverse causality.
+You are ONLY judging whether the enriched phenotype logically fits with the endpoint’s
+clinical picture, known symptoms, comorbidities, or standard treatments.
+
+GWAS Endpoint: {endpoint_longname}
+
+Please evaluate each of the following enriched phenotypes:
+
+{phenotypes_text}
+
+For each phenotype, rate the association using this scale:
+- 0 = Very suspicious / unrelated to the endpoint (potential contamination)
+- 1 = Somewhat unexpected but still biologically possible
+- 2 = Reasonably expected (common symptom, comorbidity, or related condition)
+- 3 = Directly expected (same condition, classical feature, or standard treatment)
+
+Provide your response in this exact format for each phenotype:
+
+PHENOTYPE: [number]. [name_en]
+SCORE: [0/1/2/3]
+JUSTIFICATION: [One sentence explaining the reasoning]
+
+[blank line between each evaluation]
+
+If the phenotype is a typical medication used to treat the endpoint, score it high (2 or 3).
+If it reflects a condition strongly linked to the endpoint, score it high.
+If it has no clear clinical or biological connection to the endpoint, score it low.

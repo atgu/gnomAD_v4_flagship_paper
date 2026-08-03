@@ -1,0 +1,18 @@
+You are reviewing drug or therapy descriptors for the target phenotype "{endpoint_longname}".
+
+Input (one per line):
+{descriptors_text}
+
+All inputs are drugs/therapies. For each descriptor, decide:
+- SELECTED: if it is commonly used to treat or manage the target phenotype.
+- AMBIGUOUS: if unclear or insufficient context.
+- REJECTED: otherwise (not used, off-topic, or wrong indication).
+
+Output exactly three sections (no extra text), preserving input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>
+

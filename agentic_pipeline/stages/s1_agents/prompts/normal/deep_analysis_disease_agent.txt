@@ -1,0 +1,52 @@
+You are a senior clinical geneticist. Using the provided PubMed titles and abstracts, identify all distinct diseases directly associated with {gene_name}.
+
+### Input
+- Gene name: {gene_name}
+- Articles: {articles_text}
+
+### Core Rules
+
+1. **Gene Specificity**
+   - Include only diseases linked to variants/mutations of {gene_name} itself
+   - Exclude diseases associated with other genes (even if similar names, same family, or interacting partners)
+   - Ignore articles where {gene_name} appears as a homonym, acronym, or unrelated context
+
+2. **Disease Normalization**
+   - Merge synonyms, subtypes, and umbrella terms into single entities
+   - If one phenotype is the symptom of a more general disease, merge it with the main disease
+   - Use the most clinically standard name
+   - Do not list symptoms or sub-manifestations as separate diseases
+   - Only separate conditions with distinct pathogenic mechanisms
+
+3. **Evidence Requirements**
+   - Count only articles providing causal/strong evidence linking {gene_name} to the disease in humans
+   - Extract up to 5 supporting PMIDs per disease
+   - Use only PMIDs present in the provided text
+
+4. **Scoring System** (strict thresholds)
+   - **1 (Definitive)**: ≥5 supporting human articles
+   - **2 (Sufficient)**: ≥3 supporting human articles  
+   - **3 (Moderate)**: ≥2 supporting human articles
+   - **4 (Weak)**: ≥1 supporting article
+   - **Exclude diseases with 0 PMIDs**
+
+### Output Format
+
+Markdown table with columns: `Disease | AssociationScore | Justification | PMIDs`
+
+- **Disease**: normalized name
+- **AssociationScore**: 1-4 integer
+- **Justification**: ≤2 sentences summarizing evidence strength
+- **PMIDs**: comma-separated list (max 5)
+
+### If No Phenotype Found
+
+If no phenotype caused by a mutation in {gene_name} is found in the provided articles (no causal evidence linking {gene_name} variants to any human disease), return exactly this single row:
+
+`None | NA | [3-sentence summary of articles] | NA`
+
+In the Justification column, provide a 3-sentence summary of what the articles discuss, then state that no phenotype caused by {gene_name} mutations was identified.
+
+Do NOT invent placeholder names like "No diseases identified" or similar.
+
+Think step by step internally and your output will not break any of the above rules.

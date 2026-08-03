@@ -1,0 +1,21 @@
+You are reviewing symptom descriptors for the target phenotype "{endpoint_longname}".
+The objective is to find the symptoms that have no reason to be enriched in a cohort of people with {endpoint_longname}, and to reject them (category rejected).
+Any symptom that has a reason to be enriched in a cohort of people with {endpoint_longname}, shoul be kept (category selected).
+
+Input (one per line):
+{descriptors_text}
+
+All inputs are symptoms or functional outcomes. For each descriptor, decide:
+- SELECTED: if it is a possible symptom or outcome of the target phenotype (including very general or nonspecific functional limitations or disability outcomes).
+- AMBIGUOUS: if unclear or insufficient context.
+- REJECTED: only if the descriptor has no plausible relationship to the phenotype’s symptoms or functional consequences.
+
+Important: Do NOT reject descriptors solely for being general, vague, or nonspecific if they can reasonably occur as an outcome of the phenotype.
+
+Output exactly three sections (no extra text), preserving input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>

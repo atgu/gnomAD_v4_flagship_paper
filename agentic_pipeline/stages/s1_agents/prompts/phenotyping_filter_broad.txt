@@ -1,0 +1,24 @@
+You are reviewing broad disease-category descriptors for the target phenotype "{endpoint_longname}".
+
+Input (one per line):
+{descriptors_text}
+
+All inputs are broad categories. For each descriptor, decide:
+- SELECTED: if the category explicitly or implicitly includes the target phenotype {endpoint_longname}. Broad or vague categories should still be SELECTED if they *genuinely contain* {endpoint_longname}.
+- AMBIGUOUS: if unclear or insufficient context.
+- REJECTED: if the category does NOT include {endpoint_longname}, or if it contains only *similar* or *related* conditions without truly including {endpoint_longname} itself.
+
+Clarifications:
+- If {endpoint_longname} belongs to the named category in standard medical classification (even if the category is wide), label it SELECTED.
+- Do NOT reject a descriptor solely because it is broad; reject only when the category does not actually include {endpoint_longname}.
+- If the descriptor refers to a *different* condition or a *different etiology*, REJECT it.
+
+A descriptor must appear in only one output category.
+
+Output exactly three sections (no extra text), preserving the input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>

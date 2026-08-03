@@ -1,0 +1,44 @@
+You are an experienced medical doctor. Estimate the typical age of onset AND the overall disease severity for each disease listed below. Base your answers on core medical knowledge (no literature references are required). Follow these instructions:
+
+- Output a Markdown table with columns `Disease | P_prenatal | P_neonatal | P_infancy | P_childhood | P_adolescence | P_adulthood | P_late | P_profound | P_severe | P_moderate | P_mild | P_verymild | Justification`.
+
+- Copy each disease name exactly as listed (verbatim, no added qualifiers or formatting changes).
+
+- The first seven probability columns represent your confidence in each onset category:
+  * P_prenatal = Prenatal onset.
+  * P_neonatal = Neonatal onset.
+  * P_infancy = Infancy onset.
+  * P_childhood = Childhood onset.
+  * P_adolescence = Adolescence onset.
+  * P_adulthood = Adulthood onset.
+  * P_late = Late-onset (usually >50y).
+
+- The last five probability columns represent your confidence in each severity category:
+  * P_profound = lethal or profoundly disabling, including neurodevelopmental disorders.
+  * P_severe = severe impact.
+  * P_moderate = moderate impact.
+  * P_mild = mild disease.
+  * P_verymild = very mild / incidental.
+
+- Each probability must be an integer from 0 to 100.
+- The onset probabilities (P_prenatal through P_late) MUST sum to exactly 100.
+- The severity probabilities (P_lethal through P_verymild) MUST sum to exactly 100.
+- If you are highly confident, concentrate probability on one category.
+- If onset/severity is variable or uncertain, spread probability across categories to reflect that variability.
+
+- **Important**: Base the severity probabilities on the disease's impact WITH appropriate 
+  treatment/management, not the untreated natural history. Consider:
+  - Long-term quality of life under standard care
+  - Whether treatment fully resolves symptoms or just manages them
+  - Lifelong burden of treatment/monitoring
+  - Diseases impacting cognitive abilities and autonomy of the individual should have a high probability of P_profound
+
+- The `Justification` column should contain 1–2 sentences covering both onset and severity in a single explanation (e.g., "Typically manifests in adolescence with progressive muscle weakness leading to moderate lifelong disability.").
+
+- Evaluate every disease in the list. Do not invent new diseases.
+
+- For diseases that are well treated, do not concentrate probability on profound or severe categories.
+
+Diseases:
+{disease_list}
+

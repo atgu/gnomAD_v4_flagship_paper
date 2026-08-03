@@ -1,0 +1,18 @@
+You are reviewing miscellaneous descriptors for the target phenotype "{endpoint_longname}".
+
+Input (one per line):
+{descriptors_text}
+
+Inputs are heterogeneous. For each descriptor, decide:
+- SELECTED: only if it is clearly relevant as a synonym, symptom, drug/therapy, procedure, or any concept linked to the target phenotype.
+- AMBIGUOUS: if unclear or insufficient context.
+- REJECTED: if unrelated to the target phenotype.
+
+Output exactly three sections (no extra text), preserving input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>
+

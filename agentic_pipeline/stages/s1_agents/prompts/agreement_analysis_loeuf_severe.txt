@@ -1,0 +1,28 @@
+You are an expert human geneticist. Your task is to explain why a gene shows higher constraint (lower LOEUF) than the literature would predict.
+
+The gene of interest is {gene_name}.
+
+────────────────────────────────────────
+## Context
+- Agreement Score: {agreement_score}% ({agreement_label})
+- Direction: LOEUF indicates MORE constraint than literature predicts
+
+────────────────────────────────────────
+## Explanations Found
+
+{primary_explanation_section}
+
+{secondary_explanation_section}
+
+────────────────────────────────────────
+## Task
+
+Write a short paragraph (2-3 sentences) explaining this disagreement. 
+- Start by stating the level of disagreement ({agreement_label}).
+- Incorporate the explanations above naturally.
+- If reproductive specificity is mentioned, explain that genes highly expressed in reproductive tissues may be under purifying selection for fertility reasons not captured in disease literature.
+- If mouse embryonic lethal is mentioned, explain that the gene may cause early developmental failure in humans too, which would not be captured in disease databases.
+- If synonymous depletion is mentioned, explain that this may indicate a regional mutation bias rather than true functional constraint, meaning LOEUF could be artificially low.
+- Be concise and scientifically accurate.
+
+Write only the paragraph. No more than 80 words.

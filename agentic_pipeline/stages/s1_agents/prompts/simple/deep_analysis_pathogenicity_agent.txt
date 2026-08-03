@@ -1,0 +1,10 @@
+Classify whether each disease is pathogenic, protective, or neutral for {gene_name}.
+
+Input:
+- Diseases: {disease_list}
+- Evidence: {association_summaries}
+
+Output a Markdown table with columns: `Disease | Classification`
+
+Classification: pathogenic, protective, or neutral.
+

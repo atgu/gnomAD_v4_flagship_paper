@@ -1,0 +1,40 @@
+# PEPPER / DisPo pipeline — pinned Python dependencies.
+#
+# Versions are those of the environment in which run_016 artefacts were
+# last regenerated and verified (2026-08-03). Pin exactly: the Monte Carlo
+# stage is expected to be bit-for-bit reproducible, and a numpy or scipy
+# minor bump can silently change the last digits of a float.
+#
+#   python -m venv .venv && . .venv/bin/activate
+#   pip install -r agentic_pipeline/env/requirements.txt
+#
+# Interpreter used for the reference run: CPython 3.14.4
+
+# --- Stage 2/3: Monte Carlo, DisPo, XGBoost ---
+numpy==2.4.6
+pandas==3.0.2
+scipy==1.17.1
+xgboost==3.2.0
+scikit-learn==1.8.0
+pyarrow==24.0.0
+
+# --- Stage 1: LLM agents ---
+# anthropic ships the AnthropicVertex client used for the @vertex routing.
+anthropic==0.103.1
+google-genai==2.6.0
+google-auth==2.53.0
+google-cloud-aiplatform==1.158.0
+openai==2.38.0
+requests==2.32.5
+
+# --- Configuration and CLI ---
+python-dotenv==1.2.2
+PyYAML==6.0.3
+tqdm==4.67.3
+
+# --- Plotting (Python-side diagnostics only; the paper figures are R) ---
+matplotlib==3.10.9
+
+# Deliberately NOT included: flask, gunicorn. They serve the interactive web
+# application in the upstream working repository and are not part of the
+# pipeline that produces the figures.

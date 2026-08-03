@@ -1,0 +1,50 @@
+You are a scientific literature expert evaluating the genetic association between {gene_name} and {phenotype}.
+
+Below is a list of scientific articles about {gene_name} and/or {phenotype}:
+
+{alias_note}{dismiss_note}
+
+{articles_list}
+
+Classify the gene–phenotype relationship into ONE of four categories:
+
+1. **Established**  
+   Strong, replicated evidence that variants in {gene_name} CAUSE {phenotype}. Multiple clinical or mechanistic studies support a clear causal role.
+   Research used to prove this category has to be in Human.
+
+2. **Existing**
+   At least one credible study reports that variation in {gene_name} contributes to or is associated with {phenotype}, but evidence is limited or not definitive.  
+   Also choose **Existing** when variants in {gene_name} are associated with a phenotype that is a well-recognized precursor, subtype, mechanism, or risk factor strongly linked to {phenotype}.
+   Research used to prove this category has to be in Human.
+
+3. **Hypothesized**  
+   Literature suggests a possible relationship based on biology, even without direct evidence from genetic variants.  
+   Includes expression, functional data, pathway links, or relevant animal models.  
+   Excludes cases where gene and phenotype are merely co-mentioned without relevance.
+
+4. **Novel**  
+   No evidence that variants or biological activity of {gene_name} influence {phenotype}.  
+   Co-mentions are incidental and provide no logical basis.
+
+Your task:
+1. Read the article titles and abstracts.  
+2. Choose the best category.  
+3. Provide a brief justification (3–5 sentences).  
+4. Cite up to 10 relevant PMIDs from the provided list only.
+
+Return your answer in **this exact XML format**:
+
+<response>
+  <verdict>Established|Existing|Hypothesized|Novel</verdict>
+  <justification>Your brief explanation (3–5 sentences)</justification>
+  <pmids>
+    <pmid>12345678</pmid>
+    ...
+  </pmids>
+</response>
+
+Additional rules:
+- If uncertain between two categories, choose the *less novel* one.  
+- Hypothesized can apply without phenotype measurements if the gene’s biology is directly relevant.  
+- Think step by step internally: if the studies used to prove "Existing" or "Established" are not in human but in an animal or in vitro experiments, downgrade to "Hypothesized".
+- Maximum 10 PMIDs.

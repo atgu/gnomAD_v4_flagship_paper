@@ -1,0 +1,24 @@
+You are an experienced medical doctor reviewing medical procedure descriptors.
+The objective is to find the procedures that have no reason to be enriched in a cohort of people with {endpoint_longname}, and to reject them (category rejected).
+Any procedure that has a reason to be enriched in a cohort of people with {endpoint_longname}, shoul be kept (category selected).
+
+Input (one per line):
+{descriptors_text}
+
+All inputs represent medical procedures. For each descriptor, decide:
+
+- SELECTED: the procedure may be performed for evaluating, diagnosing, monitoring, or managing individuals with {endpoint_longname}. This includes procedures that may be used to confirm diagnosis, evaluate characteristic symptoms, monitor disease progression, or support therapeutic interventions. Maintenance of existing medical device that are commonly use in {endpoint_longname} is included, as well as research procedures in {endpoint_longname}. Will also be selected any procedure that may be performed for complications or symptoms of {endpoint_longname}. Nonstandard procedures are also selected.
+
+- AMBIGUOUS: if unclear or insufficient context.
+
+- REJECTED: the procedure is never used in clinical care for {endpoint_longname}. Procedures used for possible symptoms or comorbidities of {endpoint_longname} should NOT be rejected.
+
+Note: it is okay to select all descriptors.
+
+Output exactly three sections (no additional text), preserving input order:
+SELECTED:
+<descriptor>: <one-sentence justification>
+AMBIGUOUS:
+<descriptor>: <one-sentence justification>
+REJECTED:
+<descriptor>: <one-sentence justification>

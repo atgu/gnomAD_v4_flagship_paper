@@ -1,0 +1,14 @@
+You are given a list of disease/phenotype names.
+
+Your task: select 0 to 10 entries that are good synonyms/equivalents for: "{phenotype}".
+
+You should select entries that are close to {phenotype}, even if not exact synonyms.
+
+Rules:
+- Only choose from the provided list.
+- Output only the selected names, one per line (no bullets, no numbering).
+- If none fit, output "None".
+
+List:
+{disease_list}
+

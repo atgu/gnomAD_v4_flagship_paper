@@ -1,0 +1,150 @@
+# Run manifest — run_016, the run behind Figures 5 and 6.
+#
+# This file is the single source of truth for reproducing the published
+# numbers. Every parameter that changes a figure is recorded here, including
+# the ones that were only implicit in the original invocation.
+#
+# Verified end to end on 2026-08-03: stages 2 and 3 regenerate their reference
+# artefacts bit for bit from the frozen stage-1 outputs.
+
+run_id: run_016
+
+# ===========================================================================
+# Stage 1 — PEPPER LLM agents
+# ===========================================================================
+# NOT reproducible bit for bit, by construction: the agents read PubMed, whose
+# corpus grows daily, and a full re-run costs on the order of $800. The frozen
+# outputs are the reproducibility boundary; everything downstream is exact.
+stage1_agents:
+  entrypoint: agent_gene_scorer_v3.py
+  created_at: "2025-12-29T22:17:22"
+
+  model:
+    # run_016 used the direct Anthropic API. Reproductions use Vertex, which
+    # is the same weights under a different billing and auth path; add the
+    # "@vertex" suffix to route through it. This is a deliberate deviation.
+    published: claude-haiku-4-5
+    reproduction: claude-haiku-4-5@vertex
+    temperature: 0.0
+
+  literature:
+    num_papers: 50
+    use_abstracts: true
+    keywords:
+      - variant
+      - mutation
+      - variants
+      - mutations
+      - disorder
+      - disorders
+      - neurodevelopmental
+      - developmental
+      - syndrome
+      - syndromes
+    # THE reproducibility lever. Left unset in run_016, so the agents saw
+    # PubMed as of December 2025. Pin it to bound the corpus and obtain
+    # protocol-level (not bit-level) reproducibility.
+    max_pubdate: null
+    max_pubdate_recommended: "2025/12/29"
+
+  flags:
+    proba: true
+    gencc: true
+    lof_gof: true
+    knowledge: false
+    simple: false
+  n_core: 8
+  stagger_delay: 5.0
+
+  prompts:
+    # run_016 was scored in December 2025 with the v1 mechanism prompt, which
+    # forced a single mechanism per disease and labelled multi-mechanism cases
+    # "Conflicting". On 2026-03-16 rerun_mechanism_agent.py re-annotated 562
+    # genes with the v2 prompt, producing 480 composite mechanisms (e.g.
+    # "DN/LoF"). The published monte_carlo_min.tsv reflects that v2 state.
+    #
+    # A fresh run must therefore use v2 from the start, otherwise composite
+    # mechanisms never appear and --composite-mode strict excludes nothing.
+    mechanism: prompts/normal/deep_analysis_mechanism_agent_v2.txt
+    mechanism_used_in_original_scoring: prompts/normal/deep_analysis_mechanism_agent.txt
+    mechanism_reannotation_date: "2026-03-16"
+    genes_reannotated: 562
+    composite_mechanisms_created: 480
+
+  outputs:
+    # 4.4 GB, far beyond what a git repository should carry. Archived instead,
+    # with a per-file checksum manifest.
+    results_dir: agent_runs/run_016/results
+    n_gene_files: 21955
+    archive: gs://llm_agents_bucket/archives/run_016/run_016_results.tar.zst
+    archive_sha256_file: run_016_results.tar.zst.sha256
+    checksum_manifest: SHA256SUMS.results
+    local_path_env: PEPPER_RUN_016_RESULTS
+
+# ===========================================================================
+# Stage 2 — Monte Carlo, DisPo
+# ===========================================================================
+# Fully deterministic: the seed is fixed per gene, so results do not depend on
+# the number of workers. Runtime ~4 min on 8 cores.
+stage2_montecarlo:
+  script: agentic_pipeline/stages/s2_montecarlo/recalculate_monte_carlo_min.py
+  params:
+    algo_version: v2
+    # strict: a composite-LoF mechanism yields a NA prior and the gene is
+    # dropped from DisPo. Only pure-LoF disease genes get a numeric prior.
+    composite_mode: strict
+    # Genes whose diseases are all of Unknown mechanism get prior 0 and stay in.
+    unknown_prior: benign
+    # Wide bounds. The script's defaults [20, 300] give a different figure.
+    kappa_min: 1
+    kappa_max: 100000
+    samples: 3000
+    # Differs from obs_exp_for_loeuf_missense.tsv for 5 multi-transcript genes
+    # only (PINX1, MATR3, POLR2J3, SIGLEC5, TBCE), where obs/exp take the
+    # transcript with the largest expected value instead of the sum.
+    loeuf_file: obs_exp_for_loeuf_missense_max.tsv
+    # Despite the name, these columns hold LOFTEE-2 *relaxed* counts.
+    loeuf_obs_col: obs_p_misannot_80
+    loeuf_exp_col: exp_p_misannot_80
+    grid_n: 501
+  outputs:
+    monte_carlo_min_new.tsv:
+      sha256: 2e3991bdf043459a88118b3f1b0fbbb2958423d9d03b36a44176033cb237c0a7
+      n_genes: 21955
+      n_dispo_non_na: 18124
+    monte_carlo_min_with_fetal_new.tsv:
+      sha256: a34df6f3d9e2323f0f85544a7d15813f89de7bc5db3a1cd4baa74d9da85f36b9
+      n_genes_with_fetal: 21094
+      n_columns: 59
+
+# ===========================================================================
+# Stage 3 — XGBoost out-of-fold predictions
+# ===========================================================================
+stage3_xgboost:
+  script: benchmark/scripts/train_xgboost.py
+  outputs:
+    predictions: xgboost/fold_5/predictions_no_go.csv
+
+# ===========================================================================
+# Stage 4 — OMELET (Figure 5)
+# ===========================================================================
+# OMELET evaluates its Bayesian grid at 50 points, unlike DisPo's 501. This
+# is an intentional difference between the two methods, not an inconsistency.
+stage4_omelet:
+  grid_n: 50
+
+# ===========================================================================
+# Stage 5 — Figures
+# ===========================================================================
+# The target is the "_new" variant, which will become Figure 6 of the
+# published paper. The suffix forces both the v2 mode and the _new input.
+stage5_figures:
+  suffix: _new
+  panels:
+    a: plot_discovery_score_by_year.R
+    b: test_mouse_fertility_vs_gencc.R
+    c_d: unified_fetal_analysis.R
+  assembly: generate_main_figure2.R
+  expected:
+    # ~25 signalled the v1/input bug that the _new variant fixes.
+    panel_b_gencc_median: 42

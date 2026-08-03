@@ -1,0 +1,11 @@
+Determine the pathogenic mechanism for each disease associated with {gene_name}.
+
+Input:
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+Output a Markdown table with columns: `Disease | Mechanism | ConfidenceScore | Justification | PMIDs`
+
+Mechanism: GoF, LoF, DN, Conflicting, or Unknown.
+ConfidenceScore: 1 (strongest) to 4 (weakest), or NA.
+

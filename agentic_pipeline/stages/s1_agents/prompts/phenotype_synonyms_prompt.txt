@@ -1,0 +1,30 @@
+You are a medical expert helping to identify alternative terms and synonyms for phenotypes/diseases.
+
+Given the following phenotype: {phenotype}
+
+Generate between 0 and 10 relevant synonyms or alternative terms that could be used to search for scientific literature about this phenotype. Include:
+- Alternative medical terminology
+- Common abbreviations
+- Related clinical terms
+- Different ways the condition might be described in literature
+
+IMPORTANT: 
+- If the phenotype is already very specific and well-defined, you may return fewer synonyms (even 0).
+- Only include terms that are semantically equivalent or very closely related.
+- Do NOT include broader categories, subtypes, or related but distinct conditions.
+
+Return your answer in this exact XML format:
+<response>
+<synonyms>
+<synonym>term 1</synonym>
+<synonym>term 2</synonym>
+...
+</synonyms>
+</response>
+
+If you think no synonyms are needed, return:
+<response>
+<synonyms>
+</synonyms>
+</response>
+

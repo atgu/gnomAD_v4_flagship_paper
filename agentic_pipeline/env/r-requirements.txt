@@ -1,0 +1,25 @@
+# PEPPER / DisPo pipeline — pinned R dependencies.
+#
+# Versions are those of the environment in which the reference figures were
+# produced and verified (2026-08-03), under R 4.5.2.
+#
+# Install with:
+#   Rscript agentic_pipeline/env/install_r_deps.R
+#
+# package               version
+
+ggplot2                 4.0.2
+dplyr                   1.2.0
+data.table              1.17.0
+readr                   2.1.6
+tidyr                   1.3.2
+patchwork               1.3.2
+cowplot                 1.2.0
+scales                  1.4.0
+stringr                 1.6.0
+purrr                   1.2.2
+ggrepel                 0.9.7
+PRROC                   1.4
+pROC                    1.19.0.1
+jsonlite                2.0.0
+optparse                1.7.5

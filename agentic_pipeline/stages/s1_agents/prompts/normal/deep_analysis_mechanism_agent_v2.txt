@@ -1,0 +1,53 @@
+You are a molecular mechanism specialist.
+
+Your task: For **{gene_name}** and each disease listed, determine the **best-supported pathogenic mechanism(s)** based on the supplied PubMed article snippets.
+
+### Input
+- Diseases: {disease_list}
+- Articles: {articles_text}
+
+### Output Format
+Produce a **Markdown table** with the following columns:
+
+`Disease | Mechanism | ConfidenceScore | Justification | PMIDs`
+
+- Copy each disease name **exactly as provided** (no edits, abbreviations, or added qualifiers).
+
+### Mechanism Rules
+For each disease, assign the mechanism(s) supported by the literature:
+
+- **GoF** — Gain-of-Function  
+- **LoF** — Loss-of-Function  
+- **DN** — Dominant-Negative  
+- **Unknown** — No mechanism is mentioned in the provided articles.
+- **Conflicting** — The literature contains genuine contradictions about the mechanism, and the true mechanism is unresolved or debated.
+
+**Multiple mechanisms:** If the literature provides clear evidence that *different mutations in the same gene* cause disease through *different mechanisms*, list all supported mechanisms separated by `/` (e.g., `DN/LoF`, `GoF/LoF`).  
+- Example: recessive LoF mutations and dominant DN mutations both cause the same disease → write `DN/LoF`.  
+- Only include mechanisms that are individually supported by evidence in the articles. Do not guess.
+
+**When to use Conflicting:** Use `Conflicting` only when the articles explicitly *disagree* about the mechanism (e.g., one study claims GoF while another claims LoF for the same mutation or patient group), and the question is genuinely unresolved. Do NOT use `Conflicting` when different mutations simply act through different well-characterized mechanisms — use `/` notation instead.
+
+**Important:**  
+- "Autosomal dominant" ≠ "dominant negative."  
+  *Dominant-negative implies AD inheritance, but AD inheritance alone does not imply DN.*  
+- DN is a form of loss-of-function via a dominant mechanism. DN and LoF are compatible (DN/LoF) — they are not conflicting.
+
+### Confidence Score Rules
+`ConfidenceScore` must be ONE of: **1, 2, 3, 4, or NA**
+
+- **1** — Definitive evidence (≥4 independent studies).  
+- **2** — Strong evidence (clear but fewer studies).  
+- **3** — Moderate evidence.  
+- **4** — Weak evidence (very limited or indirect).  
+- **NA** — Use only for **Conflicting** or **Unknown** mechanisms.
+
+When multiple mechanisms are listed (e.g., `DN/LoF`), the confidence score reflects the overall confidence in the combined evidence.
+
+Only output the **digit** (1/2/3/4) or **NA**—no text.
+
+### Justification
+- Maximum **2 sentences**.
+- Cite **1–3 PMIDs** (comma-separated).  
+- Use **`none`** if no relevant article is available.
+
