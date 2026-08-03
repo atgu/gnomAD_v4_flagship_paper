@@ -1,2 +1,5 @@
 # Exceeds GitHub's 100 MB per-file limit (1.2 GB); distributed separately
 Supplementary Datasets/supp_dataset_4.zip
+
+# Local reading copy of the preprint; figure PDFs under Figure_*/ stay tracked
+/medrxiv_*.pdf
