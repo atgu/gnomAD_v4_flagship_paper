@@ -16,6 +16,16 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
+# Panel A orders the GenCC submission years by sorting their labels, and one of
+# them is "<2015". Under en_US.UTF-8 collation the punctuation is ignored and it
+# sorts first, which is where the published panel puts it; under C or C.UTF-8 it
+# sorts after "2016" and lands at the far right, breaking the chronology. The
+# locale is therefore part of the figure's definition and is pinned here rather
+# than inherited. A missing locale must fail loudly: R would otherwise fall back
+# silently and produce the reordered panel.
+source "$SCRIPT_DIR/pin_locale.sh"
+
 DATA="$REPO_ROOT/Figure_6/data"
 RUN=run_016
 SUFFIX=_new

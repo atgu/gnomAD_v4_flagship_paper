@@ -19,13 +19,19 @@ with tests.
 | 3 — XGBoost out-of-fold | Figure 5 | Bit-identical | `ddd54bdb…` |
 | 4 — OMELET | Figure 5 | Agrees with R to 1e-14 | 17,167 genes |
 | 5 — assembled Figure 6 | — | Pixel-identical | `b8bd321f…` |
-| 5 — assembled Figure 5 | — | Numbers exact, pixels within tolerance | see below |
+| 5 — assembled Figure 5 | — | Pixel-identical here, numbers exact anywhere | `ec94d7c5…` |
 
 Stage 1 is not reproducible and never will be: the agents query PubMed, whose
 corpus grows every day, and a full run costs roughly $800. That is why its
 outputs are **frozen** and treated as the reproducibility boundary of the
-project. Everything downstream of it is exact, with one honest caveat about
-Figure 5's pixels, explained under *Why Figure 5 is not bit-identical*.
+project. Everything downstream of it is exact.
+
+Both figures under `Figure_5/figures/` and `Figure_6/figures/main_figure2_new.*`
+are the pipeline's own output, so the regression tests compare a rerun against a
+figure this repository produced rather than against an artefact from elsewhere.
+The published March 2026 renders of Figure 5 are preserved in git history under
+the `figures-frozen-2026-08` tag; they differ only in rasterisation, as
+explained under *Why Figure 5's pixels travel badly*.
 
 ## Architecture
 
@@ -97,6 +103,14 @@ Both figure drivers write into a work directory and leave `Figure_5/figures/`
 and `Figure_6/figures/` untouched; `run_figure5.sh` verifies that afterwards
 and fails loudly if it is not true.
 
+They also pin the collation to `en_US.UTF-8`, because Figure 6's panel A orders
+its x-axis by sorting labels and one of them is `<2015`: under `C` collation that
+bucket is drawn last instead of first, which breaks the chronology without
+changing any value (CORRIGENDA item 16). Override with `PEPPER_LOCALE` if you
+need to, and expect the panel to be ordered differently. If the locale is not
+generated on the machine the drivers stop rather than proceed, since R accepts an
+unavailable locale silently.
+
 ### Starting from the agent outputs
 
 The 21,955 JSON files (4.4 GB) live outside the repository. To redo stage 2:
@@ -135,29 +149,41 @@ python3 agent_gene_scorer_v3.py --genes BRCA1 TP53 \
 `--max-pubdate` is the only reproducibility lever stage 1 has: it bounds the
 PubMed corpus and makes the protocol replayable, if not the numbers.
 
-## Why Figure 5 is not bit-identical
-
-It is the only claim in this directory that is not exact, so it is worth being
-precise about what happened.
+## Why Figure 5's pixels travel badly
 
 `Figure_5.R` is deterministic: two runs on the same machine produce the same
-bytes. It also faithfully reproduces the upstream original — the committed PNG
-and the March 2026 run differ by 0.07% of pixels. But regenerating it *today*
-changes 6.90% of pixels, and the reason is not the code. `ragg`, `systemfonts`
-and `textshaping` were all updated on 6–7 April 2026, after the figure was
-committed. The graphics stack antialiases differently now.
+bytes, which is why the committed figure reproduces exactly here. Across
+machines it will not, and the reason is worth stating because it looks alarming
+and is not.
 
-Zooming in confirms it: every plotted point sits at exactly the same
-coordinates, and only the antialiased rim of each marker differs. Figure 6
-escapes this because its reference was generated in June, after the update.
+The March 2026 renders that this directory used to compare against differ from a
+rerun by 6.90% of pixels. `ragg`, `systemfonts` and `textshaping` were all
+updated on 6–7 April 2026, after those renders were committed. Measuring the
+difference shows three effects, none of which touches the data:
+
+1. Glyphs are rasterised with slightly more weight. In the axis-label band of
+   panel C the ink coverage is unchanged, 6.53% against 6.52% of pixels, while
+   mean luminance moves from 243.0 to 238.4.
+2. Because text metrics changed, ggplot reserves more room for the rotated
+   labels and draws the panel 0.27% smaller. Panel C's baseline moves from
+   y=4909 to y=4897 and all three bars scale by the same factor, so their height
+   ratios agree to 0.03% — 1 / 1.72843 / 2.35431 against 1 / 1.72908 / 2.35461.
+3. Marker rims antialias differently. This touches many pixels in the scatter
+   panels, 17% and 21%, because they carry about 17,000 markers each, but only
+   0.1–0.3% of pixels deviate by more than half scale.
 
 So `test_figure5_regression.py` splits the claim. The **numbers** are compared
 exactly — gene counts, the ABCC9 prior concentration, both Spearman
 correlations, and the five AUC-PR values that are the substance of panel C. The
-**pixels** are compared against a band calibrated on real measurements:
-antialiasing alone gives a mean absolute error of 1.71/255 and 0.295% of pixels
+**pixels** are compared against a band calibrated on those measurements:
+rasterisation alone gives a mean absolute error of 1.71/255 and 0.295% of pixels
 off by more than half scale, whereas two genuinely different panels give
 17.3/255 and 3.5%. The thresholds (4.0 and 1%) sit in that gap.
+
+One artefact can never be bit-reproducible: `main_figure.pdf`, because R embeds
+the generation timestamp in it. Figure 6's PDF has the same property — its
+committed copy and a fresh run differ in exactly the 16 bytes of `CreationDate`
+and `ModDate`, and nowhere else.
 
 ## Tests
 

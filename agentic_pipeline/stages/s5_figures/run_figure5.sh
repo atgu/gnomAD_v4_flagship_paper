@@ -5,7 +5,7 @@
 #
 # Figure_5.R is already self-contained: it reads four files from its own
 # data/ directory and writes into its own figures/ directory. That second
-# half is the problem — running it in place would overwrite the published
+# half is the problem — running it in place would overwrite the committed
 # PNGs, which are the very references the regression test compares against.
 #
 # So this script rebuilds the layout Figure_5.R expects inside a work
@@ -16,6 +16,12 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
+# Figure 5 has no label that collates ambiguously today, but it sorts gene and
+# category names all the same, so the locale is pinned here too rather than left
+# to whatever the caller happens to export. See pin_locale.sh.
+source "$SCRIPT_DIR/pin_locale.sh"
+
 SRC="$REPO_ROOT/Figure_5"
 
 WORK="${1:-$REPO_ROOT/agentic_pipeline/work/figure5}"
@@ -47,7 +53,7 @@ for f in ndd.txt obs_exp_for_loeuf_missense.tsv predictions_no_go.csv \
   ln -sf "$SRC/data/$f" "$WORK/data/$f"
 done
 
-# Fingerprint the published figures so that a regression in the isolation
+# Fingerprint the committed figures so that a regression in the isolation
 # above is caught here rather than discovered later in a diff.
 BEFORE="$(cd "$SRC/figures" && sha256sum ./*.png ./*.pdf | sha256sum)"
 
@@ -72,4 +78,4 @@ if [ ! -f "$FIG" ]; then
 fi
 
 echo "Figure produced: $FIG"
-echo "Published references untouched."
+echo "Committed references untouched."

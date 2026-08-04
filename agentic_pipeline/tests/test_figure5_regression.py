@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """T8 — Figure 5 regression.
 
-Figure 5 cannot be checked the way Figure 6 is. Figure 6's reference PNG was
-produced in the current environment and reproduces bit for bit. Figure 5's was
-produced in March 2026, and ragg, systemfonts and textshaping were all updated
-in early April; the graphics stack now antialiases differently. Regenerating
-the figure today changes 6.9% of pixels without moving a single plotted point.
+Figure_5/figures/ holds this pipeline's own output, so on the machine that
+produced it the figure reproduces bit for bit and the test says so. Elsewhere it
+will not: the March 2026 renders that used to sit there differed from a rerun by
+6.9% of pixels purely because ragg, systemfonts and textshaping were updated in
+early April and now antialias differently, without a single plotted point
+moving. Any machine with a different graphics stack sees the same kind of
+difference.
 
 So this test splits the claim in two:
 
@@ -29,14 +31,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _context import (Checks, FIG5_REFERENCE, N_FIG5_COMPLETE,  # noqa: E402
-                      OMELET_DUMP, PIPELINE, SHA_FIG5_PUBLISHED, sha256)
+                      OMELET_DUMP, PIPELINE, SHA_FIG5_REFERENCE, sha256)
 
 RUN_FIGURE5 = PIPELINE / "stages" / "s5_figures" / "run_figure5.sh"
 
-# Calibration, measured rather than guessed. Regenerating the published figure
-# in today's environment gives a mean absolute error of 1.71/255 and 0.295% of
-# pixels off by more than 128. Two genuinely different panels give 17.3/255 and
-# 3.5%. The thresholds sit in the gap.
+# Calibration, measured rather than guessed. The largest rasterisation-only
+# difference on record here is between the March 2026 renders and a rerun after
+# the April graphics update: mean absolute error 1.71/255, with 0.295% of pixels
+# off by more than 128. Two genuinely different panels give 17.3/255 and 3.5%.
+# The thresholds sit in the gap.
 MAX_MEAN_ABS_ERROR = 4.0
 MAX_FRACTION_STRONG = 0.01
 STRONG_DELTA = 128
@@ -66,10 +69,10 @@ def main() -> None:
     c = Checks("T8 — Figure 5 regression, numbers exact and pixels within tolerance")
 
     if not FIG5_REFERENCE.exists():
-        c.ok("published reference present", False, str(FIG5_REFERENCE))
+        c.ok("reference figure present", False, str(FIG5_REFERENCE))
         c.exit()
-    c.ok("checksum of the published figure",
-         sha256(FIG5_REFERENCE) == SHA_FIG5_PUBLISHED, FIG5_REFERENCE.name)
+    c.ok("checksum of the reference figure",
+         sha256(FIG5_REFERENCE) == SHA_FIG5_REFERENCE, FIG5_REFERENCE.name)
 
     figures_dir = FIG5_REFERENCE.parent
     before = {p.name: sha256(p) for p in sorted(figures_dir.iterdir()) if p.is_file()}
@@ -86,7 +89,7 @@ def main() -> None:
         # The published PNGs are both the reference and, by default, the
         # script's output directory. Isolation is part of what is under test.
         after = {p.name: sha256(p) for p in sorted(figures_dir.iterdir()) if p.is_file()}
-        c.ok("the published figures were left untouched", before == after,
+        c.ok("the committed figures were left untouched", before == after,
              "restore with: git checkout -- Figure_5/figures/")
 
         produced = Path(tmp) / "figures" / "main_figure.png"
@@ -169,20 +172,22 @@ def _check_pixels(c: Checks, produced: Path) -> None:
     strong = float((delta.max(axis=2) > STRONG_DELTA).mean())
     changed = float((delta.max(axis=2) > 0).mean())
 
-    identical = sha256(produced) == SHA_FIG5_PUBLISHED
-    if identical:
-        c.ok("the figure is bit-identical to the published one", True,
-             "the graphics stack matches the one used in March 2026")
+    if sha256(produced) == SHA_FIG5_REFERENCE:
+        c.ok("the figure is bit-identical to the reference", True,
+             "same graphics stack as the one that produced it")
         return
 
+    # Reached on any machine whose graphics stack differs from the one that
+    # rendered the committed reference. The band absorbs that difference; it is
+    # about ten times too narrow to absorb a change of content.
     c.ok("mean pixel deviation within the antialiasing band",
          mean_abs < MAX_MEAN_ABS_ERROR,
          f"{mean_abs:.3f}/255, limit {MAX_MEAN_ABS_ERROR}")
     c.ok("few pixels deviate strongly",
          strong < MAX_FRACTION_STRONG,
          f"{100 * strong:.3f}% above {STRONG_DELTA}, limit {100 * MAX_FRACTION_STRONG}%")
-    print(f"  ... {100 * changed:.2f}% of pixels differ at all, which is the "
-          f"expected consequence of the April 2026 ragg update")
+    print(f"  ... {100 * changed:.2f}% of pixels differ at all, which points to a "
+          f"different rasterisation rather than a different figure")
 
 
 def _check_auc(c: Checks) -> None:

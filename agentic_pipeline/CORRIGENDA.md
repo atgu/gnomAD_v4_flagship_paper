@@ -249,6 +249,41 @@ can rest on facts.
 
 ---
 
+## 16. Figure 6 panel A depends on the machine's locale
+
+Panel A plots the DisPo score against the GenCC submission year, and its
+x-axis is ordered by sorting the year labels. One of them is not a year:
+`<2015`, the bucket for everything submitted earlier.
+
+Where that bucket lands depends on the collation in force:
+
+| Collation | Order obtained |
+|---|---|
+| `en_US.UTF-8` | `<2015`, 2016, …, 2025 — the published order |
+| `C` or `C.UTF-8` | 2016, …, 2025, `<2015` — the bucket at the far right |
+
+Under `C`, punctuation is compared by code point and `<` (0x3C) sorts after the
+digits, so the oldest bucket is drawn last and the panel no longer reads as a
+chronology. The values are unaffected: the bucket keeps its 602 genes and its
+average percentile of 38.5. Only its position moves.
+
+Nothing in the script or the supplement fixes the locale, so the figure
+silently depends on the environment of whoever runs it.
+
+**Measured**: regenerating with `LC_ALL=C` changes 1.44% of the assembled
+figure's pixels, all inside panel A, with 0.897% deviating by more than half
+scale — far outside the rasterisation band that separates a rendering
+difference from a content one.
+
+**Recommended action**: order the factor levels explicitly in
+`plot_discovery_score_by_year.R` instead of relying on the default sort. Pending
+that, `agentic_pipeline/stages/s5_figures/pin_locale.sh` pins the collation for
+both figures and refuses to run when the locale is unavailable, since R accepts
+an ungenerated locale silently and would otherwise emit the reordered panel with
+no warning.
+
+---
+
 ## What was checked and turns out to be correct
 
 This section matters as much as the corrections. The following were checked and
@@ -279,12 +314,14 @@ which the supplement states correctly; N = 501 for DisPo, which it does not
 Also verified:
 
 - the count of **21,955 genes** scored, quoted in the supplement, is accurate;
-- `Figure_5.R` is deterministic and faithful to the upstream original: the
-  committed PNG and the March 2026 run differ by 0.07% of pixels. It no longer
-  regenerates bit-for-bit only because `ragg`, `systemfonts` and `textshaping`
-  were updated on 6–7 April 2026 and now antialias differently — every plotted
-  point is still at the same coordinates. This is an environment fact, not an
-  error in the paper;
+- `Figure_5.R` is deterministic and faithful to the upstream original: the PNG
+  committed in March and the March 2026 run differ by 0.07% of pixels. Rerunning
+  it after 6–7 April 2026, when `ragg`, `systemfonts` and `textshaping` were
+  updated, changes 6.90% of pixels without moving a plotted point: glyphs carry
+  slightly more weight, which makes ggplot reserve more room for the rotated
+  axis labels and draw the panel 0.27% smaller, and marker rims antialias
+  differently. Bar height ratios still agree to 0.03%. This is an environment
+  fact, not an error in the paper;
 - **CHAMP1**, cited as an example in an internal working note, does not appear
   in the preprint. Just as well: gnomAD provides neither `obs` nor `exp` for
   that gene, so its DisPo is undefined. It is the internal note that needs
