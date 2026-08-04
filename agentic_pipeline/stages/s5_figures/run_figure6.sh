@@ -3,13 +3,15 @@
 #
 #   ./run_figure6.sh [WORKDIR]
 #
-# The four R scripts were written against the layout of the upstream working
-# repository: they read from and write to <root>/app/agent_runs/<run>/. Rather
-# than rewrite several dozen paths inside 4,300 lines of R — which would risk
-# changing a figure while claiming to reproduce it — this script rebuilds that
-# layout as a tree of symlinks inside a work directory, and points the scripts
-# at it through PEPPER_PROJECT_ROOT. Inputs are read from the repository;
-# every output lands in the work directory.
+# Figure_6.R is self-contained: it reads nine files from its own data/ directory
+# and writes the four panels and the assembled figure into its own figures/
+# directory. That second half is the problem — running it in place would
+# overwrite the committed PNGs, which are the very references the regression test
+# compares against.
+#
+# So this script rebuilds the layout Figure_6.R expects inside a work directory,
+# with the inputs symlinked from the repository and the outputs landing outside
+# it. Nothing under Figure_6/ is modified.
 
 set -euo pipefail
 
@@ -25,83 +27,62 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 # silently and produce the reordered panel.
 source "$SCRIPT_DIR/pin_locale.sh"
 
-DATA="$REPO_ROOT/Figure_6/data"
-RUN=run_016
-
-# The R scripts accept a filename suffix, a hook for running against an alternate
-# DisPo table. There is one table here, so it is empty. Kept as a variable because
-# an empty value has a consequence: see the --v2 note below.
-SUFFIX=""
+SRC="$REPO_ROOT/Figure_6"
 
 WORK="${1:-$REPO_ROOT/agentic_pipeline/work/figure6}"
-RUN_PATH="$WORK/app/agent_runs/$RUN"
 
 echo "Repository: $REPO_ROOT"
 echo "Work dir  : $WORK"
 echo
 
-# --- rebuild the expected layout ------------------------------------------
 rm -rf "$WORK"
-mkdir -p "$WORK/app/data" "$RUN_PATH/xgboost/fold_5/figures"
+mkdir -p "$WORK/data" "$WORK/scripts" "$WORK/figures"
 
-link() {  # link <source-in-repo> <destination-in-workdir>
-  local src="$DATA/$1" dst="$WORK/$2"
-  if [ ! -e "$src" ]; then
-    echo "ERROR: input missing from the repository: Figure_6/data/$1" >&2
+# The two R files are copied, not symlinked, and this matters. Figure_6.R locates
+# itself with normalizePath() on its own --file= argument, which resolves
+# symlinks; linked in, it would compute a script directory back inside Figure_6/
+# and write its output over the published references. Copying keeps it anchored in
+# the work directory.
+cp "$SRC/Figure_6.R" "$WORK/Figure_6.R"
+cp "$SRC/scripts/functions_figure6.R" "$WORK/scripts/functions_figure6.R"
+
+# The nine inputs Figure_6.R opens. obs_exp_for_loeuf_missense_max.tsv is not
+# among them: it feeds stage 2, which already consumed it to build the two Monte
+# Carlo tables below.
+for f in gencc-submissions.tsv monte_carlo_min.tsv monte_carlo_min_with_fetal.tsv \
+         scores_for_pr_plots.csv mouse_fertility_genes.tsv \
+         mouse_embryonic_lethal_genes.tsv gencc_fertility_only_genes.tsv \
+         julia_syn.tsv gtex_median_tpm.gct.gz; do
+  if [ ! -e "$SRC/data/$f" ]; then
+    echo "ERROR: input missing from the repository: Figure_6/data/$f" >&2
     exit 1
   fi
-  mkdir -p "$(dirname "$dst")"
-  ln -sf "$src" "$dst"
-}
+  ln -sf "$SRC/data/$f" "$WORK/data/$f"
+done
 
-# Files the scripts expect at the project root.
-link mouse_fertility_genes.tsv        mouse_fertility_genes_MP0001922_1923_1924.tsv
-link mouse_embryonic_lethal_genes.tsv mouse_embryonic_lethal_genes.tsv
-link gencc_fertility_only_genes.tsv   gencc_fertility_only_genes.tsv
+# Fingerprint the committed figures so that a regression in the isolation above is
+# caught here rather than discovered later in a diff.
+BEFORE="$(cd "$SRC/figures" && sha256sum ./*.png ./*.pdf | sha256sum)"
 
-# Files the scripts expect under app/data.
-link gencc-submissions.tsv              app/data/gencc-submissions.tsv
-link gtex_median_tpm.gct.gz             app/data/gtex_median_tpm.gct.gz
-link julia_syn.tsv                      app/data/julia_syn.tsv
-link scores_for_pr_plots.csv            app/data/scores_for_pr_plots.csv
-link obs_exp_for_loeuf_missense_max.tsv app/data/obs_exp_for_loeuf_missense_max.tsv
-link fetal_gene_expression_tissue_with_symbols.csv \
-     app/fetal_gene_expression_tissue_with_symbols.csv
-
-# Stage-2 outputs, which are the figure's inputs.
-link "monte_carlo_min${SUFFIX}.tsv" \
-     "app/agent_runs/$RUN/monte_carlo_min${SUFFIX}.tsv"
-link "monte_carlo_min_with_fetal${SUFFIX}.tsv" \
-     "app/agent_runs/$RUN/monte_carlo_min_with_fetal${SUFFIX}.tsv"
-
-export PEPPER_PROJECT_ROOT="$WORK"
-
-step() {  # step <label> <script.R> [extra args...]
-  local label="$1" script="$2"; shift 2
-  echo "--- $label"
-  if ! Rscript "$SCRIPT_DIR/$script" --run "$RUN" --suffix "$SUFFIX" "$@" \
-       > "$WORK/${script%.R}.log" 2>&1; then
-    echo "FAILED: $script — see $WORK/${script%.R}.log" >&2
-    tail -15 "$WORK/${script%.R}.log" >&2
-    exit 1
-  fi
-  echo "    ok"
-}
-
-# Panel B needs --v2 spelled out. Its script infers the algorithm version from the
-# suffix being non-empty, so with an empty suffix and no flag it reads the v1
-# columns and draws a different panel, without warning. The other three scripts
-# either hard-code the v2 column or default to it.
-step "Panel A — discovery score by year"   plot_discovery_score_by_year.R
-step "Panel B — mouse fertility vs GenCC"  test_mouse_fertility_vs_gencc.R --v2
-step "Panels C/D — fetal expression"       unified_fetal_analysis.R
-step "Figure assembly"                     generate_main_figure2.R
-
-echo
-FIG="$RUN_PATH/xgboost/fold_5/figures/main_figure2${SUFFIX}.pdf"
-if [ -f "$FIG" ]; then
-  echo "Figure produced: $FIG"
-else
-  echo "WARNING: expected figure not found: $FIG" >&2
+cd "$WORK"
+if ! Rscript Figure_6.R > "$WORK/figure6.log" 2>&1; then
+  echo "FAILED: see $WORK/figure6.log" >&2
+  tail -20 "$WORK/figure6.log" >&2
   exit 1
 fi
+
+AFTER="$(cd "$SRC/figures" && sha256sum ./*.png ./*.pdf | sha256sum)"
+if [ "$BEFORE" != "$AFTER" ]; then
+  echo "ERROR: the run modified Figure_6/figures/. Restore with:" >&2
+  echo "         git checkout -- Figure_6/figures/" >&2
+  exit 1
+fi
+
+FIG="$WORK/figures/main_figure2.png"
+if [ ! -f "$FIG" ]; then
+  echo "ERROR: expected figure not found: $FIG" >&2
+  exit 1
+fi
+
+echo "Figure produced: $FIG"
+echo "Committed references untouched."

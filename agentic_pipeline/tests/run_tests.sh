@@ -39,7 +39,7 @@ if [ "$run_full" -eq 1 ]; then
   python3 test_dispo_regression.py --workdir "$workdir" || failures=$((failures+1))
   echo "  (test outputs kept in $workdir)"
 
-  note "Figure 6 — figure regression (pipeline and standalone script, ~80 s)"
+  note "Figure 6 — figure regression (bit-identical panels and assembly, ~35 s)"
   python3 test_figure6_regression.py || failures=$((failures+1))
 
   note "Figure 5 — XGBoost regression (~45 s)"

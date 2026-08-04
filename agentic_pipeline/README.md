@@ -45,7 +45,7 @@ flowchart TD
 
     subgraph S2["Stage 2 — Monte Carlo (deterministic, 4 min)"]
         JSON --> MC["recalculate_monte_carlo_min.py<br/>3000 draws per gene"]
-        MC --> MCT["monte_carlo_min*.tsv<br/>MC_max_v2 · DisPo"]
+        MC --> MCT["monte_carlo_min.tsv<br/>MC_max_v2 · DisPo"]
     end
 
     subgraph F6["Figure 6 — DisPo (grid 501)"]
@@ -54,7 +54,7 @@ flowchart TD
         TSV --> MG[merge_monte_carlo_with_fetal.py]
         FE[("fetal expression")] --> MG
         MG --> TSVF[monte_carlo_min_with_fetal.tsv]
-        TSV --> P6["4 R scripts<br/>panels A–D"]
+        TSV --> P6["Figure_6.R<br/>panels a–d + assembly"]
         TSVF --> P6
         P6 --> FIG6["main_figure2.pdf"]
     end
@@ -93,7 +93,7 @@ Nothing needs to be downloaded: every reference table lives in the repository.
 pip install -r agentic_pipeline/env/requirements.txt
 Rscript agentic_pipeline/env/install_r_deps.R      # audit the R versions
 
-agentic_pipeline/stages/s5_figures/run_figure6.sh  # ~50 s
+agentic_pipeline/stages/s5_figures/run_figure6.sh  # ~30 s
 agentic_pipeline/stages/s3_xgboost/run_xgboost.sh  # ~45 s
 agentic_pipeline/stages/s5_figures/run_figure5.sh  # ~90 s
 ```
@@ -150,7 +150,7 @@ it keeps papers published after the original run out of the candidate pool, but
 it has no hold over how PubMed ranks that pool. It makes the protocol replayable,
 not the retrieved set and not the numbers.
 
-## Shared data, and the two implementations of Figure 6
+## The shared table, and one script per figure
 
 There is exactly one Monte Carlo table, `monte_carlo_min.tsv`, and both figures
 read it: Figure 6 takes `MC_LoF_v2_signed_dis` from it for DisPo, Figure 5 takes
@@ -158,22 +158,23 @@ read it: Figure 6 takes `MC_LoF_v2_signed_dis` from it for DisPo, Figure 5 takes
 Each figure directory holds its own copy so either figure runs on its own, and
 `test_artifacts.py` asserts the two copies are byte-identical.
 
-Figure 6 is produced by two independent implementations, which must agree.
-`agentic_pipeline/stages/s5_figures/` runs the four upstream R scripts, one per
-panel plus the assembly; `Figure_6/Figure_6.R` is a consolidated standalone
-version of the same analysis. `test_figure6_regression.py` requires both to
-reproduce the committed PNGs byte for byte, panels included.
+Each figure is drawn by exactly one script, the one committed next to it:
+`Figure_5/Figure_5.R` and `Figure_6/Figure_6.R`. The drivers in
+`stages/s5_figures/` do not reimplement anything — they copy that script into a
+work directory, symlink the inputs it opens, and run it there, so a rerun cannot
+overwrite the committed references it is about to be compared against. What the
+pipeline adds is everything upstream of the script: stages 1 to 3.
 
-Two parameters of Figure 6 are worth knowing because nothing in the code makes
-them obvious:
+Two constants at the top of `Figure_6.R` are worth knowing, because a reader
+would not guess either and both change the figure:
 
-- **panel b admits GenCC genes at moderate confidence**, not only definitive and
-  strong. That is `--min_classification Moderate`, the default, and it sets the
-  comparison set to 2,828 genes. Restricting to definitive and strong moves both
-  Wilcoxon p-values by four orders of magnitude.
-- **the v2 algorithm must be requested explicitly.** `run_figure6.sh` passes
-  `--v2` to `test_mouse_fertility_vs_gencc.R`, which would otherwise read the v1
-  columns and draw a different panel.
+- `MIN_CLASSIFICATION <- "Moderate"` sets which GenCC confidence levels enter
+  panel b, and therefore the size of its comparison set, 2,828 genes. Restricting
+  to definitive and strong moves both Wilcoxon p-values by four orders of
+  magnitude.
+- `V2 <- TRUE` selects the corrected DisPo columns. On the v1 ones the median of
+  panel b's GenCC box drops from 42 to around 25, which is what
+  `test_figure6_regression.py` recomputes from the table to check.
 
 ## Tests
 
@@ -190,7 +191,7 @@ agentic_pipeline/tests/run_tests.sh --smoke  # + 5 genes through Vertex (billed)
 | `test_methods_omelet.py` | An independent reimplementation of OMELET agrees with R on 17,167 genes |
 | `test_guardrails.py` | The frozen outputs stay frozen; no secret is published |
 | `test_dispo_regression.py` | Recomputed stage 2 is bit-identical |
-| `test_figure6_regression.py` | Both implementations regenerate Figure 6 and its four panels bit-identically |
+| `test_figure6_regression.py` | Figure 6 and its four panels regenerate bit-identically; panel b's median recomputed from the table |
 | `test_xgboost_regression.py` | The regenerated out-of-fold predictions are bit-identical |
 | `test_figure5_regression.py` | The regenerated Figure 5 is bit-identical, and its gene counts, correlations and AUC-PR values exact |
 | `test_smoke_agent.sh` | The agent chain still runs and emits the right schema |
@@ -227,7 +228,7 @@ agentic_pipeline/
 │   ├── s1_agents/           LLM agents (Vertex), prompts, services
 │   ├── s2_montecarlo/       Monte Carlo, DisPo, fetal merge
 │   ├── s3_xgboost/          out-of-fold PEPPER_XGB predictions
-│   └── s5_figures/          the R scripts and the two figure drivers
+│   └── s5_figures/          the two figure drivers, and the pinned locale
 └── tests/                   the harness described above
 ```
 

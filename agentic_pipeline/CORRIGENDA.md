@@ -28,11 +28,10 @@ handling of composite mechanisms (see item 3). The number of genes carrying a
 DisPo goes from **18,092 to 18,124**, and the panel A subset from **5,418 to
 5,428**.
 
-The corrected table is the only one the repository now ships, as
+The corrected table is the only one the repository ships, as
 `Figure_6/data/monte_carlo_min.tsv`, and the figure regenerates from it through
-`agentic_pipeline/stages/s5_figures/run_figure6.sh`. It carried a `_new` suffix
-while both generations coexisted; the March one is preserved under the
-`pre-unification-2026-08` tag.
+`agentic_pipeline/stages/s5_figures/run_figure6.sh`. The superseded generation is
+preserved under the `pre-unification-2026-08` tag.
 
 ## 2. The panel A gene count of 17,112 is wrong
 
@@ -304,7 +303,8 @@ scale — far outside the rasterisation band that separates a rendering
 difference from a content one.
 
 **Recommended action**: order the factor levels explicitly in
-`plot_discovery_score_by_year.R` instead of relying on the default sort. Pending
+`generate_panel_a` (`Figure_6/scripts/functions_figure6.R`) instead of relying on
+the default sort. Pending
 that, `agentic_pipeline/stages/s5_figures/pin_locale.sh` pins the collation for
 both figures and refuses to run when the locale is unavailable, since R accepts
 an ungenerated locale silently and would otherwise emit the reordered panel with
@@ -347,12 +347,10 @@ the claim of the panel holds. But the quartiles of the GenCC box shift visibly,
 and the caption currently describes a set the reader cannot rebuild.
 
 This also explains a discrepancy inside the repository. `Figure_6/Figure_6.R`,
-the standalone script published alongside the figure, followed the text and set
-`MIN_CLASSIFICATION <- "Strong"`, so it did not reproduce its own figure. Nothing
-detected it while the corrected figure sat under a separate `_new` filename. It
-now reads `"Moderate"`, agrees with the pipeline byte for byte on all four panels
-and on the assembly, and `test_figure6_regression.py` checks both implementations
-against the committed PNGs.
+the script published alongside the figure, followed the text and set
+`MIN_CLASSIFICATION <- "Strong"`, so it did not reproduce its own figure. It now
+reads `"Moderate"` and regenerates all four panels and the assembly byte for
+byte, which `test_figure6_regression.py` checks.
 
 **Correction**: state "definitive, strong and moderate" in the main text, or
 redraw the panel from the narrower set. The first is preferable, since the

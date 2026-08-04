@@ -235,7 +235,7 @@ cd Figure_4 && Rscript figure_4.R
 so the committed figures are never overwritten:
 
 ```bash
-agentic_pipeline/stages/s5_figures/run_figure6.sh      # ~50 s
+agentic_pipeline/stages/s5_figures/run_figure6.sh      # ~30 s
 agentic_pipeline/stages/s3_xgboost/run_xgboost.sh      # ~45 s
 agentic_pipeline/stages/s5_figures/run_figure5.sh      # ~90 s
 ```

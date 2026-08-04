@@ -147,19 +147,15 @@ stage4_omelet:
 # ===========================================================================
 # Stage 5 — Figures
 # ===========================================================================
-# The filename suffix the R scripts accept is empty, since there is a single
-# Monte Carlo table. One consequence is worth knowing:
-# test_mouse_fertility_vs_gencc.R infers the v2 algorithm from the suffix being
-# non-empty, so run_figure6.sh passes --v2 explicitly. Without it the panel falls
-# back to the v1 columns with no warning.
+# Each figure is drawn by the single script committed next to it. The drivers in
+# stages/s5_figures/ copy that script into a work directory and run it there, so a
+# rerun cannot overwrite the committed references.
 stage5_figures:
-  suffix: ""
-  locale: en_US.UTF-8        # panel A's x-axis ordering depends on it; item 16
-  panels:
-    a: plot_discovery_score_by_year.R
-    b: test_mouse_fertility_vs_gencc.R --v2
-    c_d: unified_fetal_analysis.R
-  assembly: generate_main_figure2.R
+  figure5: Figure_5/Figure_5.R
+  figure6: Figure_6/Figure_6.R
+  locale: en_US.UTF-8        # panel a's x-axis ordering depends on it; item 16
+  # Constants at the top of Figure_6.R that change the figure.
+  v2: true                   # the corrected DisPo columns
   # Lowest GenCC confidence admitted into panel b, which sets the comparison set
   # to 2,828 genes. See CORRIGENDA item 17.
   gencc_min_classification: Moderate
