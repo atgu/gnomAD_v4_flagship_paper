@@ -34,12 +34,20 @@ Both files are now in the repository
 > DisPo percentiles were computed across all 17,112 genes with valid DisPo
 > values.
 
-**Finding**: that number matches neither version of the data.
+**Finding**: that number matches neither version of the data the figure was drawn
+from. It is the count from a *third*, earlier generation of the table.
 
 | Version | Genes with a valid DisPo | Dated GenCC intersection (plotted) |
 |---|---|---|
+| February (`monte_carlo_min_pre_divisor.tsv`) | 17,112 | not plotted |
 | Published (`monte_carlo_min.tsv`) | 18,092 | 5,418 |
 | Corrected (`_new`) | **18,124** | **5,428** |
+
+17,112 is exactly what the February table yields on `MC_LoF_v2_signed_dis`, and on
+`MC_LoF_signed_dis` too. So the count is not an arithmetic slip: it was carried
+over from the February generation while the figure itself was produced from the
+March one. This is the same February/March mixing as item 11, appearing in the
+methods text rather than in the code.
 
 **Correction**: replace 17,112 with **18,124**, and separate the two counts
 explicitly — the base the percentiles are computed over (18,124) and the subset
