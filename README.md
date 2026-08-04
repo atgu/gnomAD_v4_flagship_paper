@@ -3,9 +3,10 @@
 Code and data for **Figures 4, 5 and 6** of the gnomAD v4 flagship paper
 ([medRxiv 2026.03.23.26349081](https://doi.org/10.64898/2026.03.23.26349081)).
 
-The three figures make one argument in three steps. Figure 4 builds a measure of
-**missense constraint** from 730,947 exomes and shows it beats existing
-constraint metrics at recovering known disease genes. Figure 5 pairs that
+The three figures make one argument in three steps. Figure 4 builds a
+**constraint metric that adds damaging missense variants to the loss-of-function
+counts** across 730,947 exomes, and shows it beats existing constraint metrics at
+recovering known disease genes. Figure 5 pairs that
 population-genetic signal with an orthogonal, literature-derived estimate of
 **clinical impact** produced by a chain of LLM agents, and shows the combination
 beats either ingredient alone. Figure 6 turns the argument around: where the two
@@ -18,7 +19,7 @@ expect of phenotypes that are hard to observe in humans.
 ## Contents
 
 - [The scientific argument](#the-scientific-argument)
-  - [Figure 4 — a constraint metric for missense variation](#figure-4--a-constraint-metric-for-missense-variation)
+  - [Figure 4 — a constraint metric combining pLoF and missense variation](#figure-4--a-constraint-metric-combining-plof-and-missense-variation)
   - [Figure 5 — combining constraint with the literature (PEPPER, OMELET)](#figure-5--combining-constraint-with-the-literature-pepper-omelet)
   - [Figure 6 — mining the disagreement (DisPo)](#figure-6--mining-the-disagreement-dispo)
 - [Architecture](#architecture)
@@ -32,14 +33,23 @@ expect of phenotypes that are hard to observe in humans.
 
 ## The scientific argument
 
-### Figure 4 — a constraint metric for missense variation
+### Figure 4 — a constraint metric combining pLoF and missense variation
 
 <img src="Figure_4/figures/Figure_4_Main.png" width="720">
 
-Loss-of-function constraint (LOEUF) works well but ignores most of the coding
-genome: pLoF variants are rare, so thousands of genes carry too few to be
-informative. Figure 4 asks whether missense variants, weighted by a
-pathogenicity predictor, can supply the missing signal.
+Loss-of-function constraint (LOEUF) works well but rests on a thin slice of the
+data: pLoF variants are rare, so thousands of genes carry too few to be
+informative. Figure 4 asks whether damaging missense variants can supply the
+missing signal.
+
+**LOEUF-MIS is the answer, and it is not a missense-only metric.** It counts the
+pLoF variants — under the LOFTEE-2 relaxed filter — **plus** the most damaging
+missense variants, taken at the 99th percentile of ESM1v, PopEVE and
+AlphaMissense and averaged across the three. Observed and expected counts are
+summed over that union, and the metric is the upper bound of the 90% confidence
+interval on the resulting o/e ratio, exactly as LOEUF is for pLoFs alone. So it
+is LOEUF's estimator applied to a larger variant set, which is why it stays
+informative in genes where pLoF counts run out.
 
 - **Panel a** ranks missense variants by predictor score and plots the
   observed/expected ratio at each percentile. All three predictors — ESM1v,
@@ -51,12 +61,23 @@ pathogenicity predictor, can supply the missing signal.
   fold enrichment. Ion channels and helicases lead, followed by kinases, OMIM
   genes, oncogenes and GoF/DN genes.
 - **Panel c** compares observed against expected variant counts for pLoFs and
-  for each predictor, in all genes and in NDD genes separately. Missense
-  predictors reach o/e ratios in NDD genes (0.09–0.20) below what pLoFs achieve
-  (0.30), on a far larger pool of variants.
+  for each missense predictor, in all genes and in NDD genes separately. In NDD
+  genes the missense sets are depleted more strongly than the pLoFs themselves
+  (o/e 0.09–0.20 against 0.30), so they are not a weaker substitute for pLoF
+  counts but an independent source of the same signal — which is what justifies
+  summing the two.
 - **Panel d** is the payoff: precision-recall curves for recovering known
   neurodevelopmental disorder genes. **LOEUF-MIS** reaches AUPRC **0.178**,
   against 0.128 for LOEUF v4, 0.103 for GeneBayes and 0.075 for LOEUF v2.
+
+The 0.128 → 0.178 step is worth reading carefully, because it is a controlled
+ablation rather than a comparison across published scores. The curve labelled
+LOEUF v4 is computed in `figure_4.R` from the *same* LOFTEE-2 relaxed pLoF counts
+and the *same* confidence-bound estimator as LOEUF-MIS; the only difference
+between the two is the added missense counts. The gain is therefore attributable
+to the missense contribution and not to a change of LoF filter — though a reader
+should know that this curve is a recomputation and not gnomAD v4's published
+LOEUF.
 
 LOEUF-MIS is the input the next two figures consume.
 
@@ -154,7 +175,7 @@ flowchart TD
     LIT[("PubMed<br/>clinical literature")]
     GC[("GenCC<br/>curated disease genes")]
 
-    GN --> LM["LOEUF-MIS<br/>missense constraint"]
+    GN --> LM["LOEUF-MIS<br/>pLoF + damaging missense<br/>constraint"]
     LM --> F4["Figure 4<br/>constraint metric<br/>AUPRC 0.178"]
 
     LIT --> AG["PEPPER — 7 LLM agents per gene<br/>Claude Haiku via Vertex<br/>disease · penetrance · inheritance<br/>severity · mechanism · summary"]
