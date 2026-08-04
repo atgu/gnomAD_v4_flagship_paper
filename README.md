@@ -314,7 +314,7 @@ them pass; the smoke test is separate because it costs money to run.
 | XGBoost out-of-fold | Figure 5 | Bit-identical |
 | OMELET | Figure 5 | Independent Python reimplementation agrees with the R original to 1e-14 over 17,167 genes |
 | Assembled Figure 6 | — | Bit-identical, from the pipeline and from the standalone `Figure_6.R` alike |
-| Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any ([why](agentic_pipeline/README.md#reproducing-figure-5s-pixels)) |
+| Assembled Figure 5 | — | Bit-identical, and every number on it checked exactly |
 
 ```bash
 agentic_pipeline/tests/run_tests.sh            # fast checks, seconds

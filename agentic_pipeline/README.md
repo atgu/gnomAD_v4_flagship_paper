@@ -17,8 +17,8 @@ together with the tests that pin each step to a checksum.
 | 2 — fetal expression merge | Figure 6 | Bit-identical | `a34df6f3…` |
 | 3 — XGBoost out-of-fold | Figure 5 | Bit-identical | `af9a54be…` |
 | 4 — OMELET | Figure 5 | Agrees with R to 1e-14 | 17,167 genes |
-| 5 — assembled Figure 6 | — | Pixel-identical | `b8bd321f…` |
-| 5 — assembled Figure 5 | — | Pixel-identical here, numbers exact anywhere | `55f8961c…` |
+| 5 — assembled Figure 6 | — | Bit-identical | `b8bd321f…` |
+| 5 — assembled Figure 5 | — | Bit-identical | `55f8961c…` |
 
 Stage 1 is not reproducible and never will be. The agents take the top 50 PubMed
 hits sorted by relevance, and that ranking is neither fixed nor published: it is
@@ -31,8 +31,6 @@ exact.
 Everything under `Figure_5/figures/` and `Figure_6/figures/` is this pipeline's
 own output, panels included, so a regression test compares a rerun against a
 figure the repository produced rather than against an artefact from elsewhere.
-Figure 5's assembled PNG is the one case where that comparison needs a tolerance
-on a different machine; *Reproducing Figure 5's pixels* explains why.
 
 ## Architecture
 
@@ -177,43 +175,6 @@ them obvious:
   `--v2` to `test_mouse_fertility_vs_gencc.R`, which would otherwise read the v1
   columns and draw a different panel.
 
-## Reproducing Figure 5's pixels
-
-`Figure_5.R` is deterministic: two runs on the same machine produce the same
-bytes, and `Figure_5/figures/main_figure.png` is one of those runs, so it
-reproduces exactly here. On a machine with a different graphics stack it will
-not, and the reason is worth stating because it looks alarming and is not.
-
-`ragg`, `systemfonts` and `textshaping` decide how text is rasterised, and their
-text metrics feed back into layout: ggplot sizes each panel around the space the
-axis labels need. A different version of any of them therefore shifts pixels
-across the whole figure without touching a single plotted value. Three effects
-are measurable, none of them in the data:
-
-1. Glyphs carry slightly more or less weight. Across an axis-label band the ink
-   coverage is unchanged to 0.01% of pixels while mean luminance moves by several
-   levels.
-2. Panels are drawn up to 0.3% smaller or larger, because the label space
-   reserved for them differs. Every bar in panel C scales by the same factor, so
-   their height ratios still agree to 0.03%.
-3. Marker rims antialias differently. This touches 17–21% of pixels in the
-   scatter panels, which carry about 17,000 markers each, but only 0.1–0.3% of
-   pixels deviate by more than half scale.
-
-`test_figure5_regression.py` therefore splits the claim in two. The **numbers**
-are compared exactly: gene counts, the ABCC9 prior concentration, both Spearman
-correlations, and the five AUC-PR values that are the substance of panel C. The
-**pixels** are compared against a calibrated band — rasterisation alone gives a
-mean absolute error of 1.71/255 with 0.295% of pixels off by more than half
-scale, whereas two genuinely different panels give 17.3/255 and 3.5%, so the
-thresholds sit at 4.0 and 1%, an order of magnitude too narrow to absorb a change
-of content.
-
-One artefact can never be bit-reproducible: `main_figure.pdf`, because R embeds
-the generation timestamp in it. Figure 6's PDF has the same property — a fresh
-run differs from the committed copy in exactly the 16 bytes of `CreationDate` and
-`ModDate`, and nowhere else.
-
 ## Tests
 
 ```bash
@@ -231,7 +192,7 @@ agentic_pipeline/tests/run_tests.sh --smoke  # + 5 genes through Vertex (billed)
 | `test_dispo_regression.py` | Recomputed stage 2 is bit-identical |
 | `test_figure6_regression.py` | Both implementations regenerate Figure 6 and its four panels bit-identically |
 | `test_xgboost_regression.py` | The regenerated out-of-fold predictions are bit-identical |
-| `test_figure5_regression.py` | Figure 5's numbers are exact and its pixels within tolerance |
+| `test_figure5_regression.py` | The regenerated Figure 5 is bit-identical, and its gene counts, correlations and AUC-PR values exact |
 | `test_smoke_agent.sh` | The agent chain still runs and emits the right schema |
 
 The smoke test deliberately does **not** check the scores. Two runs of the same
