@@ -131,7 +131,7 @@ mc_data_clean <- mc_data %>%
 
 cat("  Genes with", mc_col_display, ":", nrow(mc_data_clean), "\n")
 
-# --- Charger LOEUF v4 ---
+# --- Load LOEUF v4 ---
 cat("\n  Loading LOEUF v4 from scores_for_pr_plots.csv...\n")
 loeuf_file <- file.path(PROJECT_ROOT, "app", "data", "scores_for_pr_plots.csv")
 if (!file.exists(loeuf_file)) {
@@ -208,7 +208,7 @@ gencc_data <- read_tsv(gencc_file, show_col_types = FALSE)
 classification_levels <- c("Definitive", "Strong", "Moderate")
 min_level_idx <- which(classification_levels == args$min_classification)
 if (length(min_level_idx) == 0) {
-  stop(paste("Classification invalide:", args$min_classification))
+  stop(paste("Invalid classification:", args$min_classification))
 }
 accepted_classifications <- classification_levels[1:min_level_idx]
 
@@ -743,7 +743,7 @@ if (nrow(plot_data_all) > 0) {
     gtex_testis_data <- read_tsv(gtex_testis_file, show_col_types = FALSE)
     cat(sprintf("    %d genes with testis expression loaded\n", nrow(gtex_testis_data)))
   } else {
-    # Essayer de charger depuis gtex_median_tpm.gct.gz
+    # Try loading from gtex_median_tpm.gct.gz
     gtex_gct_path <- file.path(DATA_DIR, "gtex_median_tpm.gct.gz")
     if (file.exists(gtex_gct_path)) {
       cat("  Loadingpuis gtex_median_tpm.gct.gz...\n")
@@ -784,7 +784,7 @@ if (nrow(plot_data_all) > 0) {
       cat(sprintf("  %d mouse fertility genes with testis expression and an MC score\n", n_fertility_with_testis))
       
       if (n_fertility_with_testis >= 10) {
-        # Test avec top 10% vs bottom 10%
+        # Test with top 10% vs bottom 10%
         n_top_10pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.1))
         n_bottom_10pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.1))
         
@@ -838,7 +838,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_30pct_fertility_mc, mean_tpm_bottom_30pct_fertility_mc))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_30pct$p.value))
         
-        # Test avec top 50% vs bottom 50%
+        # Test with top 50% vs bottom 50%
         n_top_50pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.5))
         n_bottom_50pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.5))
         
@@ -905,7 +905,7 @@ if (nrow(plot_data_all) > 0) {
       cat(sprintf("  %d mouse fertility genes with testis expression and a LOEUF v4 score\n", n_fertility_with_testis_loeuf))
       
       if (n_fertility_with_testis_loeuf >= 10) {
-        # Test avec top 10% vs bottom 10%
+        # Test with top 10% vs bottom 10%
         n_top_10pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.1))
         n_bottom_10pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.1))
         
@@ -932,7 +932,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("    Bottom 10%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_10pct_fertility_loeuf, mean_tpm_bottom_10pct_fertility_loeuf))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_10pct_loeuf$p.value))
         
-        # Test avec top 30% vs bottom 30%
+        # Test with top 30% vs bottom 30%
         n_top_30pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.3))
         n_bottom_30pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.3))
         
@@ -955,7 +955,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_30pct_fertility_loeuf, mean_tpm_bottom_30pct_fertility_loeuf))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_30pct_loeuf$p.value))
         
-        # Test avec top 50% vs bottom 50%
+        # Test with top 50% vs bottom 50%
         n_top_50pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.5))
         n_bottom_50pct_fertility_loeuf <- max(1, floor(n_fertility_with_testis_loeuf * 0.5))
         
@@ -1056,7 +1056,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("  %d mouse embryonic lethal genes with fetal expression and an MC score\n", n_embryonic_with_fetal))
         
         if (n_embryonic_with_fetal >= 10) {
-          # Test avec top 10% vs bottom 10%
+          # Test with top 10% vs bottom 10%
           n_top_10pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.1))
           n_bottom_10pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.1))
           
@@ -1110,7 +1110,7 @@ if (nrow(plot_data_all) > 0) {
           cat(sprintf("    Bottom 30%% (n=%d): Mean of the median fetal TPM = %.4f\n", n_bottom_30pct_embryonic_mc, mean_fetal_median_bottom_30pct_embryonic_mc))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_fetal_30pct$p.value))
           
-          # Test avec top 50% vs bottom 50%
+          # Test with top 50% vs bottom 50%
           n_top_50pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.5))
           n_bottom_50pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.5))
           
@@ -1190,7 +1190,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("  %d mouse embryonic lethal genes with fetal expression and a LOEUF v4 score\n", n_embryonic_with_fetal_loeuf))
         
         if (n_embryonic_with_fetal_loeuf >= 10) {
-          # Test avec top 10% vs bottom 10%
+          # Test with top 10% vs bottom 10%
           n_top_10pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.1))
           n_bottom_10pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.1))
           
@@ -1217,7 +1217,7 @@ if (nrow(plot_data_all) > 0) {
           cat(sprintf("    Bottom 10%% (n=%d): Mean of the median fetal TPM = %.4f\n", n_bottom_10pct_loeuf, mean_fetal_median_bottom_10pct_loeuf))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_fetal_10pct_loeuf$p.value))
           
-          # Test avec top 30% vs bottom 30%
+          # Test with top 30% vs bottom 30%
           n_top_30pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.3))
           n_bottom_30pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.3))
           
@@ -1240,7 +1240,7 @@ if (nrow(plot_data_all) > 0) {
           cat(sprintf("    Bottom 30%% (n=%d): Mean of the median fetal TPM = %.4f\n", n_bottom_30pct_loeuf, mean_fetal_median_bottom_30pct_loeuf))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_fetal_30pct_loeuf$p.value))
           
-          # Test avec top 50% vs bottom 50%
+          # Test with top 50% vs bottom 50%
           n_top_50pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.5))
           n_bottom_50pct_loeuf <- max(1, floor(n_embryonic_with_fetal_loeuf * 0.5))
           
@@ -1340,7 +1340,7 @@ if (nrow(plot_data_all) > 0) {
         cat(sprintf("  %d mouse embryonic lethal genes with a fetal-adult difference and an MC score\n", n_embryonic_fetal_adult))
         
         if (n_embryonic_fetal_adult >= 10) {
-          # Test avec top 10% vs bottom 10%
+          # Test with top 10% vs bottom 10%
           n_top_10pct <- max(1, floor(n_embryonic_fetal_adult * 0.1))
           n_bottom_10pct <- max(1, floor(n_embryonic_fetal_adult * 0.1))
           
@@ -1364,7 +1364,7 @@ if (nrow(plot_data_all) > 0) {
                       n_bottom_10pct, mean_diff_bottom_10pct, mean_diff_pct_bottom_10))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4e\n", wilcoxon_test_fa_10pct$p.value))
           
-          # Test avec top 30% vs bottom 30%
+          # Test with top 30% vs bottom 30%
           n_top_30pct <- max(1, floor(n_embryonic_fetal_adult * 0.3))
           n_bottom_30pct <- max(1, floor(n_embryonic_fetal_adult * 0.3))
           
@@ -1388,7 +1388,7 @@ if (nrow(plot_data_all) > 0) {
                       n_bottom_30pct, mean_diff_bottom_30pct, mean_diff_pct_bottom_30))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4e\n", wilcoxon_test_fa_30pct$p.value))
           
-          # Test avec top 50% vs bottom 50%
+          # Test with top 50% vs bottom 50%
           n_top_50pct <- max(1, floor(n_embryonic_fetal_adult * 0.5))
           n_bottom_50pct <- max(1, floor(n_embryonic_fetal_adult * 0.5))
           

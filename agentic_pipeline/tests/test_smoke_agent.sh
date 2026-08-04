@@ -81,7 +81,7 @@ check "one JSON per gene" $? "$produced of ${#GENES[@]}"
 
 # --- schema compatibility with the frozen run ------------------------------
 if [ -z "$FROZEN" ] || [ ! -d "$FROZEN" ]; then
-  echo "  [SKIP] comparaison de schema — PEPPER_RUN_016_RESULTS non defini"
+  echo "  [SKIP] schema comparison — PEPPER_RUN_016_RESULTS not set"
 else
   python3 - "$WORK" "$FROZEN" <<'PY'
 import json, sys, glob, os

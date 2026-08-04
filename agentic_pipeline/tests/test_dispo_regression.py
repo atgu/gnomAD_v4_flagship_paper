@@ -51,7 +51,7 @@ def main() -> None:
     if src is None:
         c.skip("Monte Carlo recomputation",
                "JSON de l'agent introuvables; definir PEPPER_RUN_016_RESULTS "
-               "ou extraire l'archive GCS")
+               "or extract the GCS archive")
         c.exit()
 
     n_json = sum(1 for _ in src.glob("*.json"))

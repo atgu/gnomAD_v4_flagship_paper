@@ -250,10 +250,10 @@ def parse_gcs_uri(uri: str):
     Raises ValueError if the URI is invalid.
     """
     if not uri or not uri.startswith("gs://"):
-        raise ValueError(f"URI GCS invalide (doit commencer par gs://): {uri!r}")
+        raise ValueError(f"Invalid GCS URI (must start with gs://): {uri!r}")
     without_scheme = uri[5:]
     if not without_scheme:
-        raise ValueError(f"URI GCS invalide (nom de bucket manquant): {uri!r}")
+        raise ValueError(f"Invalid GCS URI (missing bucket name): {uri!r}")
     parts = without_scheme.split("/", 1)
     bucket_name = parts[0]
     prefix = ""
@@ -398,14 +398,14 @@ def gather_pubmed_data_for_gene(gene_name, cfg):
     # In knowledge mode, PubMed is skipped entirely
     if cfg.get("knowledge", False):
         if cfg.get("verbose", False):
-            print(f"[INFO] Mode knowledge pour {gene_name} - skip PubMed")
+            print(f"[INFO] Knowledge mode for {gene_name} - skipping PubMed")
         return {
             "base_articles": [],
             "lof_gof_articles": [],
         }
     
     if cfg.get("verbose", False):
-        print(f"[INFO] Collecte PubMed pour {gene_name}")
+        print(f"[INFO] Collecting PubMed for {gene_name}")
     articles = search_pubmed(
         gene_name,
         cfg["keywords"],
@@ -488,7 +488,7 @@ def run_mendelian_pipeline(gene_name, guiding_score, cfg, pubmed_data):
                     data["agreement_direction"] = bayes_result.get("agreement_direction", "unknown")
                 except Exception as exc:
                     # Errors are always surfaced, verbose or not
-                    print(f"[Worker] real_bayes impossible pour {gene_name}/{version}: {exc}", file=sys.stderr)
+                    print(f"[Worker] real_bayes failed for {gene_name}/{version}: {exc}", file=sys.stderr)
                     data["real_bayes"] = None
                     data["agreement"] = None
             else:
@@ -521,7 +521,7 @@ def run_mendelian_pipeline(gene_name, guiding_score, cfg, pubmed_data):
                     if da_disease_names:
                         try:
                             if verbose:
-                                print(f"[Worker] Comparaison GenCC pour {gene_name} ({len(da_disease_names)} maladies DA vs {len(gencc_diseases)} GenCC)")
+                                print(f"[Worker] GenCC comparison for {gene_name} ({len(da_disease_names)} DA diseases vs {len(gencc_diseases)} GenCC)")
                             gencc_comparison = compare_diseases_batch(
                                 da_diseases=da_disease_names,
                                 gencc_diseases=gencc_diseases,
@@ -759,7 +759,7 @@ def process_gene_worker(payload):
             "token_snapshot": worker_tracker.get_snapshot(),
         }
     except LLMOverloadedError as exc:
-        message = f"LLM overloaded pour {gene_name}: {exc}"
+        message = f"LLM overloaded for {gene_name}: {exc}"
     except Exception as exc:
         message = f"Error for {gene_name}: {exc}"
     traceback.print_exc()
@@ -793,7 +793,7 @@ def run_pipeline(args):
             print(f"[INFO] GCS bucket mode on, results written to {args.google_bucket}")
         except Exception as exc:
             # A bucket misconfiguration must stop the program outright
-            print(f"[ERROR] Impossible d'initialiser le bucket GCS '{args.google_bucket}': {exc}")
+            print(f"[ERROR] Could not initialise the GCS bucket '{args.google_bucket}': {exc}")
             raise
 
     # Configure verbose mode for services
@@ -1096,7 +1096,7 @@ def parse_args():
         help=(
             "LLM model to use. Options per backend:\n"
             "  - Anthropic API directe : 'claude-haiku-4-5', 'claude-sonnet-4-5'\n"
-            "  - Anthropic via Vertex AI (GCP credits) : ajouter '@vertex', ex. 'claude-haiku-4-5@vertex'\n"
+            "  - Anthropic via Vertex AI (GCP credits): append '@vertex', e.g. 'claude-haiku-4-5@vertex'\n"
             "  - Google Gemini (Vertex AI) : 'gemini-3.5-flash', 'gemini-2.5-flash', etc.\n"
             "  - Meta Llama via Vertex MaaS : 'llama-4-scout', 'llama-4-maverick'"
         ),
@@ -1131,7 +1131,7 @@ def parse_args():
              "Restricts EVERY search to articles published on or before that date "
              "(datetype=pdat). Default: no restriction. Used to rebuild the "
              "literature as it stood at a past date.")
-    parser.add_argument("--resume", action="store_true", help="Reprendre le dernier run disponible.")
+    parser.add_argument("--resume", action="store_true", help="Resume the most recent available run.")
     parser.add_argument("--new", action="store_true", 
                         help="Force the creation of a new run (ignores existing runs sharing the same config).")
     parser.add_argument("--force-run", type=str, default=None, dest="force_run",

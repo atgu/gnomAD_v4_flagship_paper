@@ -173,7 +173,7 @@ def compute_real_bayes(O, E, level, kappa=100, min_p=0.05, max_p=0.95,
             denom = np.sqrt(prior_var + likelihood_var + 1e-12)
             d = np.abs(prior_mean - likelihood_mean) / denom
             
-            # Accord dans [0, 1] : 1/(1 + d)
+            # Agreement in [0, 1]: 1/(1 + d)
             agreement_prior_lik = float(1.0 / (1.0 + d))
             
             # Direction: "prior_more_pathogenic", "likelihood_more_pathogenic", or "similar"

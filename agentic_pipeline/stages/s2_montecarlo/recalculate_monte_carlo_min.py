@@ -954,7 +954,7 @@ def process_gene_data(data: dict, n_samples: int = MONTE_CARLO_SAMPLES, enable_v
     Returns:
         Dict with MC results or None if error
     """
-    # Extraire le gene_symbol
+    # Extract the gene_symbol
     gene_symbol = data.get('gene_symbol')
     if not gene_symbol:
         return None
@@ -994,7 +994,7 @@ def process_gene_data(data: dict, n_samples: int = MONTE_CARLO_SAMPLES, enable_v
             'MC_LoF_v2_kappa': kappa_max,
         })
     
-    # Extraire les maladies depuis deep_analysis.diseases
+    # Extract the diseases from deep_analysis.diseases
     deep_analysis = data.get('deep_analysis', {})
     diseases = deep_analysis.get('diseases', []) if isinstance(deep_analysis, dict) else []
     
@@ -1012,7 +1012,7 @@ def process_gene_data(data: dict, n_samples: int = MONTE_CARLO_SAMPLES, enable_v
         if disease.get('association_is_protective') or disease.get('association_is_neutral'):
             continue
         
-        # Calculer v1 (toujours)
+        # Compute v1 (always)
         expected_level, variance = get_expected_level_and_variance(disease, n_samples)
         disease_name = disease.get('name', 'Unknown')
         mechanism = disease.get('mechanism', '').upper() if disease.get('mechanism') else ''

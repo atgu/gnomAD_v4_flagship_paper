@@ -84,7 +84,7 @@ if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)
 }
 
-# --- Helper: Charger PNG comme raster ---
+# --- Helper: load a PNG as a raster ---
 load_as_raster <- function(path) {
   if (!file.exists(path)) {
     warning("File not found: ", path)
@@ -143,8 +143,8 @@ if (!file.exists(fetal_tpm_path)) {
 }
 r_D <- load_as_raster(fetal_tpm_path)
 
-# --- Assemblage avec patchwork ---
-cat("  Assemblage...\n")
+# --- Assembly with patchwork ---
+cat("  Assembling...\n")
 
 layout <- "
 AB

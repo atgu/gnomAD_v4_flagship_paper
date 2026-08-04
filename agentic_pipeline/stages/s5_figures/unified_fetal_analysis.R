@@ -141,8 +141,8 @@ cat("  Seuil syn_upper (exclusion):", args$syn_threshold, "\n")
 cat("  Seuil syn_depleted (enrichment):", args$syn_depleted_threshold, "\n")
 cat("  Percentile repro (testis/ovary/uterus/stomach):", args$repro_percentile, "\n")
 cat("  Percentile blood (exclusion):", args$blood_exclusion_percentile, "\n")
-cat("  Fetal Expr (enrichments): top", args$fetal_enrichment_percentile, "% dans ≥", args$fetal_enrichment_min_tissues, "tissues\n")
-cat("  Fetal Expr (exclusion testis): top", args$fetal_exclusion_percentile, "% dans ≥", args$fetal_exclusion_min_tissues, "tissues\n")
+cat("  Fetal Expr (enrichments): top", args$fetal_enrichment_percentile, "% in ≥", args$fetal_enrichment_min_tissues, "tissues\n")
+cat("  Fetal Expr (exclusion testis): top", args$fetal_exclusion_percentile, "% in ≥", args$fetal_exclusion_min_tissues, "tissues\n")
 cat("  Control range:", args$control_range,
     if (args$control_range_mode == "percentile") " (percentile)" 
     else if (args$control_range_mode == "top_n") " (top_n genes)" 
@@ -201,7 +201,7 @@ if (file.exists(gtex_gct_path)) {
   
   # Extract one tissue and compute the percentiles (optimised)
   extract_tissue <- function(gtex_df, tissue_col) {
-    # Extraire et filtrer
+    # Extract and filter
     tissue_data <- gtex_df %>%
       select(gene = gene_symbol, tpm = all_of(tissue_col)) %>%
       filter(!is.na(tpm))
@@ -214,7 +214,7 @@ if (file.exists(gtex_gct_path)) {
     return(tissue_data)
   }
   
-  # Extraire chaque tissu
+  # Extract each tissue
   gtex_testis_df <- extract_tissue(gtex_full, "Testis")
   gtex_ovary_df <- extract_tissue(gtex_full, "Ovary")
   gtex_uterus_df <- extract_tissue(gtex_full, "Uterus")
@@ -233,7 +233,7 @@ if (file.exists(gtex_gct_path)) {
     toupper()
   
   # Precompute the top blood genes to avoid refiltering later on
-  # Note: blood utilise blood_exclusion_percentile, pas repro_percentile
+  # Note: blood uses blood_exclusion_percentile, not repro_percentile
   top_blood_genes <- gtex_blood_df %>%
     filter(percentile >= args$blood_exclusion_percentile) %>%
     pull(gene) %>%
@@ -297,7 +297,7 @@ exclude_sel5 <- unique(c(syn_genes_to_exclude, top_blood_genes))
 cat("  Selection 5 exclusions (syn + others, no testis):", length(exclude_sel5), "\n")
 
 t_end_section1 <- Sys.time()
-cat("\n  Section 1 (Chargement):", round(as.numeric(difftime(t_end_section1, t_start_section1, units = "secs")), 2), "seconds\n")
+cat("\n  Section 1 (Loading):", round(as.numeric(difftime(t_end_section1, t_start_section1, units = "secs")), 2), "seconds\n")
 
 # ==============================================================================
 # 2. PREPARING THE DATA
@@ -456,8 +456,8 @@ if (!is.null(gtex_stomach_df)) {
   data_valid <- data_valid %>% mutate(stomach_expr = FALSE)
 }
 
-# Ajouter Whole Blood Expr
-# - blood_expr_enrichment : pour l'enrichment "Blood Expr" (utilise repro_percentile)
+# Add Whole Blood Expr
+# - blood_expr_enrichment: for the "Blood Expr" enrichment (uses repro_percentile)
 # - blood_expr : for the exclusion in "NOT Blood" (uses blood_exclusion_percentile)
 if (!is.null(gtex_blood_df)) {
   data_valid <- data_valid %>%
@@ -492,7 +492,7 @@ if (!is.null(args$excl_mode) && !is.null(gtex_full)) {
       tissue_data <- gtex_df %>%
         select(gene_symbol, all_of(other_tissues))
       
-      # Convertir en matrice pour rowMedians (exclure gene_symbol)
+      # Convert to a matrix for rowMedians (excluding gene_symbol)
       tissue_matrix <- as.matrix(tissue_data[, -1])
       others_stat <- tissue_data %>%
         mutate(
@@ -648,7 +648,7 @@ if (!is.null(args$excl_mode) && !is.null(gtex_full)) {
       fetal_data <- gtex_full %>%
         select(gene_symbol, all_of(other_tissues_fetal))
       
-      # Convertir en matrice pour rowMedians (exclure gene_symbol)
+      # Convert to a matrix for rowMedians (excluding gene_symbol)
       fetal_matrix <- as.matrix(fetal_data[, -1])
       others_fetal_stat <- fetal_data %>%
         mutate(
@@ -701,7 +701,7 @@ if (!is.null(args$excl_mode)) {
     mutate(fetal_not_blood_expr = fetal_high_expr & !blood_expr)
 }
 
-# Ajouter Testis NOT Blood NOT Fetal (utilise fetal_exclusion_expr)
+# Add Testis NOT Blood NOT Fetal (uses fetal_exclusion_expr)
 data_valid <- data_valid %>%
   mutate(testis_not_blood_not_fetal_expr = testis_not_blood_expr & !fetal_exclusion_expr)
 
@@ -1327,9 +1327,9 @@ print_enrichment <- function(res, selection_name) {
   
   if (res$p_value < 0.05) {
     if (res$odds_ratio > 1) {
-      cat(" ★ ENRICHI dans TOP\n")
+      cat(" ★ ENRICHED in TOP\n")
     } else {
-      cat(" ☆ ENRICHI dans CTRL\n")
+      cat(" ☆ ENRICHED in CTRL\n")
     }
   } else {
     cat(" (NS)\n")
@@ -1383,11 +1383,11 @@ cat("--- FETAL NOT OTHERS retain TESTIS (Selection 5: excl. syn + others) ---\n\
 print_enrichment(res_fetal_not_others_no_testis, paste0("N=", nrow(top_sel5), " paires"))
 
 # ==============================================================================
-# 9b. ENRICHISSEMENTS GTEx TOUS TISSUS
+# 9b. GTEx ALL-TISSUE ENRICHMENTS
 # ==============================================================================
 cat("\n")
 cat(strrep("-", 50), "\n")
-cat("9b. ENRICHISSEMENTS GTEx TOUS TISSUS\n")
+cat("9b. GTEx ALL-TISSUE ENRICHMENTS\n")
 cat(strrep("-", 50), "\n\n")
 t_start_section9b <- Sys.time()
 
@@ -1398,7 +1398,7 @@ if (!is.null(gtex_full)) {
   # Get the list of every GTEx tissue
   tissue_cols <- colnames(gtex_full)[2:ncol(gtex_full)]
   
-  cat("  Tissus disponibles:", length(tissue_cols), "\n")
+  cat("  Tissues available:", length(tissue_cols), "\n")
   
   # Prepare the results data frame
   gtex_results <- tibble()
@@ -1465,7 +1465,7 @@ if (!is.null(gtex_full)) {
           tissue_data <- gtex_full %>%
             select(gene_symbol, all_of(other_tissues))
           
-          # Convertir en matrice pour rowMedians (exclure gene_symbol)
+          # Convert to a matrix for rowMedians (excluding gene_symbol)
           tissue_matrix <- as.matrix(tissue_data[, -1])
           others_stat <- tissue_data %>%
             mutate(others_stat = rowMedians(tissue_matrix, na.rm = TRUE)) %>%
@@ -1659,7 +1659,7 @@ if (!is.null(gtex_full)) {
   sig_tissues <- gtex_results %>% filter(P_value < 0.05) %>% arrange(P_value)
   sig_tissues_nb <- gtex_results_not_blood %>% filter(P_value < 0.05) %>% arrange(P_value)
   
-  cat("\n  Tissus significatifs (p < 0.05):\n")
+  cat("\n  Significant tissues (p < 0.05):\n")
   if (nrow(sig_tissues) > 0) {
     cat("    Standard:", nrow(sig_tissues), "tissues\n")
     for (i in 1:min(5, nrow(sig_tissues))) {
@@ -1668,7 +1668,7 @@ if (!is.null(gtex_full)) {
     }
     if (nrow(sig_tissues) > 5) cat("      ... et", nrow(sig_tissues) - 5, "autres\n")
   } else {
-    cat("    Standard: aucun\n")
+    cat("    Standard: none\n")
   }
   
   exclusion_label_display <- if (!is.null(args$excl_mode)) "NOT Others" else "NOT Blood"
@@ -1680,7 +1680,7 @@ if (!is.null(gtex_full)) {
     }
     if (nrow(sig_tissues_nb) > 5) cat("      ... et", nrow(sig_tissues_nb) - 5, "autres\n")
   } else {
-    cat("    ", exclusion_label_display, ": aucun\n", sep = "")
+    cat("    ", exclusion_label_display, ": none\n", sep = "")
   }
   
 } else {
@@ -1688,7 +1688,7 @@ if (!is.null(gtex_full)) {
 }
 
 t_end_section9b <- Sys.time()
-cat("\n  Section 9b (GTEx tous tissues):", round(as.numeric(difftime(t_end_section9b, t_start_section9b, units = "secs")), 2), "seconds\n")
+cat("\n  Section 9b (GTEx all tissues):", round(as.numeric(difftime(t_end_section9b, t_start_section9b, units = "secs")), 2), "seconds\n")
 
 t_end_section9 <- Sys.time()
 cat("\n  Section 9 (Enrichments):", round(as.numeric(difftime(t_end_section9, t_start_section9, units = "secs")), 2), "seconds\n")
@@ -1839,7 +1839,7 @@ plot_or_data <- results_df %>%
       P_value < 0.01 ~ paste0("p=", sprintf("%.3f", P_value)),
       TRUE ~ paste0("p=", sprintf("%.2f", P_value))
     ),
-    # Limiter CI_high pour l'affichage
+    # Cap CI_high for display
     CI_high_plot = pmin(CI_high, 4)
   ) %>%
   # Feature order (bottom to top in the plot)
@@ -2144,7 +2144,7 @@ timing_report <- c(
   paste("Date:", Sys.time()),
   "",
   "TEMPS PAR SECTION:",
-  paste("  Section 1 (Chargement):", round(as.numeric(difftime(t_end_section1, t_start_section1, units = "secs")), 2), "seconds"),
+  paste("  Section 1 (Loading):", round(as.numeric(difftime(t_end_section1, t_start_section1, units = "secs")), 2), "seconds"),
   paste("  Section 2 (Preparation):", round(as.numeric(difftime(t_end_section2, t_start_section2, units = "secs")), 2), "seconds"),
   "",
   "TIME PER SELECTION:",
@@ -2157,7 +2157,7 @@ timing_report <- c(
   "",
   "TEMPS PAR SECTION (suite):",
   paste("  Section 8 (Boxplots):", round(as.numeric(difftime(t_end_section8, t_start_section8, units = "secs")), 2), "seconds"),
-  paste("  Section 9b (GTEx tous tissues):", round(as.numeric(difftime(t_end_section9b, t_start_section9b, units = "secs")), 2), "seconds"),
+  paste("  Section 9b (GTEx all tissues):", round(as.numeric(difftime(t_end_section9b, t_start_section9b, units = "secs")), 2), "seconds"),
   paste("  Section 9 (Enrichments):", round(as.numeric(difftime(t_end_section9, t_start_section9, units = "secs")), 2), "seconds"),
   paste("  Section 10 (Sauvegarde):", round(as.numeric(difftime(t_end_section10, t_start_section10, units = "secs")), 2), "seconds"),
   "",
