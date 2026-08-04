@@ -253,9 +253,12 @@ committed tables, or to run the agents themselves, see
 
 ## The per-gene JSON files
 
-These are the raw material of Figures 5 and 6, and the one artefact that cannot
-be regenerated. One file per gene, 21,955 of them, 4.4 GB in total. Each records
-the complete trace of what the agents saw and concluded:
+These are the raw material of Figures 5 and 6, and the one artefact that can be
+regenerated but not reproduced. The agent code is here and runnable, under
+`agentic_pipeline/stages/s1_agents/`, so producing a fresh set is a matter of
+compute; producing *this* set again is not possible, which is why the published
+one survives only by being kept. One file per gene, 21,955 of them, 4.4 GB in
+total. Each records the complete trace of what the agents saw and concluded:
 
 | Field | Contents |
 |---|---|
