@@ -12,9 +12,11 @@ run_id: run_016
 # ===========================================================================
 # Stage 1 — PEPPER LLM agents
 # ===========================================================================
-# NOT reproducible bit for bit, by construction: the agents read PubMed, whose
-# corpus grows daily, and a full re-run costs on the order of $800. The frozen
-# outputs are the reproducibility boundary; everything downstream is exact.
+# NOT reproducible bit for bit, by construction: the agents read the top 50
+# PubMed hits ranked by relevance, and that ranking shifts over time, so a re-run
+# hands them different abstracts. A full re-run also costs on the order of $800.
+# The frozen outputs are the reproducibility boundary; everything downstream is
+# exact.
 stage1_agents:
   entrypoint: agent_gene_scorer_v3.py
   created_at: "2025-12-29T22:17:22"
@@ -41,9 +43,10 @@ stage1_agents:
       - developmental
       - syndrome
       - syndromes
-    # THE reproducibility lever. Left unset in run_016, so the agents saw
-    # PubMed as of December 2025. Pin it to bound the corpus and obtain
-    # protocol-level (not bit-level) reproducibility.
+    # THE reproducibility lever, and a partial one. Left unset in run_016, so the
+    # agents saw PubMed as of December 2025. Pinning it bounds the candidate pool
+    # by date but does not pin the relevance ranking within it, so it buys
+    # protocol-level reproducibility, not bit-level.
     max_pubdate: null
     max_pubdate_recommended: "2025/12/29"
 

@@ -273,9 +273,13 @@ total. Each records the complete trace of what the agents saw and concluded:
 | `gencc_comparison` | agreement with GenCC, phenotype by phenotype |
 | `deep_analysis._raw_llm`, `timing` | verbatim model output and per-agent timings |
 
-**Why they are frozen.** The agents query PubMed, whose corpus grows daily, so
-the same gene scored a month later can legitimately get a different answer. A
-full rerun also costs roughly $800 in inference. The run behind the published
+**Why they are frozen.** The agents ask PubMed for the top 50 articles sorted by
+**relevance**, and that ranking is not a fixed function: it is retrained over
+time, and it reshuffles as new papers enter the index. The same query, for the
+same gene, therefore returns a different top 50 — the agents are shown different
+evidence and can reasonably reach a different conclusion. Sampling in the model
+adds to this, but the retrieval is the larger source of drift. A full rerun also
+costs roughly $800 in inference. The run behind the published
 figures (`run_016`) is therefore treated as the reproducibility boundary of the
 project, and protected three ways: the directory is read-only, all 22,519 files
 are checksummed in `SHA256SUMS.results`, and a verified archive sits in a
@@ -287,9 +291,11 @@ gcloud storage cp gs://llm_agents_bucket/archives/run_016/run_016_results.tar.zs
 tar -I 'zstd -d --long=27' -xf run_016_results.tar.zst      # 233 MB -> 4.4 GB
 ```
 
-Rerunning the agents is supported, but only against a new run identifier, and
-`--max-pubdate` is the only lever that makes the protocol replayable — it bounds
-the corpus, which fixes the inputs even though it cannot fix the model.
+Rerunning the agents is supported, but only against a new run identifier.
+`--max-pubdate` is the only lever available, and it is a partial one: it caps
+publication dates, so papers that appeared after the original run cannot enter
+the pool, but it has no hold over how PubMed ranks the pool it is given. It makes
+the protocol replayable, not the inputs.
 
 ---
 

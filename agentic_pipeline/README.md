@@ -21,10 +21,13 @@ with tests.
 | 5 — assembled Figure 6 | — | Pixel-identical | `b8bd321f…` |
 | 5 — assembled Figure 5 | — | Pixel-identical here, numbers exact anywhere | `ec94d7c5…` |
 
-Stage 1 is not reproducible and never will be: the agents query PubMed, whose
-corpus grows every day, and a full run costs roughly $800. That is why its
-outputs are **frozen** and treated as the reproducibility boundary of the
-project. Everything downstream of it is exact.
+Stage 1 is not reproducible and never will be. The agents take the top 50 PubMed
+hits sorted by relevance, and that ranking is neither fixed nor published: it is
+retrained over time and reshuffles as the index grows, so the same query returns
+a different 50 abstracts and the agents are handed different evidence. A full run
+also costs roughly $800. That is why its outputs are **frozen** and treated as
+the reproducibility boundary of the project. Everything downstream of it is
+exact.
 
 Both figures under `Figure_5/figures/` and `Figure_6/figures/main_figure2_new.*`
 are the pipeline's own output, so the regression tests compare a rerun against a
@@ -146,8 +149,10 @@ python3 agent_gene_scorer_v3.py --genes BRCA1 TP53 \
   --max-pubdate 2025/12/29
 ```
 
-`--max-pubdate` is the only reproducibility lever stage 1 has: it bounds the
-PubMed corpus and makes the protocol replayable, if not the numbers.
+`--max-pubdate` is the only reproducibility lever stage 1 has, and it is partial:
+it keeps papers published after the original run out of the candidate pool, but
+it has no hold over how PubMed ranks that pool. It makes the protocol replayable,
+not the retrieved set and not the numbers.
 
 ## Why Figure 5's pixels travel badly
 
