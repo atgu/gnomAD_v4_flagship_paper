@@ -109,10 +109,10 @@ and fails loudly if it is not true.
 They also pin the collation to `en_US.UTF-8`, because Figure 6's panel A orders
 its x-axis by sorting labels and one of them is `<2015`: under `C` collation that
 bucket is drawn last instead of first, which breaks the chronology without
-changing any value (CORRIGENDA item 16). Override with `PEPPER_LOCALE` if you
-need to, and expect the panel to be ordered differently. If the locale is not
-generated on the machine the drivers stop rather than proceed, since R accepts an
-unavailable locale silently.
+changing any value ([`CORRIGENDA.md`](CORRIGENDA.md) item 16). Override with
+`PEPPER_LOCALE` if you need to, and expect the panel to be ordered differently.
+If the locale is not generated on the machine the drivers stop rather than
+proceed, since R accepts an unavailable locale silently.
 
 ### Starting from the agent outputs
 
@@ -266,10 +266,3 @@ Three differences, all documented in `config/run_016.yaml`:
 - **No NCBI key by default.** The upstream version carried one in source; it
   must be treated as compromised and rotated. Without a key, PubMed remains
   usable at 3 requests/s instead of 10.
-
-One further point is not a deviation but a finding, and it matters for Figure 5:
-the published `predictions_no_go.csv` was trained on the **February** Monte
-Carlo table, while the repository ships the **March** one. Both are now
-versioned, and the consequences are measured in
-[`CORRIGENDA.md`](CORRIGENDA.md), along with the other corrections to carry
-over to the preprint.
