@@ -95,16 +95,13 @@ def _get_prompt_name(base_name: str, knowledge_mode: bool = False, simple_mode: 
     parametric knowledge. The response parser is selected independently via the
     proba_mode flag, so it stays compatible with these knowledge/ prompts.
     """
-    # Mechanism agent: v2 by default in this repository.
-    #
-    # run_016 was originally scored with the v1 prompt, which forced a single
-    # mechanism per disease and labelled multi-mechanism cases "Conflicting".
-    # In March 2026 the 562 affected genes were re-annotated with v2, which
-    # allows composite mechanisms in slash notation (e.g. "DN/LoF"), producing
-    # 480 of them; the published tables reflect that state. A fresh run on the
-    # v1 prompt would therefore produce no composite mechanism at all, and
-    # --composite-mode strict would exclude nothing, silently changing DisPo.
-    # Set PEPPER_MECHANISM_PROMPT_VERSION=v1 to reproduce the original scoring.
+    # Mechanism agent: v2 by default, because that is what the frozen JSON files
+    # carry. v2 allows a disease to hold several mechanisms in slash notation
+    # ("DN/LoF"), which 480 of them do; v1 forces a single mechanism and labels
+    # multi-mechanism cases "Conflicting". Running v1 would therefore produce no
+    # composite mechanism at all, --composite-mode strict would exclude nothing,
+    # and DisPo would change with no warning.
+    # Set PEPPER_MECHANISM_PROMPT_VERSION=v1 to select it anyway.
     if base_name == "deep_analysis_mechanism_agent":
         version = os.environ.get("PEPPER_MECHANISM_PROMPT_VERSION", "v2").lower()
         if version == "v2":

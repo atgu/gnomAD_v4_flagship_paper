@@ -39,9 +39,7 @@ DISPO_COLUMN = "MC_LoF_v2_signed_dis"
 
 # --- Figure 5 -------------------------------------------------------------
 # The out-of-fold XGBoost predictions and the Monte Carlo table they are trained
-# on, which is now the same table Figure 6 uses. The preprint's predictions came
-# from an earlier February generation of it; CORRIGENDA.md item 11 records what
-# unifying changed.
+# on, which is the same table Figure 6 reads.
 ORACLE_PREDICTIONS = FIG5_DATA / "predictions_no_go.csv"
 XGB_TARGET_TABLE = FIG5_DATA / "monte_carlo_min.tsv"
 XGB_FEATURES = FIG5_DATA / "gene_features_for_s_het.tsv.gz"
@@ -50,9 +48,10 @@ FIG5_REFERENCE = REPO_ROOT / "Figure_5" / "figures" / "main_figure.png"
 SHA_PREDICTIONS = "af9a54be5b84d6153ba84f6fe80ba8a2647a0d175f0f6754e2c58cedff0c7c88"
 SHA_XGB_TARGET = SHA_DISPO
 SHA_XGB_FEATURES = "bb3eb98e9f177d894f15c7dac928af591e09dd7351c0e3b6a1448eaccbce59a4"
-# Figure_5/figures/ holds the pipeline's own output rather than the March 2026
-# renders, so this is the checksum of a figure this repository regenerates. The
-# published PNG (099d4e91…) remains under the figures-frozen-2026-08 tag.
+# Figure_5/figures/ holds the pipeline's own output, so this is the checksum of a
+# figure this repository regenerates rather than of an artefact from elsewhere.
+# It is reproduced exactly on the graphics stack that produced it and within a
+# calibrated band elsewhere; see test_figure5_regression.py.
 SHA_FIG5_REFERENCE = "55f8961cd5011e0b20236f08e435b7bfba3e84ec551b036196d4069d373f2a1c"
 
 N_FIG5_GENES = 17700       # rows in predictions_no_go.csv

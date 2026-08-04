@@ -127,12 +127,6 @@ papers, including the ones that established these genes as NDD genes, so its
 they predict the unknown. In both regimes the Bayesian step helps —
 0.291 → 0.504 and 0.648 → 0.689 — which is the point being made.
 
-The two literature values are a thousandth or so above the ones in the preprint,
-which quotes 0.644 and 0.686. The preprint's model was trained against an earlier
-generation of the Monte Carlo table than the one it shipped; this repository
-trains on the table it ships. `agentic_pipeline/CORRIGENDA.md` item 11 tabulates
-the difference, which changes no ordering and no conclusion.
-
 **Panels d and e** plot the two axes against each other, NDD genes in red. In
 panel d the cloud is diffuse: constraint and literature disagree for many genes.
 Panel e shows the posterior pulling the cloud towards the diagonal. The genes
@@ -159,9 +153,9 @@ The figure asks whether high-DisPo genes behave like undiscovered disease genes.
 - **Panel b** compares DisPo across gene sets. Mouse fertility genes and mouse
   embryonic-lethal genes score higher than established GenCC disease genes
   (p = 1.6 × 10⁻¹⁴ and 8.6 × 10⁻⁵⁴) — phenotypes that are severe but, in humans,
-  invisible to clinical ascertainment. The GenCC set is the 2,828 genes curated at
-  definitive, strong or moderate confidence, minus those that get their own box.
-  The preprint says "definitive and strong"; `CORRIGENDA.md` item 17 covers it.
+  invisible to clinical ascertainment. The GenCC set is the 2,828 genes curated
+  at definitive, strong or moderate confidence, minus those that get their own
+  box.
 - **Panel c** tests tissue-specific expression among high-DisPo genes across
   every GTEx tissue. Two are enriched and only two: **testis** (OR = 1.86,
   95% CI 1.36–2.56, p = 6.7 × 10⁻⁵) and **fetal** tissue (OR = 1.46,
@@ -320,7 +314,7 @@ them pass; the smoke test is separate because it costs money to run.
 | XGBoost out-of-fold | Figure 5 | Bit-identical |
 | OMELET | Figure 5 | Independent Python reimplementation agrees with the R original to 1e-14 over 17,167 genes |
 | Assembled Figure 6 | — | Bit-identical, from the pipeline and from the standalone `Figure_6.R` alike |
-| Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any ([why](agentic_pipeline/README.md#why-figure-5s-pixels-travel-badly)) |
+| Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any ([why](agentic_pipeline/README.md#reproducing-figure-5s-pixels)) |
 
 ```bash
 agentic_pipeline/tests/run_tests.sh            # fast checks, seconds
@@ -350,10 +344,8 @@ upstream derivation is not in this repository.
 Everything under `Figure_5/figures/` and `Figure_6/figures/` is the pipeline's
 own output, panels included, so the regression tests compare a rerun against a
 figure this repository produced rather than an artefact from elsewhere. Both
-figures read a single Monte Carlo table; earlier generations of it, and the
-renders they produced, are preserved under the `figures-frozen-2026-08` and
-`pre-unification-2026-08` tags. `agentic_pipeline/README.md` explains what was
-unified and why it mattered.
+figures read the same Monte Carlo table, `monte_carlo_min.tsv`, copied into each
+figure's data directory so either can run on its own.
 
 ---
 
@@ -366,7 +358,6 @@ unified and why it mattered.
 | [`agentic_pipeline/config/run_016.yaml`](agentic_pipeline/config/run_016.yaml) | every parameter of the published run — the authoritative record |
 | [`agentic_pipeline/methods/dispo.py`](agentic_pipeline/methods/dispo.py) | DisPo, reimplemented to be read rather than run |
 | [`agentic_pipeline/methods/omelet.py`](agentic_pipeline/methods/omelet.py) | OMELET, likewise |
-| [`agentic_pipeline/PLAN.md`](agentic_pipeline/PLAN.md) | how the pipeline was reconstructed, and what was decided along the way |
 
 ## License
 

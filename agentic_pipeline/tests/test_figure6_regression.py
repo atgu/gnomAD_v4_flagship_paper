@@ -7,12 +7,11 @@ repository also ships Figure_6/Figure_6.R, a consolidated standalone version of
 the same analysis. Both are required to reproduce the committed PNG byte for
 byte, panels included.
 
-The second half is not redundant. The two implementations did disagree: the
-standalone script admitted only Definitive and Strong GenCC genes where the
-published panel b also admits Moderate, which moved both Wilcoxon p-values by
-four orders of magnitude while leaving panels a, c and d untouched. Nothing
-caught it until the figures were unified onto one filename. This is the test that
-would have.
+The second half is not redundant. Panel b depends on which GenCC confidence
+levels enter the comparison set, and the two scripts express that choice
+separately; disagreeing on it moves both Wilcoxon p-values by four orders of
+magnitude while leaving panels a, c and d bit-identical. Comparing assembled
+figures alone would not localise that, so the panels are compared individually.
 
     python3 test_figure6_regression.py [--workdir DIR]
 
@@ -49,8 +48,8 @@ PANELS = {
 }
 
 # Documented acceptance criterion for panel B: the median discovery score of
-# GenCC disease genes. A value near 25 is the signature of the v1 bug that
-# the _new variant fixes, so this is a genuine guard, not a tautology.
+# GenCC disease genes. A value near 25 means the v1 columns were read instead of
+# the v2 ones, so this is a genuine guard rather than a tautology.
 PANEL_B_GENCC_MEDIAN = 42.0
 PANEL_B_TOLERANCE = 1.0
 
@@ -90,8 +89,8 @@ def main() -> None:
          f"{sha256(produced)[:16]} vs {SHA_FIGURE[:16]}")
 
     # The committed panels must be the ones this figure is actually built from.
-    # They were not, before unification: they were stale copies from an earlier
-    # run, which is invisible as long as nobody compares them.
+    # Nothing else in the repository would notice if they drifted, since the
+    # assembled PNG is checked against itself, not against its parts.
     for committed, produced_name in PANELS.items():
         ref = FIG6_DIR / committed
         got = run_dir / produced_name

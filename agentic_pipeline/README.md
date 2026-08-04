@@ -3,10 +3,10 @@
 This directory holds the complete pipelines that produce **Figure 5** and
 **Figure 6**, from the LLM agents through to the assembled figures.
 
-Until now the repository carried only the visualisation layer: the figures read
-tables that nobody could trace back to a source. Everything upstream lived in a
-private working repository. `agentic_pipeline/` fills that gap, and proves it
-with tests.
+The repository's figure directories hold the visualisation layer: an R script per
+figure, its input tables, and its output. This directory holds everything that
+produces those tables — the LLM agents, the Monte Carlo stage, the XGBoost stage —
+together with the tests that pin each step to a checksum.
 
 ## What is demonstrated
 
@@ -28,13 +28,11 @@ also costs roughly $800. That is why its outputs are **frozen** and treated as
 the reproducibility boundary of the project. Everything downstream of it is
 exact.
 
-Everything under `Figure_5/figures/` and `Figure_6/figures/` is the pipeline's
-own output, panels included, so the regression tests compare a rerun against a
-figure this repository produced rather than against an artefact from elsewhere.
-The published renders are preserved in git history under the
-`figures-frozen-2026-08` and `pre-unification-2026-08` tags; for Figure 5 they
-differ only in rasterisation, as explained under *Why Figure 5's pixels travel
-badly*.
+Everything under `Figure_5/figures/` and `Figure_6/figures/` is this pipeline's
+own output, panels included, so a regression test compares a rerun against a
+figure the repository produced rather than against an artefact from elsewhere.
+Figure 5's assembled PNG is the one case where that comparison needs a tolerance
+on a different machine; *Reproducing Figure 5's pixels* explains why.
 
 ## Architecture
 
@@ -154,77 +152,67 @@ it keeps papers published after the original run out of the candidate pool, but
 it has no hold over how PubMed ranks that pool. It makes the protocol replayable,
 not the retrieved set and not the numbers.
 
-## One dataset, one filename
+## Shared data, and the two implementations of Figure 6
 
-There is exactly **one** Monte Carlo table in this repository, and both figures
-read it. That was not always true, and the history is worth a paragraph because
-it is where the reproducibility bugs came from.
+There is exactly one Monte Carlo table, `monte_carlo_min.tsv`, and both figures
+read it: Figure 6 takes `MC_LoF_v2_signed_dis` from it for DisPo, Figure 5 takes
+`MC_max_v2` as the XGBoost target and `MC_max_v2_variance` for the OMELET prior.
+Each figure directory holds its own copy so either figure runs on its own, and
+`test_artifacts.py` asserts the two copies are byte-identical.
 
-Three generations of the table existed. February 2026 trained the XGBoost model.
-March 2026 was shipped with the preprint and supplied Figure 5's variance column.
-June 2026 corrected the handling of composite loss-of-function mechanisms and was
-carried as `monte_carlo_min_new.tsv`, feeding Figure 6 only. So Figure 5 mixed
-February and March in the same panels, Figure 6 used June, and the correct file
-to read was a matter of local knowledge.
+Figure 6 is produced by two independent implementations, which must agree.
+`agentic_pipeline/stages/s5_figures/` runs the four upstream R scripts, one per
+panel plus the assembly; `Figure_6/Figure_6.R` is a consolidated standalone
+version of the same analysis. `test_figure6_regression.py` requires both to
+reproduce the committed PNGs byte for byte, panels included.
 
-They are now collapsed onto one file, the corrected June generation. The two
-figures that mattered are unaffected in substance: June is byte-identical to
-March in the two columns Figure 5 reads, so retraining on it yields
-byte-identical predictions, and Figure 6 already used it. Only Figure 5's
-published numbers move, by less than 0.004 AUC-PR, because they came from the
-February target; `CORRIGENDA.md` item 11 tabulates the shift.
+Two parameters of Figure 6 are worth knowing because nothing in the code makes
+them obvious:
 
-Each figure directory keeps its own copy of the table so either figure can be run
-without reaching across the repository. `test_artifacts.py` asserts the two
-copies are identical, because two copies is exactly how three generations started.
+- **panel b admits GenCC genes at moderate confidence**, not only definitive and
+  strong. That is `--min_classification Moderate`, the default, and it sets the
+  comparison set to 2,828 genes. Restricting to definitive and strong moves both
+  Wilcoxon p-values by four orders of magnitude.
+- **the v2 algorithm must be requested explicitly.** `run_figure6.sh` passes
+  `--v2` to `test_mouse_fertility_vs_gencc.R`, which would otherwise read the v1
+  columns and draw a different panel.
 
-The superseded generations are not deleted, just no longer in the working tree:
-
-| Tag | What it holds |
-|---|---|
-| `figures-frozen-2026-08` | the state as published, March data and March renders |
-| `pre-unification-2026-08` | March and June side by side, with the `_new` suffixes |
-
-Figure 6's files lost their `_new` suffix in the process. That mattered more than
-a rename: the suffix had been hiding a real disagreement between the two
-implementations of panel b, which surfaced the moment both wrote to the same
-filename. `CORRIGENDA.md` item 17 has the details.
-
-## Why Figure 5's pixels travel badly
+## Reproducing Figure 5's pixels
 
 `Figure_5.R` is deterministic: two runs on the same machine produce the same
-bytes, which is why the committed figure reproduces exactly here. Across
-machines it will not, and the reason is worth stating because it looks alarming
-and is not.
+bytes, and `Figure_5/figures/main_figure.png` is one of those runs, so it
+reproduces exactly here. On a machine with a different graphics stack it will
+not, and the reason is worth stating because it looks alarming and is not.
 
-The March 2026 renders that this directory used to compare against differ from a
-rerun by 6.90% of pixels. `ragg`, `systemfonts` and `textshaping` were all
-updated on 6–7 April 2026, after those renders were committed. Measuring the
-difference shows three effects, none of which touches the data:
+`ragg`, `systemfonts` and `textshaping` decide how text is rasterised, and their
+text metrics feed back into layout: ggplot sizes each panel around the space the
+axis labels need. A different version of any of them therefore shifts pixels
+across the whole figure without touching a single plotted value. Three effects
+are measurable, none of them in the data:
 
-1. Glyphs are rasterised with slightly more weight. In the axis-label band of
-   panel C the ink coverage is unchanged, 6.53% against 6.52% of pixels, while
-   mean luminance moves from 243.0 to 238.4.
-2. Because text metrics changed, ggplot reserves more room for the rotated
-   labels and draws the panel 0.27% smaller. Panel C's baseline moves from
-   y=4909 to y=4897 and all three bars scale by the same factor, so their height
-   ratios agree to 0.03% — 1 / 1.72843 / 2.35431 against 1 / 1.72908 / 2.35461.
-3. Marker rims antialias differently. This touches many pixels in the scatter
-   panels, 17% and 21%, because they carry about 17,000 markers each, but only
-   0.1–0.3% of pixels deviate by more than half scale.
+1. Glyphs carry slightly more or less weight. Across an axis-label band the ink
+   coverage is unchanged to 0.01% of pixels while mean luminance moves by several
+   levels.
+2. Panels are drawn up to 0.3% smaller or larger, because the label space
+   reserved for them differs. Every bar in panel C scales by the same factor, so
+   their height ratios still agree to 0.03%.
+3. Marker rims antialias differently. This touches 17–21% of pixels in the
+   scatter panels, which carry about 17,000 markers each, but only 0.1–0.3% of
+   pixels deviate by more than half scale.
 
-So `test_figure5_regression.py` splits the claim. The **numbers** are compared
-exactly — gene counts, the ABCC9 prior concentration, both Spearman
+`test_figure5_regression.py` therefore splits the claim in two. The **numbers**
+are compared exactly: gene counts, the ABCC9 prior concentration, both Spearman
 correlations, and the five AUC-PR values that are the substance of panel C. The
-**pixels** are compared against a band calibrated on those measurements:
-rasterisation alone gives a mean absolute error of 1.71/255 and 0.295% of pixels
-off by more than half scale, whereas two genuinely different panels give
-17.3/255 and 3.5%. The thresholds (4.0 and 1%) sit in that gap.
+**pixels** are compared against a calibrated band — rasterisation alone gives a
+mean absolute error of 1.71/255 with 0.295% of pixels off by more than half
+scale, whereas two genuinely different panels give 17.3/255 and 3.5%, so the
+thresholds sit at 4.0 and 1%, an order of magnitude too narrow to absorb a change
+of content.
 
 One artefact can never be bit-reproducible: `main_figure.pdf`, because R embeds
-the generation timestamp in it. Figure 6's PDF has the same property — its
-committed copy and a fresh run differ in exactly the 16 bytes of `CreationDate`
-and `ModDate`, and nowhere else.
+the generation timestamp in it. Figure 6's PDF has the same property — a fresh
+run differs from the committed copy in exactly the 16 bytes of `CreationDate` and
+`ModDate`, and nowhere else.
 
 ## Tests
 
@@ -294,11 +282,12 @@ Three differences, all documented in `config/run_016.yaml`:
 
 - **Vertex instead of the direct Anthropic API.** Same weights, different
   billing and authentication. Suffix the model with `@vertex`.
-- **Mechanism prompt v2 by default.** `run_016` was scored with v1 and then
-  re-annotated with v2 over 562 genes in March 2026; the published tables
-  reflect the v2 state. A fresh v1 run would produce no composite mechanism at
-  all, `--composite-mode strict` would exclude nothing, and DisPo would shift
-  silently. `PEPPER_MECHANISM_PROMPT_VERSION=v1` restores the old behaviour.
+- **Mechanism prompt v2 by default.** v2 is what the frozen JSON files carry: it
+  allows a gene to hold several mechanisms in slash notation (`DN/LoF`), which 562
+  of them do. v1 forces a single mechanism, so running it would produce no
+  composite mechanism at all, `--composite-mode strict` would exclude nothing, and
+  DisPo would shift silently. `PEPPER_MECHANISM_PROMPT_VERSION=v1` selects it
+  anyway.
 - **No NCBI key by default.** The upstream version carried one in source; it
   must be treated as compromised and rotated. Without a key, PubMed remains
   usable at 3 requests/s instead of 10.

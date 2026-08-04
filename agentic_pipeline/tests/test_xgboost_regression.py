@@ -66,9 +66,8 @@ def main() -> None:
         c.equal("genes scored", rows, N_FIG5_GENES)
 
         # The target the model learned must be the Monte Carlo table this
-        # repository ships. Feeding a different generation of that table is what
-        # made the reproduction fail before unification, so provenance is
-        # asserted rather than left as a comment.
+        # repository ships. Feeding it any other table silently changes every
+        # AUC-PR on panel C, so provenance is asserted rather than assumed.
         try:
             import pandas as pd
 

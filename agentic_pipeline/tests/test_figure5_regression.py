@@ -2,12 +2,11 @@
 """T8 — Figure 5 regression.
 
 Figure_5/figures/ holds this pipeline's own output, so on the machine that
-produced it the figure reproduces bit for bit and the test says so. Elsewhere it
-will not: the March 2026 renders that used to sit there differed from a rerun by
-6.9% of pixels purely because ragg, systemfonts and textshaping were updated in
-early April and now antialias differently, without a single plotted point
-moving. Any machine with a different graphics stack sees the same kind of
-difference.
+produced it the figure reproduces bit for bit and the test says so. On a machine
+whose graphics stack differs it will not: ragg, systemfonts and textshaping decide
+how text is rasterised, and their metrics feed back into ggplot's layout, so a
+different version of any of them shifts pixels across the whole figure without
+moving a single plotted point.
 
 So this test splits the claim in two:
 
@@ -36,10 +35,9 @@ from _context import (Checks, FIG5_REFERENCE, N_FIG5_COMPLETE,  # noqa: E402
 RUN_FIGURE5 = PIPELINE / "stages" / "s5_figures" / "run_figure5.sh"
 
 # Calibration, measured rather than guessed. The largest rasterisation-only
-# difference on record here is between the March 2026 renders and a rerun after
-# the April graphics update: mean absolute error 1.71/255, with 0.295% of pixels
-# off by more than 128. Two genuinely different panels give 17.3/255 and 3.5%.
-# The thresholds sit in the gap.
+# difference on record here is a mean absolute error of 1.71/255 with 0.295% of
+# pixels off by more than 128, against 17.3/255 and 3.5% for two genuinely
+# different panels. The thresholds sit in the gap.
 MAX_MEAN_ABS_ERROR = 4.0
 MAX_FRACTION_STRONG = 0.01
 STRONG_DELTA = 128

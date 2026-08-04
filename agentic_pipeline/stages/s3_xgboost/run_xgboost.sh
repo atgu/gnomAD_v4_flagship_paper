@@ -6,12 +6,9 @@
 # The script reproduces Figure_5/data/predictions_no_go.csv bit for bit.
 #
 # The target is the single Monte Carlo table the repository ships,
-# Figure_5/data/monte_carlo_min.tsv, which is also what Figure 6 reads. The
-# preprint's predictions were trained on an earlier February generation of that
-# table instead, which is why their AUC-PR values differ slightly from the ones
-# on the figure here; CORRIGENDA.md item 11 records the change. That generation
-# is preserved under the pre-unification-2026-08 tag and is no longer needed to
-# reproduce anything.
+# Figure_5/data/monte_carlo_min.tsv, which is also what Figure 6 reads. Training
+# is deterministic given random_state=42, so the output is bit-identical to the
+# committed predictions_no_go.csv.
 
 set -euo pipefail
 

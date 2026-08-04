@@ -71,7 +71,7 @@ def main() -> None:
                     digest, _, name = line.strip().partition("  ")
                     if name:
                         expected[Path(name).name] = digest
-            # 21,955 gene JSON, 562 .bak backups kept from the March 2026
+            # 21,955 gene JSON, 562 .bak backups kept from the v2
             # mechanism re-annotation, plus two ancillary tables.
             c.equal("entries in the manifest", len(expected), 22519)
             c.equal("per-gene JSON files on disk",

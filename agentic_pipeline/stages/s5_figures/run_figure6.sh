@@ -28,10 +28,9 @@ source "$SCRIPT_DIR/pin_locale.sh"
 DATA="$REPO_ROOT/Figure_6/data"
 RUN=run_016
 
-# The upstream scripts used a filename suffix to switch between the original and
-# the corrected DisPo tables. Only the corrected one survives here, so the suffix
-# is empty. It is kept as a variable because the R scripts still accept it, and
-# because an empty value has a consequence: see the --v2 note below.
+# The R scripts accept a filename suffix, a hook for running against an alternate
+# DisPo table. There is one table here, so it is empty. Kept as a variable because
+# an empty value has a consequence: see the --v2 note below.
 SUFFIX=""
 
 WORK="${1:-$REPO_ROOT/agentic_pipeline/work/figure6}"
@@ -89,11 +88,10 @@ step() {  # step <label> <script.R> [extra args...]
   echo "    ok"
 }
 
-# Panel B needs --v2 spelled out. Its script infers the algorithm version from
-# the suffix being non-empty, a shortcut that was harmless while the corrected
-# table was the suffixed one and is a trap now that the suffix is empty: without
-# the flag it would silently read the v1 columns and draw a different panel.
-# The other three scripts either hard-code the v2 column or default to it.
+# Panel B needs --v2 spelled out. Its script infers the algorithm version from the
+# suffix being non-empty, so with an empty suffix and no flag it reads the v1
+# columns and draws a different panel, without warning. The other three scripts
+# either hard-code the v2 column or default to it.
 step "Panel A — discovery score by year"   plot_discovery_score_by_year.R
 step "Panel B — mouse fertility vs GenCC"  test_mouse_fertility_vs_gencc.R --v2
 step "Panels C/D — fetal expression"       unified_fetal_analysis.R
