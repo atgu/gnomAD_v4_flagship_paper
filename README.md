@@ -366,14 +366,6 @@ renders are preserved under the `figures-frozen-2026-08` tag.
 | [`agentic_pipeline/methods/omelet.py`](agentic_pipeline/methods/omelet.py) | OMELET, likewise |
 | [`agentic_pipeline/PLAN.md`](agentic_pipeline/PLAN.md) | how the pipeline was reconstructed, and what was decided along the way |
 
-Two things a reader should know before quoting numbers from these figures. The
-published `predictions_no_go.csv` behind Figure 5 was trained on the February
-2026 Monte Carlo table while the repository also ships the March one, and both
-are now versioned so the discrepancy is measurable rather than invisible. And
-`monte_carlo_min.tsv` predates a correction to how composite loss-of-function
-mechanisms are handled; Figure 6 here is the corrected `_new` variant.
-CORRIGENDA items 11 and 1 give the numbers.
-
 ## License
 
 See [LICENSE](LICENSE).
