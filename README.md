@@ -90,15 +90,14 @@ says nothing about what the gene does clinically. The clinical literature says a
 great deal about that, but not in a form a model can use. Figure 5 extracts it.
 
 **PEPPER** is a chain of LLM agents (`agentic_pipeline/stages/s1_agents/`). For
-each of 21,955 genes it searches PubMed, retrieves up to 50 abstracts, and makes
-seven agent calls over them (**panel a**). A disease agent (A1) identifies the
+each of 21,955 genes it searches PubMed, retrieves up to 50 abstracts, and runs
+five agents over them (**panel a**). A disease agent (A1) identifies the
 phenotypes; penetrance (A2), inheritance (A3) and severity/onset (A4) agents
-score each phenotype on a five-level scale; a mechanism agent (A5) classifies
-the mode of action; a pathogenicity agent and a summary agent close the chain,
-producing a composite level from 1 (lethal or profoundly disabling) to 7 (no
-phenotype found in the literature). A Monte Carlo over the per-axis
-distributions — 3,000 draws per gene — turns those levels into an expected score
-and, crucially, **a variance**.
+score each phenotype on a five-level scale; a mechanism agent (A5) classifies the
+mode of action. A Monte Carlo over those per-axis distributions — 3,000 draws per
+gene — combines them into a composite level from 1 (lethal or profoundly
+disabling) to 7 (no phenotype found in the literature), and returns both its
+expectation and, crucially, **a variance**.
 
 **OMELET** combines the two signals in a Bayesian framework. The PEPPER score
 becomes a **Beta prior** on the fraction of loss-of-function variation a gene
@@ -178,7 +177,7 @@ flowchart TD
     GN --> LM["LOEUF-MIS<br/>pLoF + damaging missense<br/>constraint"]
     LM --> F4["Figure 4<br/>constraint metric<br/>AUPRC 0.178"]
 
-    LIT --> AG["PEPPER — 7 LLM agents per gene<br/>Claude Haiku via Vertex<br/>disease · penetrance · inheritance<br/>severity · mechanism · summary"]
+    LIT --> AG["PEPPER — 5 LLM agents per gene<br/>Claude Haiku via Vertex<br/>disease · penetrance · inheritance<br/>severity/onset · mechanism"]
     GC --> AG
     AG --> JS["21,955 per-gene JSON<br/>4.4 GB · frozen · archived on GCS"]
 
