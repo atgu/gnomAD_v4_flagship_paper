@@ -40,7 +40,7 @@ flowchart TD
     subgraph S1["Stage 1 — PEPPER agents (not reproducible, ~$800)"]
         PM[PubMed E-utilities] --> AG
         GC[(GenCC)] --> AG
-        AG["agent_gene_scorer_v3.py<br/>Claude Haiku through Vertex<br/>7 agents per gene"]
+        AG["agent_gene_scorer_v3.py<br/>Claude Haiku through Vertex<br/>5 scoring agents per gene"]
         AG --> JSON["21,955 per-gene JSON<br/>4.4 GB — archived on GCS"]
     end
 
