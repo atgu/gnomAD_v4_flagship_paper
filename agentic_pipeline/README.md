@@ -189,7 +189,7 @@ and `ModDate`, and nowhere else.
 
 ```bash
 agentic_pipeline/tests/run_tests.sh          # a few seconds
-agentic_pipeline/tests/run_tests.sh --full   # + the four regressions (~7 min)
+agentic_pipeline/tests/run_tests.sh --full   # + the four regressions (~6 min)
 agentic_pipeline/tests/run_tests.sh --smoke  # + 5 genes through Vertex (billed)
 ```
 
