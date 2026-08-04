@@ -7,8 +7,11 @@ how the discrepancy was established.
 
 Items 1 to 4 change values or figures. Items 5 to 10 fill gaps that currently
 prevent a third party from reproducing Figure 6, and items 11 to 13 do the same
-for Figure 5. Items 14 and 15 do not concern the text but must be dealt with
-before the code is published.
+for Figure 5. Items 14 to 17 do not concern the argument of the paper but must be
+dealt with before the code is published.
+
+Item 17 is the one to read if you only read one: the caption of Figure 6b
+describes a different gene set from the one the panel is drawn from.
 
 The headline numbers of both figures reproduce; see *What was checked and turns
 out to be correct* at the end, which is the part worth reading first.
@@ -17,15 +20,19 @@ out to be correct* at the end, which is the part worth reading first.
 
 ## 1. Replace Figure 6 with the corrected variant
 
-**Preprint**: the current Figure 6 is produced from `monte_carlo_min.tsv`.
+**Preprint**: the current Figure 6 is produced from the March generation of
+`monte_carlo_min.tsv`.
 
-**Correction**: replace it with the `_new` variant, which fixes the handling of
-composite mechanisms (see item 3). The number of genes carrying a DisPo goes
-from **18,092 to 18,124**, and the panel A subset from **5,418 to 5,428**.
+**Correction**: replace it with the corrected June generation, which fixes the
+handling of composite mechanisms (see item 3). The number of genes carrying a
+DisPo goes from **18,092 to 18,124**, and the panel A subset from **5,418 to
+5,428**.
 
-Both files are now in the repository
-(`Figure_6/data/monte_carlo_min_new.tsv`), and the figure regenerates through
-`agentic_pipeline/stages/s5_figures/run_figure6.sh`.
+The corrected table is the only one the repository now ships, as
+`Figure_6/data/monte_carlo_min.tsv`, and the figure regenerates from it through
+`agentic_pipeline/stages/s5_figures/run_figure6.sh`. It carried a `_new` suffix
+while both generations coexisted; the March one is preserved under the
+`pre-unification-2026-08` tag.
 
 ## 2. The panel A gene count of 17,112 is wrong
 
@@ -37,11 +44,14 @@ Both files are now in the repository
 **Finding**: that number matches neither version of the data the figure was drawn
 from. It is the count from a *third*, earlier generation of the table.
 
-| Version | Genes with a valid DisPo | Dated GenCC intersection (plotted) |
+| Generation | Genes with a valid DisPo | Dated GenCC intersection (plotted) |
 |---|---|---|
-| February (`monte_carlo_min_pre_divisor.tsv`) | 17,112 | not plotted |
-| Published (`monte_carlo_min.tsv`) | 18,092 | 5,418 |
-| Corrected (`_new`) | **18,124** | **5,428** |
+| February 2026 | 17,112 | not plotted |
+| March 2026, the one the preprint figure was drawn from | 18,092 | 5,418 |
+| June 2026, corrected, the one shipped here | **18,124** | **5,428** |
+
+Only the June generation is in the repository; the other two are reachable
+through the `pre-unification-2026-08` and `figures-frozen-2026-08` tags.
 
 17,112 is exactly what the February table yields on `MC_LoF_v2_signed_dis`, and on
 `MC_LoF_signed_dis` too. So the count is not an arithmetic slip: it was carried
@@ -155,18 +165,23 @@ a verbatim copy of `MC_max_v2`, which makes the mismatch measurable:
 
 | Candidate table | Dated | `true_value` matches |
 |---|---|---|
-| `monte_carlo_min.tsv` (published) | 16 March | 41.4% of genes |
+| `monte_carlo_min.tsv` as published | 16 March | 41.4% of genes |
 | `monte_carlo_min_backup_nodivisor.tsv` | 22 February | **100.0%** |
 
-So Figure 5 reads the February target through the predictions and the March
-variance through `monte_carlo_min.tsv`, in the same panels. The February table
-is now versioned as `Figure_5/data/monte_carlo_min_pre_divisor.tsv`, which is
-what makes the stage 3 reproduction bit-identical.
+So the published Figure 5 reads the February target through the predictions and
+the March variance through `monte_carlo_min.tsv`, in the same panels.
 
-**Consequence, measured** by retraining stage 3 on the March table and rerunning
-the panel C computation through the published R code:
+**Resolution**: the repository now trains on the single Monte Carlo table it
+ships, which is the corrected June generation of item 1. That generation is
+byte-identical to the March one in the two columns Figure 5 reads (`MC_max_v2`
+and `MC_max_v2_variance`), and retraining on either produces byte-identical
+predictions — so "consistent" below is one number, not two. Figure 5 has been
+redrawn accordingly and `Figure_5/figures/` holds the redrawn version.
 
-| AUC-PR | Published (February) | Consistent (March) | Change |
+**Consequence, measured** by retraining stage 3 and rerunning the panel C
+computation through the published R code:
+
+| AUC-PR | Published (February target) | Consistent (shipped table) | Change |
 |---|---|---|---|
 | LOEUF-MIS | 0.291477 | 0.291477 | 0 |
 | PEPPER_XGB | 0.343785 | 0.343549 | −0.000236 |
@@ -174,11 +189,16 @@ the panel C computation through the published R code:
 | OMELET_XGB | 0.503646 | 0.503608 | −0.000038 |
 | OMELET_LLM | 0.685914 | 0.688992 | +0.003078 |
 
-**Correction**: no conclusion changes — every ordering holds and the largest
-move is under 0.004 AUC-PR — so the figure does not need redrawing. But the
-methods should state which table the model was trained on, since a reader who
-uses the shipped `monte_carlo_min.tsv` will not reproduce the published
-predictions and has no way to discover why.
+Two further numbers on the figure move with them: the panel D Spearman
+correlation from 0.3047 to 0.3054, the panel E one from 0.4899 to 0.4889, and the
+ABCC9 prior concentration drawn in panel B from 128.6 to 126.3.
+
+**Correction**: no conclusion changes — every ordering holds, the largest AUC-PR
+move is under 0.004, and the Bayesian step still raises the correlation with the
+population signal. Update the five AUC-PR values and the two correlations quoted
+for Figure 5, and state which table the model was trained on. A reader who used
+the shipped table could not otherwise reproduce the published predictions, nor
+discover why.
 
 ## 12. The cross-validation seed is not stated
 
@@ -289,6 +309,54 @@ that, `agentic_pipeline/stages/s5_figures/pin_locale.sh` pins the collation for
 both figures and refuses to run when the locale is unavailable, since R accepts
 an ungenerated locale silently and would otherwise emit the reordered panel with
 no warning.
+
+---
+
+## 17. Figure 6b is drawn from a wider GenCC set than the text describes
+
+**Preprint**, describing the comparison sets of Figure 6b:
+
+> disease-associated genes curated in GenCC (definitive and strong
+> associations)⁴⁵, mouse embryonic lethal genes⁴⁸, and mouse infertility
+> genes⁴⁸
+
+**Code**: the panel actually admits a third confidence level, Moderate. The
+pipeline script defaults to `--min_classification Moderate`, and that default is
+what produced the published panel:
+
+| GenCC filter | Genes in the set | Genes in the panel's GenCC box |
+|---|---|---|
+| Definitive + Strong, as the text says | 3,980 | 2,616 |
+| Definitive + Strong + Moderate, as drawn | **4,311** | **2,828** |
+
+The second column is the set after removing the fertility-only genes and the
+mouse embryonic lethal genes, which get their own box, and keeping those with a
+DisPo value.
+
+**Established by** regenerating the figure both ways. With Moderate included,
+the assembled PNG is byte-identical to the published one; without it, both
+Wilcoxon p-values move by roughly four orders of magnitude:
+
+| Comparison | As drawn (with Moderate) | Text's set (without) |
+|---|---|---|
+| Mouse fertility > GenCC | 1.59 × 10⁻¹⁴ | 2.48 × 10⁻¹⁶ |
+| Mouse embryonic lethal > GenCC | 8.55 × 10⁻⁵⁴ | 6.71 × 10⁻⁵⁸ |
+
+The direction and the significance of both comparisons survive either choice, so
+the claim of the panel holds. But the quartiles of the GenCC box shift visibly,
+and the caption currently describes a set the reader cannot rebuild.
+
+This also explains a discrepancy inside the repository. `Figure_6/Figure_6.R`,
+the standalone script published alongside the figure, followed the text and set
+`MIN_CLASSIFICATION <- "Strong"`, so it did not reproduce its own figure. Nothing
+detected it while the corrected figure sat under a separate `_new` filename. It
+now reads `"Moderate"`, agrees with the pipeline byte for byte on all four panels
+and on the assembly, and `test_figure6_regression.py` checks both implementations
+against the committed PNGs.
+
+**Correction**: state "definitive, strong and moderate" in the main text, or
+redraw the panel from the narrower set. The first is preferable, since the
+published figure is the one under review.
 
 ---
 

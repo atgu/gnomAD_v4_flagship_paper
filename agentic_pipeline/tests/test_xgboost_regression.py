@@ -26,7 +26,7 @@ def main() -> None:
 
     for label, path, want in [
         ("published predictions", ORACLE_PREDICTIONS, SHA_PREDICTIONS),
-        ("February target table", XGB_TARGET_TABLE, SHA_XGB_TARGET),
+        ("target table", XGB_TARGET_TABLE, SHA_XGB_TARGET),
         ("feature matrix", XGB_FEATURES, SHA_XGB_FEATURES),
     ]:
         if not path.exists():
@@ -65,19 +65,19 @@ def main() -> None:
             rows = sum(1 for _ in fh) - 1
         c.equal("genes scored", rows, N_FIG5_GENES)
 
-        # The target the model learned must be the February table, not the
-        # March one the repository ships as monte_carlo_min.tsv. Getting this
-        # wrong is what makes the reproduction fail, so it is asserted rather
-        # than left as a comment.
+        # The target the model learned must be the Monte Carlo table this
+        # repository ships. Feeding a different generation of that table is what
+        # made the reproduction fail before unification, so provenance is
+        # asserted rather than left as a comment.
         try:
             import pandas as pd
 
             pred = pd.read_csv(produced, usecols=["gene_symbol", "true_value"])
-            feb = pd.read_csv(XGB_TARGET_TABLE, sep="\t",
-                              usecols=["gene_symbol", "MC_max_v2"])
-            merged = pred.merge(feb, on="gene_symbol")
+            target = pd.read_csv(XGB_TARGET_TABLE, sep="\t",
+                                 usecols=["gene_symbol", "MC_max_v2"])
+            merged = pred.merge(target, on="gene_symbol")
             exact = float((merged.true_value == merged.MC_max_v2).mean())
-            c.ok("the target matches the February table exactly",
+            c.ok("the target matches the shipped table exactly",
                  exact == 1.0, f"{100 * exact:.1f}% of {len(merged)} genes")
         except ImportError:
             c.skip("target provenance", "pandas missing")

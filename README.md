@@ -115,17 +115,23 @@ purple, gnomAD likelihood in orange, posterior in green.
 | LOEUF-MIS alone | 0.291 | no |
 | PEPPER<sub>XGB</sub> | 0.344 | no — XGBoost on gene features |
 | OMELET<sub>XGB</sub> | **0.504** | no |
-| PEPPER<sub>LLM</sub> | 0.644 | yes |
-| OMELET<sub>LLM</sub> | **0.686** | yes |
+| PEPPER<sub>LLM</sub> | 0.648 | yes |
+| OMELET<sub>LLM</sub> | **0.689** | yes |
 
 The dashed line in the panel separates the two regimes, and the distinction
 matters when reading the numbers. The left three are **prediction**: nothing
 gene-specific from the literature enters, so the comparison is fair against
 LOEUF-MIS. The right two are **curation**: PEPPER<sub>LLM</sub> has read the
 papers, including the ones that established these genes as NDD genes, so its
-0.644 measures how well the agents extract what is already known, not how well
+0.648 measures how well the agents extract what is already known, not how well
 they predict the unknown. In both regimes the Bayesian step helps —
-0.291 → 0.504 and 0.644 → 0.686 — which is the point being made.
+0.291 → 0.504 and 0.648 → 0.689 — which is the point being made.
+
+The two literature values are a thousandth or so above the ones in the preprint,
+which quotes 0.644 and 0.686. The preprint's model was trained against an earlier
+generation of the Monte Carlo table than the one it shipped; this repository
+trains on the table it ships. `agentic_pipeline/CORRIGENDA.md` item 11 tabulates
+the difference, which changes no ordering and no conclusion.
 
 **Panels d and e** plot the two axes against each other, NDD genes in red. In
 panel d the cloud is diffuse: constraint and literature disagree for many genes.
@@ -134,7 +140,7 @@ that stay far from it are what Figure 6 is about.
 
 ### Figure 6 — mining the disagreement (DisPo)
 
-<img src="Figure_6/figures/main_figure2_new.png" width="720">
+<img src="Figure_6/figures/main_figure2.png" width="720">
 
 **DisPo** (discovery potential) uses the same two ingredients as OMELET for the
 opposite purpose. OMELET multiplies prior and likelihood because agreement
@@ -153,7 +159,9 @@ The figure asks whether high-DisPo genes behave like undiscovered disease genes.
 - **Panel b** compares DisPo across gene sets. Mouse fertility genes and mouse
   embryonic-lethal genes score higher than established GenCC disease genes
   (p = 1.6 × 10⁻¹⁴ and 8.6 × 10⁻⁵⁴) — phenotypes that are severe but, in humans,
-  invisible to clinical ascertainment.
+  invisible to clinical ascertainment. The GenCC set is the 2,828 genes curated at
+  definitive, strong or moderate confidence, minus those that get their own box.
+  The preprint says "definitive and strong"; `CORRIGENDA.md` item 17 covers it.
 - **Panel c** tests tissue-specific expression among high-DisPo genes across
   every GTEx tissue. Two are enriched and only two: **testis** (OR = 1.86,
   95% CI 1.36–2.56, p = 6.7 × 10⁻⁵) and **fetal** tissue (OR = 1.46,
@@ -188,7 +196,7 @@ flowchart TD
     MC --> OM["OMELET<br/>Beta prior x Poisson likelihood<br/>posterior quantile, grid 50"]
     XG --> OM
     LM --> OM
-    OM --> F5["Figure 5<br/>constraint + literature<br/>AUPRC 0.291 to 0.686"]
+    OM --> F5["Figure 5<br/>constraint + literature<br/>AUPRC 0.291 to 0.689"]
 
     MC --> DP["DisPo<br/>standardised gap between<br/>the same two means, grid 501"]
     LM --> DP
@@ -311,7 +319,7 @@ them pass; the smoke test is separate because it costs money to run.
 | Fetal expression merge | Figure 6 | Bit-identical |
 | XGBoost out-of-fold | Figure 5 | Bit-identical |
 | OMELET | Figure 5 | Independent Python reimplementation agrees with the R original to 1e-14 over 17,167 genes |
-| Assembled Figure 6 | — | Bit-identical |
+| Assembled Figure 6 | — | Bit-identical, from the pipeline and from the standalone `Figure_6.R` alike |
 | Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any ([why](agentic_pipeline/README.md#why-figure-5s-pixels-travel-badly)) |
 
 ```bash
@@ -332,17 +340,20 @@ upstream derivation is not in this repository.
 .
 ├── Figure_4/                 constraint metric — standalone R script + data
 ├── Figure_5/                 PEPPER / OMELET — figure script, data, figures
-├── Figure_6/                 DisPo — data and figures (main_figure2_new is current)
+├── Figure_6/                 DisPo — data and figures
 ├── Supplementary Datasets/   datasets 1–3; dataset 4 is 1.24 GB and hosted outside
 ├── agentic_pipeline/         the pipelines behind Figures 5 and 6, and the tests
-├── SHA256SUMS                84 checksummed files: every data table and figure
+├── SHA256SUMS                78 checksummed files: every data table and figure
 └── SHA256SUMS.external       checksums for supplementary dataset 4
 ```
 
-`Figure_5/figures/` and `Figure_6/figures/main_figure2_new.*` hold the
-pipeline's own output, so the regression tests compare a rerun against a figure
-this repository produced rather than an artefact from elsewhere. The March 2026
-renders are preserved under the `figures-frozen-2026-08` tag.
+Everything under `Figure_5/figures/` and `Figure_6/figures/` is the pipeline's
+own output, panels included, so the regression tests compare a rerun against a
+figure this repository produced rather than an artefact from elsewhere. Both
+figures read a single Monte Carlo table; earlier generations of it, and the
+renders they produced, are preserved under the `figures-frozen-2026-08` and
+`pre-unification-2026-08` tags. `agentic_pipeline/README.md` explains what was
+unified and why it mattered.
 
 ---
 
@@ -351,7 +362,7 @@ renders are preserved under the `figures-frozen-2026-08` tag.
 | Document | What it covers |
 |---|---|
 | [`agentic_pipeline/README.md`](agentic_pipeline/README.md) | the pipelines in detail: stages, parameters, tests, reproducibility |
-| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 16 corrections to carry over to the preprint, each measured |
+| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 17 corrections to carry over to the preprint, each measured |
 | [`agentic_pipeline/config/run_016.yaml`](agentic_pipeline/config/run_016.yaml) | every parameter of the published run — the authoritative record |
 | [`agentic_pipeline/methods/dispo.py`](agentic_pipeline/methods/dispo.py) | DisPo, reimplemented to be read rather than run |
 | [`agentic_pipeline/methods/omelet.py`](agentic_pipeline/methods/omelet.py) | OMELET, likewise |

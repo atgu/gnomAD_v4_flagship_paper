@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Regenerate Figure 6 (the "_new" variant) from the reference data in this
-# repository.
+# Regenerate Figure 6 from the reference data in this repository.
 #
 #   ./run_figure6.sh [WORKDIR]
 #
@@ -28,7 +27,12 @@ source "$SCRIPT_DIR/pin_locale.sh"
 
 DATA="$REPO_ROOT/Figure_6/data"
 RUN=run_016
-SUFFIX=_new
+
+# The upstream scripts used a filename suffix to switch between the original and
+# the corrected DisPo tables. Only the corrected one survives here, so the suffix
+# is empty. It is kept as a variable because the R scripts still accept it, and
+# because an empty value has a consequence: see the --v2 note below.
+SUFFIX=""
 
 WORK="${1:-$REPO_ROOT/agentic_pipeline/work/figure6}"
 RUN_PATH="$WORK/app/agent_runs/$RUN"
@@ -73,22 +77,27 @@ link "monte_carlo_min_with_fetal${SUFFIX}.tsv" \
 
 export PEPPER_PROJECT_ROOT="$WORK"
 
-step() {
-  local label="$1"; shift
+step() {  # step <label> <script.R> [extra args...]
+  local label="$1" script="$2"; shift 2
   echo "--- $label"
-  if ! Rscript "$SCRIPT_DIR/$1" --run "$RUN" --suffix "$SUFFIX" \
-       > "$WORK/${1%.R}.log" 2>&1; then
-    echo "FAILED: $1 — see $WORK/${1%.R}.log" >&2
-    tail -15 "$WORK/${1%.R}.log" >&2
+  if ! Rscript "$SCRIPT_DIR/$script" --run "$RUN" --suffix "$SUFFIX" "$@" \
+       > "$WORK/${script%.R}.log" 2>&1; then
+    echo "FAILED: $script — see $WORK/${script%.R}.log" >&2
+    tail -15 "$WORK/${script%.R}.log" >&2
     exit 1
   fi
   echo "    ok"
 }
 
-step "Panel A — discovery score by year"          plot_discovery_score_by_year.R
-step "Panel B — mouse fertility vs GenCC"        test_mouse_fertility_vs_gencc.R
-step "Panels C/D — fetal expression"              unified_fetal_analysis.R
-step "Figure assembly"                            generate_main_figure2.R
+# Panel B needs --v2 spelled out. Its script infers the algorithm version from
+# the suffix being non-empty, a shortcut that was harmless while the corrected
+# table was the suffixed one and is a trap now that the suffix is empty: without
+# the flag it would silently read the v1 columns and draw a different panel.
+# The other three scripts either hard-code the v2 column or default to it.
+step "Panel A — discovery score by year"   plot_discovery_score_by_year.R
+step "Panel B — mouse fertility vs GenCC"  test_mouse_fertility_vs_gencc.R --v2
+step "Panels C/D — fetal expression"       unified_fetal_analysis.R
+step "Figure assembly"                     generate_main_figure2.R
 
 echo
 FIG="$RUN_PATH/xgboost/fold_5/figures/main_figure2${SUFFIX}.pdf"

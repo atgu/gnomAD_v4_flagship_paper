@@ -111,11 +111,13 @@ stage2_montecarlo:
     loeuf_exp_col: exp_p_misannot_80
     grid_n: 501
   outputs:
-    monte_carlo_min_new.tsv:
+    # Both figures read this single table. It carried a _new suffix while the
+    # uncorrected March generation was still in the tree; see CORRIGENDA item 1.
+    monte_carlo_min.tsv:
       sha256: 2e3991bdf043459a88118b3f1b0fbbb2958423d9d03b36a44176033cb237c0a7
       n_genes: 21955
       n_dispo_non_na: 18124
-    monte_carlo_min_with_fetal_new.tsv:
+    monte_carlo_min_with_fetal.tsv:
       sha256: a34df6f3d9e2323f0f85544a7d15813f89de7bc5db3a1cd4baa74d9da85f36b9
       n_genes_with_fetal: 21094
       n_columns: 59
@@ -123,10 +125,19 @@ stage2_montecarlo:
 # ===========================================================================
 # Stage 3 — XGBoost out-of-fold predictions
 # ===========================================================================
+# Trained against MC_max_v2 in the table above. The preprint's predictions used
+# an earlier February generation of it instead; CORRIGENDA item 11 measures what
+# the difference costs, which is under 0.004 AUC-PR.
 stage3_xgboost:
   script: benchmark/scripts/train_xgboost.py
+  random_state: 42
+  n_folds: 5
+  target_column: MC_max_v2
+  target_table: monte_carlo_min.tsv
   outputs:
-    predictions: xgboost/fold_5/predictions_no_go.csv
+    xgboost/fold_5/predictions_no_go.csv:
+      sha256: af9a54be5b84d6153ba84f6fe80ba8a2647a0d175f0f6754e2c58cedff0c7c88
+      n_genes: 17700
 
 # ===========================================================================
 # Stage 4 — OMELET (Figure 5)
@@ -139,15 +150,22 @@ stage4_omelet:
 # ===========================================================================
 # Stage 5 — Figures
 # ===========================================================================
-# The target is the "_new" variant, which will become Figure 6 of the
-# published paper. The suffix forces both the v2 mode and the _new input.
+# Only one generation of the data remains, so the filename suffix that used to
+# select between them is empty. That has a consequence worth knowing:
+# test_mouse_fertility_vs_gencc.R infers the v2 algorithm from the suffix being
+# non-empty, so run_figure6.sh now passes --v2 explicitly. Without it the panel
+# would silently fall back to the v1 columns.
 stage5_figures:
-  suffix: _new
+  suffix: ""
+  locale: en_US.UTF-8        # panel A's x-axis ordering depends on it; item 16
   panels:
     a: plot_discovery_score_by_year.R
-    b: test_mouse_fertility_vs_gencc.R
+    b: test_mouse_fertility_vs_gencc.R --v2
     c_d: unified_fetal_analysis.R
   assembly: generate_main_figure2.R
+  # Lowest GenCC confidence admitted into panel b. The published panel includes
+  # Moderate, the manuscript text says definitive and strong; item 17.
+  gencc_min_classification: Moderate
   expected:
-    # ~25 signalled the v1/input bug that the _new variant fixes.
+    # ~25 signalled the v1 column bug that the corrected table fixes.
     panel_b_gencc_median: 42

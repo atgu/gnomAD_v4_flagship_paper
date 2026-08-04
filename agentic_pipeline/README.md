@@ -1,8 +1,7 @@
 # PEPPER / OMELET / DisPo — the pipelines behind Figures 5 and 6
 
 This directory holds the complete pipelines that produce **Figure 5** and
-**Figure 6** (the `_new` variant of the latter), from the LLM agents through to
-the assembled figures.
+**Figure 6**, from the LLM agents through to the assembled figures.
 
 Until now the repository carried only the visualisation layer: the figures read
 tables that nobody could trace back to a source. Everything upstream lived in a
@@ -16,10 +15,10 @@ with tests.
 | 1 — LLM agents | both | No, by construction | 5-gene smoke test |
 | 2 — Monte Carlo / DisPo | Figure 6 | Bit-identical | `2e3991bd…` |
 | 2 — fetal expression merge | Figure 6 | Bit-identical | `a34df6f3…` |
-| 3 — XGBoost out-of-fold | Figure 5 | Bit-identical | `ddd54bdb…` |
+| 3 — XGBoost out-of-fold | Figure 5 | Bit-identical | `af9a54be…` |
 | 4 — OMELET | Figure 5 | Agrees with R to 1e-14 | 17,167 genes |
 | 5 — assembled Figure 6 | — | Pixel-identical | `b8bd321f…` |
-| 5 — assembled Figure 5 | — | Pixel-identical here, numbers exact anywhere | `ec94d7c5…` |
+| 5 — assembled Figure 5 | — | Pixel-identical here, numbers exact anywhere | `55f8961c…` |
 
 Stage 1 is not reproducible and never will be. The agents take the top 50 PubMed
 hits sorted by relevance, and that ranking is neither fixed nor published: it is
@@ -29,12 +28,13 @@ also costs roughly $800. That is why its outputs are **frozen** and treated as
 the reproducibility boundary of the project. Everything downstream of it is
 exact.
 
-Both figures under `Figure_5/figures/` and `Figure_6/figures/main_figure2_new.*`
-are the pipeline's own output, so the regression tests compare a rerun against a
+Everything under `Figure_5/figures/` and `Figure_6/figures/` is the pipeline's
+own output, panels included, so the regression tests compare a rerun against a
 figure this repository produced rather than against an artefact from elsewhere.
-The published March 2026 renders of Figure 5 are preserved in git history under
-the `figures-frozen-2026-08` tag; they differ only in rasterisation, as
-explained under *Why Figure 5's pixels travel badly*.
+The published renders are preserved in git history under the
+`figures-frozen-2026-08` and `pre-unification-2026-08` tags; for Figure 5 they
+differ only in rasterisation, as explained under *Why Figure 5's pixels travel
+badly*.
 
 ## Architecture
 
@@ -53,14 +53,14 @@ flowchart TD
     end
 
     subgraph F6["Figure 6 — DisPo (grid 501)"]
-        MCT --> TSV["monte_carlo_min_new.tsv<br/>18,124 DisPo"]
+        MCT --> TSV["monte_carlo_min.tsv<br/>18,124 DisPo"]
         LO[("gnomAD LOEUF")] --> TSV
         TSV --> MG[merge_monte_carlo_with_fetal.py]
         FE[("fetal expression")] --> MG
-        MG --> TSVF[monte_carlo_min_with_fetal_new.tsv]
+        MG --> TSVF[monte_carlo_min_with_fetal.tsv]
         TSV --> P6["4 R scripts<br/>panels A–D"]
         TSVF --> P6
-        P6 --> FIG6["main_figure2_new.pdf"]
+        P6 --> FIG6["main_figure2.pdf"]
     end
 
     subgraph F5["Figure 5 — OMELET (grid 50)"]
@@ -125,7 +125,7 @@ export PEPPER_RUN_016_RESULTS="$PWD/results"
 
 python3 agentic_pipeline/stages/s2_montecarlo/recalculate_monte_carlo_min.py run_016 \
   --results-dir "$PEPPER_RUN_016_RESULTS" \
-  --output /var/tmp/monte_carlo_min_new.tsv \
+  --output /var/tmp/monte_carlo_min.tsv \
   --loeuf-file Figure_6/data/obs_exp_for_loeuf_missense_max.tsv \
   --algo-version v2 --composite-mode strict --unknown-prior benign \
   --kappa-min 1 --kappa-max 100000 --samples 3000
@@ -153,6 +153,42 @@ python3 agent_gene_scorer_v3.py --genes BRCA1 TP53 \
 it keeps papers published after the original run out of the candidate pool, but
 it has no hold over how PubMed ranks that pool. It makes the protocol replayable,
 not the retrieved set and not the numbers.
+
+## One dataset, one filename
+
+There is exactly **one** Monte Carlo table in this repository, and both figures
+read it. That was not always true, and the history is worth a paragraph because
+it is where the reproducibility bugs came from.
+
+Three generations of the table existed. February 2026 trained the XGBoost model.
+March 2026 was shipped with the preprint and supplied Figure 5's variance column.
+June 2026 corrected the handling of composite loss-of-function mechanisms and was
+carried as `monte_carlo_min_new.tsv`, feeding Figure 6 only. So Figure 5 mixed
+February and March in the same panels, Figure 6 used June, and the correct file
+to read was a matter of local knowledge.
+
+They are now collapsed onto one file, the corrected June generation. The two
+figures that mattered are unaffected in substance: June is byte-identical to
+March in the two columns Figure 5 reads, so retraining on it yields
+byte-identical predictions, and Figure 6 already used it. Only Figure 5's
+published numbers move, by less than 0.004 AUC-PR, because they came from the
+February target; `CORRIGENDA.md` item 11 tabulates the shift.
+
+Each figure directory keeps its own copy of the table so either figure can be run
+without reaching across the repository. `test_artifacts.py` asserts the two
+copies are identical, because two copies is exactly how three generations started.
+
+The superseded generations are not deleted, just no longer in the working tree:
+
+| Tag | What it holds |
+|---|---|
+| `figures-frozen-2026-08` | the state as published, March data and March renders |
+| `pre-unification-2026-08` | March and June side by side, with the `_new` suffixes |
+
+Figure 6's files lost their `_new` suffix in the process. That mattered more than
+a rename: the suffix had been hiding a real disagreement between the two
+implementations of panel b, which surfaced the moment both wrote to the same
+filename. `CORRIGENDA.md` item 17 has the details.
 
 ## Why Figure 5's pixels travel badly
 
@@ -200,12 +236,12 @@ agentic_pipeline/tests/run_tests.sh --smoke  # + 5 genes through Vertex (billed)
 
 | Test | What it guarantees |
 |---|---|
-| `test_artifacts.py` | Checksums, shape and business rules of the reference tables |
+| `test_artifacts.py` | Checksums, shape and business rules of the reference tables, and that both figures read the same one |
 | `test_methods_dispo.py` | An independent reimplementation of DisPo recovers all 18,124 values |
 | `test_methods_omelet.py` | An independent reimplementation of OMELET agrees with R on 17,167 genes |
 | `test_guardrails.py` | The frozen outputs stay frozen; no secret is published |
 | `test_dispo_regression.py` | Recomputed stage 2 is bit-identical |
-| `test_figure6_regression.py` | The regenerated Figure 6 is bit-identical |
+| `test_figure6_regression.py` | Both implementations regenerate Figure 6 and its four panels bit-identically |
 | `test_xgboost_regression.py` | The regenerated out-of-fold predictions are bit-identical |
 | `test_figure5_regression.py` | Figure 5's numbers are exact and its pixels within tolerance |
 | `test_smoke_agent.sh` | The agent chain still runs and emits the right schema |

@@ -39,10 +39,19 @@ def main() -> None:
         c.exit()
 
     # --- T6: integrity -----------------------------------------------------
-    c.ok("checksum monte_carlo_min_new.tsv", sha256(ORACLE_DISPO) == SHA_DISPO,
+    c.ok("checksum monte_carlo_min.tsv", sha256(ORACLE_DISPO) == SHA_DISPO,
          SHA_DISPO[:16])
-    c.ok("checksum monte_carlo_min_with_fetal_new.tsv",
+    c.ok("checksum monte_carlo_min_with_fetal.tsv",
          sha256(ORACLE_FETAL) == SHA_FETAL, SHA_FETAL[:16])
+
+    # One Monte Carlo table now feeds both figures, and each figure directory
+    # keeps its own copy so that either can be run without reaching across the
+    # repository. The price is that the two can drift apart; this is what stops
+    # them. If it ever fails, one figure is being drawn from stale scores.
+    fig5_copy = FIG5_DATA / "monte_carlo_min.tsv"
+    c.ok("Figure 5 and Figure 6 read the same Monte Carlo table",
+         fig5_copy.exists() and sha256(fig5_copy) == SHA_DISPO,
+         "Figure_5/data and Figure_6/data copies agree")
 
     # --- T3: shape and business rules -------------------------------------
     rows = read_tsv(ORACLE_DISPO)

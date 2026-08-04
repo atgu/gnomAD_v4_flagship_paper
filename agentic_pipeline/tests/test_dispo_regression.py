@@ -59,8 +59,8 @@ def main() -> None:
 
     tmp = Path(args.workdir) if args.workdir else Path(tempfile.mkdtemp(prefix="dispo_t2_"))
     tmp.mkdir(parents=True, exist_ok=True)
-    out_dispo = tmp / "monte_carlo_min_new.tsv"
-    out_fetal = tmp / "monte_carlo_min_with_fetal_new.tsv"
+    out_dispo = tmp / "monte_carlo_min.tsv"
+    out_fetal = tmp / "monte_carlo_min_with_fetal.tsv"
 
     print(f"  ... recomputing from {src}")
     print(f"  ... writing to {tmp} (the references are never overwritten)")
@@ -77,7 +77,7 @@ def main() -> None:
                 proc.stderr.strip().splitlines()[-1] if proc.stderr.strip() else ""):
         c.exit()
 
-    c.ok("monte_carlo_min_new.tsv is bit-identical",
+    c.ok("monte_carlo_min.tsv is bit-identical",
          sha256(out_dispo) == SHA_DISPO,
          f"{sha256(out_dispo)[:16]} vs {SHA_DISPO[:16]}")
 
@@ -94,7 +94,7 @@ def main() -> None:
     )
     if c.ok("the fetal merge completes without error", merge.returncode == 0,
             merge.stderr.strip().splitlines()[-1] if merge.stderr.strip() else ""):
-        c.ok("monte_carlo_min_with_fetal_new.tsv is bit-identical",
+        c.ok("monte_carlo_min_with_fetal.tsv is bit-identical",
              sha256(out_fetal) == SHA_FETAL,
              f"{sha256(out_fetal)[:16]} vs {SHA_FETAL[:16]}")
         c.equal("merged TSV size",

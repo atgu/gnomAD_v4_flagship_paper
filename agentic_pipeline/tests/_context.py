@@ -22,10 +22,11 @@ S2_MERGE = PIPELINE / "stages" / "s2_montecarlo" / "merge_monte_carlo_with_fetal
 S3_RUN = PIPELINE / "stages" / "s3_xgboost" / "run_xgboost.sh"
 OMELET_DUMP = PIPELINE / "methods" / "dump_omelet_reference.R"
 
-# Reference artefacts. These are the "_new" variants, which are the target:
-# the published Figure 6 is being replaced by the _new one.
-ORACLE_DISPO = FIG6_DATA / "monte_carlo_min_new.tsv"
-ORACLE_FETAL = FIG6_DATA / "monte_carlo_min_with_fetal_new.tsv"
+# Reference artefacts. One Monte Carlo table now serves both figures, so the
+# same file appears under Figure_5/data and Figure_6/data and the two copies are
+# asserted identical in test_artifacts.py.
+ORACLE_DISPO = FIG6_DATA / "monte_carlo_min.tsv"
+ORACLE_FETAL = FIG6_DATA / "monte_carlo_min_with_fetal.tsv"
 LOEUF_MAX = FIG6_DATA / "obs_exp_for_loeuf_missense_max.tsv"
 FETAL_EXPRESSION = FIG6_DATA / "fetal_gene_expression_tissue_with_symbols.csv"
 
@@ -37,21 +38,22 @@ N_DISPO_NON_NA = 18124
 DISPO_COLUMN = "MC_LoF_v2_signed_dis"
 
 # --- Figure 5 -------------------------------------------------------------
-# The out-of-fold XGBoost predictions, and the Monte Carlo table they were
-# actually trained on. That table is the February one, not the March one the
-# repository ships as monte_carlo_min.tsv; see CORRIGENDA.md.
+# The out-of-fold XGBoost predictions and the Monte Carlo table they are trained
+# on, which is now the same table Figure 6 uses. The preprint's predictions came
+# from an earlier February generation of it; CORRIGENDA.md item 11 records what
+# unifying changed.
 ORACLE_PREDICTIONS = FIG5_DATA / "predictions_no_go.csv"
-XGB_TARGET_TABLE = FIG5_DATA / "monte_carlo_min_pre_divisor.tsv"
+XGB_TARGET_TABLE = FIG5_DATA / "monte_carlo_min.tsv"
 XGB_FEATURES = FIG5_DATA / "gene_features_for_s_het.tsv.gz"
 FIG5_REFERENCE = REPO_ROOT / "Figure_5" / "figures" / "main_figure.png"
 
-SHA_PREDICTIONS = "ddd54bdb67aa3f2829b6a653c296d0bc0d074245e5d231b664ec0c02dabcbcf8"
-SHA_XGB_TARGET = "86d9e9722604a52c2ea75a97b8e7d8a624348f7b87e31b6bb38cd1ce9680deb7"
+SHA_PREDICTIONS = "af9a54be5b84d6153ba84f6fe80ba8a2647a0d175f0f6754e2c58cedff0c7c88"
+SHA_XGB_TARGET = SHA_DISPO
 SHA_XGB_FEATURES = "bb3eb98e9f177d894f15c7dac928af591e09dd7351c0e3b6a1448eaccbce59a4"
-# Figure_5/figures/ now holds the pipeline's own output rather than the March
-# 2026 renders, so this is the checksum of a figure this repository regenerates.
-# The March PNG (099d4e91…) remains under the figures-frozen-2026-08 tag.
-SHA_FIG5_REFERENCE = "ec94d7c59e31c4e3d8e821a9947d53733367431e5e3422aeb7bd398f001c4c7f"
+# Figure_5/figures/ holds the pipeline's own output rather than the March 2026
+# renders, so this is the checksum of a figure this repository regenerates. The
+# published PNG (099d4e91…) remains under the figures-frozen-2026-08 tag.
+SHA_FIG5_REFERENCE = "55f8961cd5011e0b20236f08e435b7bfba3e84ec551b036196d4069d373f2a1c"
 
 N_FIG5_GENES = 17700       # rows in predictions_no_go.csv
 N_FIG5_COMPLETE = 17167    # after the LOEUF join, the set the figure scores

@@ -42,7 +42,7 @@ PROJECT_ROOT <- get_project_root()
 DATA_DIR <- file.path(PROJECT_ROOT, "app", "data")
 
 # --- Arguments ---
-parser <- ArgumentParser(description = "Test de Wilcoxon Mouse Fertility vs GenCC (Definitive+Strong+Moderate)")
+parser <- ArgumentParser(description = "Wilcoxon test, Mouse Fertility vs GenCC (Definitive+Strong+Moderate)")
 parser$add_argument("--run", type = "character", required = TRUE,
                     help = "ID du run (ex: run_016)")
 parser$add_argument("--input_file", type = "character", default = "monte_carlo_min.tsv",

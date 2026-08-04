@@ -5,14 +5,13 @@
 #
 # The script reproduces Figure_5/data/predictions_no_go.csv bit for bit.
 #
-# One subtlety is worth stating up front, because it is not obvious and it
-# cost a while to find. The published predictions were trained on the
-# February 2026 Monte Carlo table, not on the March one that the repository
-# ships as Figure_5/data/monte_carlo_min.tsv. The two differ: the target
-# column of the published predictions matches the February table for 100% of
-# genes and the March table for only 41%. The February table is versioned
-# here as monte_carlo_min_pre_divisor.tsv and is what this script feeds to
-# the model. See CORRIGENDA.md for the consequences.
+# The target is the single Monte Carlo table the repository ships,
+# Figure_5/data/monte_carlo_min.tsv, which is also what Figure 6 reads. The
+# preprint's predictions were trained on an earlier February generation of that
+# table instead, which is why their AUC-PR values differ slightly from the ones
+# on the figure here; CORRIGENDA.md item 11 records the change. That generation
+# is preserved under the pre-unification-2026-08 tag and is no longer needed to
+# reproduce anything.
 
 set -euo pipefail
 
@@ -22,9 +21,9 @@ DATA="$REPO_ROOT/Figure_5/data"
 
 WORK="${1:-$REPO_ROOT/agentic_pipeline/work/xgboost}"
 
-# The trainer discovers its target table as <run_id>/monte_carlo_min.tsv, so
-# the work directory supplies the February table under that name.
-TARGET_TABLE=monte_carlo_min_pre_divisor.tsv
+# The trainer discovers its target table as <run_id>/monte_carlo_min.tsv, so the
+# work directory links the repository's copy under that same name.
+TARGET_TABLE=monte_carlo_min.tsv
 
 echo "Repository: $REPO_ROOT"
 echo "Work dir  : $WORK"

@@ -57,10 +57,10 @@ EXPECTED_COUNTS = {
 # beats that score alone, and both beat LOEUF-MIS.
 EXPECTED_AUC = {
     "LOEUF-MIS.LOEUF-MIS": 0.2914767344712117,
-    "LOEUF-MIS.XGB PEPPER": 0.3437852249988358,
-    "LOEUF-MIS.LLM PEPPER": 0.6437172859416409,
-    "LOEUF-MIS.Bayes(XGB PEPPER, LOEUF-MIS)": 0.5036464585189133,
-    "LOEUF-MIS.Bayes(LLM PEPPER, LOEUF-MIS)": 0.685914278190959,
+    "LOEUF-MIS.XGB PEPPER": 0.3435490004500183,
+    "LOEUF-MIS.LLM PEPPER": 0.6476412162769882,
+    "LOEUF-MIS.Bayes(XGB PEPPER, LOEUF-MIS)": 0.5036082672760859,
+    "LOEUF-MIS.Bayes(LLM PEPPER, LOEUF-MIS)": 0.6889919627416337,
 }
 AUC_TOL = 1e-9
 
@@ -133,16 +133,16 @@ def _check_printed_numbers(c: Checks, log: str) -> None:
     # prior actually drawn there.
     m = re.search(r"Dynamic kappa for ABCC9:\s*([\d.]+)", log)
     c.ok("panel B prior concentration for ABCC9",
-         bool(m) and abs(float(m.group(1)) - 128.6) < 0.05,
-         f"{m.group(1) if m else 'not found'} vs 128.6")
+         bool(m) and abs(float(m.group(1)) - 126.3) < 0.05,
+         f"{m.group(1) if m else 'not found'} vs 126.3")
 
     rhos = [float(x) for x in re.findall(r"Spearman rho = ([\d.]+)", log)]
     c.equal("two correlations reported", len(rhos), 2)
     if len(rhos) == 2:
-        c.ok("panel D: LOEUF-MIS vs PEPPER", abs(rhos[0] - 0.3047) < 5e-5, f"{rhos[0]}")
+        c.ok("panel D: LOEUF-MIS vs PEPPER", abs(rhos[0] - 0.3054) < 5e-5, f"{rhos[0]}")
         # The whole point of the Bayesian step: correlation with the population
         # signal rises once the two sources are combined.
-        c.ok("panel E: LOEUF-MIS vs OMELET", abs(rhos[1] - 0.4899) < 5e-5, f"{rhos[1]}")
+        c.ok("panel E: LOEUF-MIS vs OMELET", abs(rhos[1] - 0.4889) < 5e-5, f"{rhos[1]}")
         c.ok("the Bayesian step improves the correlation", rhos[1] > rhos[0],
              f"{rhos[0]} -> {rhos[1]}")
 

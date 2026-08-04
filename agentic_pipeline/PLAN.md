@@ -14,6 +14,12 @@
 > moving it would have risked changing a published figure while claiming to
 > reproduce it. It is instead reimplemented and validated in
 > `methods/omelet.py`, which agrees with the R code on all 17,167 genes.
+>
+> **Filenames below are the ones of the day.** The three generations of the Monte
+> Carlo table have since been collapsed into one, so `monte_carlo_min_new.tsv` is
+> now `monte_carlo_min.tsv`, `main_figure2_new.*` is `main_figure2.*`, and the
+> February table is no longer in the working tree. Checksums are unchanged. See
+> *One dataset, one filename* in the README.
 
 Originally a working document: this file fixes the architecture, the parameters,
 the reproducibility policy, the tests, and the list of corrections to carry over
