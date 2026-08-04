@@ -27,7 +27,7 @@ SECRET_PATTERNS = [
     (re.compile(r"sk-ant-[A-Za-z0-9_\-]{20,}"), "cle API Anthropic"),
     (re.compile(r"AIza[0-9A-Za-z_\-]{35}"), "cle API Google"),
     (re.compile(r"\bDEFAULT_PUBMED_KEY\s*=\s*[\"'][0-9a-f]{32,}"), "cle NCBI en dur"),
-    (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "cle privee"),
+    (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "private key"),
 ]
 
 

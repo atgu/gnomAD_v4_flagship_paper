@@ -229,7 +229,7 @@ def format_report(run_name: str, summary: Dict) -> str:
     lines.extend([
         "",
         sub,
-        "TOTAUX:",
+        "TOTALS:",
         sub,
         f"Total tokens input:  {summary['total_input']:,}",
         f"Total tokens output: {summary['total_output']:,}",

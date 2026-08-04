@@ -132,13 +132,13 @@ cat("  Mode exclusion:",
     } else {
       "Blood (NOT Blood)"
     }, "\n")
-cat("  Seuil disagreement:", args$threshold, 
+cat("  disagreement threshold:", args$threshold, 
     if (args$threshold_mode == "percentile") " (percentile)" 
     else if (args$threshold_mode == "top_n") " (top_n genes)" 
-    else " (valeur absolue)", "\n")
+    else " (absolute value)", "\n")
 cat("  LOEUF tolerance: +/-", args$loeuf_tolerance, "\n", sep = "")
-cat("  Seuil syn_upper (exclusion):", args$syn_threshold, "\n")
-cat("  Seuil syn_depleted (enrichment):", args$syn_depleted_threshold, "\n")
+cat("  syn_upper threshold (exclusion):", args$syn_threshold, "\n")
+cat("  syn_depleted threshold (enrichment):", args$syn_depleted_threshold, "\n")
 cat("  Percentile repro (testis/ovary/uterus/stomach):", args$repro_percentile, "\n")
 cat("  Percentile blood (exclusion):", args$blood_exclusion_percentile, "\n")
 cat("  Fetal Expr (enrichments): top", args$fetal_enrichment_percentile, "% in ≥", args$fetal_enrichment_min_tissues, "tissues\n")
@@ -146,7 +146,7 @@ cat("  Fetal Expr (exclusion testis): top", args$fetal_exclusion_percentile, "% 
 cat("  Control range:", args$control_range,
     if (args$control_range_mode == "percentile") " (percentile)" 
     else if (args$control_range_mode == "top_n") " (top_n genes)" 
-    else " (valeur absolue)", "\n")
+    else " (absolute value)", "\n")
 cat("\n")
 
 # ==============================================================================
@@ -339,7 +339,7 @@ if (args$use_diff_pct) {
       diff_pct_percentile = percent_rank(disagreement) * 100
     )
 } else {
-  # Mode standard: utiliser MC_LoF_signed_dis
+  # Standard mode: use MC_LoF_signed_dis
   disagreement_col <- if (args$v2) "MC_LoF_v2_signed_dis" else "MC_LoF_signed_dis"
   cat("  Disagreement column used:", disagreement_col, "\n\n")
   
@@ -380,7 +380,7 @@ if (args$threshold_mode == "percentile") {
   cat("  Threshold (top", n_genes, "genes):", round(threshold_value, 4), "\n")
   cat("    Genes with disagreement >=", round(threshold_value, 4), ":", nrow(data_sorted), "\n")
 } else {
-  cat("  Threshold (valeur absolue):", threshold_value, "\n")
+  cat("  Threshold (absolute value):", threshold_value, "\n")
 }
 
 if (args$control_range_mode == "percentile") {
@@ -388,7 +388,7 @@ if (args$control_range_mode == "percentile") {
     stop("The control_range percentile must lie between 0 and 100")
   }
   # For control_range the percentile is symmetric around 0
-  # Si percentile = 50, on prend [-percentile(50), percentile(50)]
+  # If percentile = 50, take [-percentile(50), percentile(50)]
   # The percentile is computed on the absolute disagreement
   abs_disagreement <- abs(data_valid$disagreement)
   control_range_value <- quantile(abs_disagreement, args$control_range / 100, na.rm = TRUE)
@@ -407,7 +407,7 @@ if (args$control_range_mode == "percentile") {
   # Take every other gene (excluded from the top n)
   excluded_genes <- data_sorted %>%
     slice_tail(n = nrow(data_sorted) - n_genes)
-  # Control_range = max(abs(disagreement)) parmi les exclus
+  # Control_range = max(abs(disagreement)) among the excluded
   if (nrow(excluded_genes) > 0) {
     control_range_value <- max(abs(excluded_genes$disagreement), na.rm = TRUE)
     cat("  Control range (top", n_genes, "genes excluded):", round(control_range_value, 4), "\n")
@@ -416,7 +416,7 @@ if (args$control_range_mode == "percentile") {
     stop("No gene available for the control pool")
   }
 } else {
-  cat("  Control range (valeur absolue):", control_range_value, "\n")
+  cat("  Control range (absolute value):", control_range_value, "\n")
 }
 
 # Add Repro Expr, Testis Expr, Ovary Expr, Uterus Expr (for the enrichment)
@@ -592,7 +592,7 @@ if (!is.null(args$excl_mode)) {
       stomach_not_blood_expr = stomach_expr & !others_stomach_expr
     )
 } else {
-  # Mode standard : utiliser Blood
+  # Standard mode: use Blood
   data_valid <- data_valid %>%
     mutate(
       testis_not_blood_expr = testis_expr & !blood_expr,
@@ -737,7 +737,7 @@ t_end_section2 <- Sys.time()
 cat("\n  Section 2 (Preparation):", round(as.numeric(difftime(t_end_section2, t_start_section2, units = "secs")), 2), "seconds\n")
 
 # ==============================================================================
-# 3. FONCTION DE MATCHING LOEUF
+# 3. LOEUF MATCHING FUNCTION
 # ==============================================================================
 match_loeuf_genes <- function(data_source, threshold, loeuf_tolerance, exclude_genes, control_range) {
   # Keep the valid genes (after exclusion)
@@ -786,7 +786,7 @@ match_loeuf_genes <- function(data_source, threshold, loeuf_tolerance, exclude_g
     candidate_disagreements <- abs(pool_disagreement[candidate_indices])
     best_idx <- candidate_indices[which.min(candidate_disagreements)]
     
-    # Stocker les matches
+    # Store the matches
     match_count <- match_count + 1
     matched_top_list[[match_count]] <- top_genes_all[i, ]
     matched_ctrl_list[[match_count]] <- pool[best_idx, ]
@@ -826,8 +826,8 @@ cat("  Genes >= threshold:", nrow(data_valid %>% filter(disagreement >= threshol
 cat("  Matched pairs (Selection 0):", nrow(top_sel0), "\n")
 
 if (nrow(top_sel0) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel0$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel0$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel0$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel0$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel0$disagreement), 2), ", ", 
       round(max(top_sel0$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel0$disagreement), 2), ", ", 
@@ -858,8 +858,8 @@ cat("  Genes >= threshold after exclusion syn:",
 cat("  Matched pairs (Selection 1):", nrow(top_sel1), "\n")
 
 if (nrow(top_sel1) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel1$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel1$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel1$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel1$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel1$disagreement), 2), ", ", 
       round(max(top_sel1$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel1$disagreement), 2), ", ", 
@@ -890,8 +890,8 @@ cat("  Genes >= threshold after exclusion (syn+testis):",
 cat("  Matched pairs (Selection 2):", nrow(top_sel2), "\n")
 
 if (nrow(top_sel2) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel2$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel2$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel2$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel2$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel2$disagreement), 2), ", ", 
       round(max(top_sel2$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel2$disagreement), 2), ", ", 
@@ -922,8 +922,8 @@ cat("  Genes >= threshold after exclusion (syn+testis+blood):",
 cat("  Matched pairs (Selection 3):", nrow(top_sel3), "\n")
 
 if (nrow(top_sel3) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel3$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel3$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel3$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel3$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel3$disagreement), 2), ", ", 
       round(max(top_sel3$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel3$disagreement), 2), ", ", 
@@ -954,8 +954,8 @@ cat("  Genes >= threshold after exclusion (syn+blood):",
 cat("  Matched pairs (Selection 4):", nrow(top_sel4), "\n")
 
 if (nrow(top_sel4) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel4$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel4$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel4$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel4$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel4$disagreement), 2), ", ", 
       round(max(top_sel4$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel4$disagreement), 2), ", ", 
@@ -986,8 +986,8 @@ cat("  Genes >= threshold after exclusion (syn+others):",
 cat("  Matched pairs (Selection 5):", nrow(top_sel5), "\n")
 
 if (nrow(top_sel5) > 0) {
-  cat("  LOEUF moyen TOP:", round(mean(top_sel5$LOEUF, na.rm = TRUE), 4), "\n")
-  cat("  LOEUF moyen CTRL:", round(mean(ctrl_sel5$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF TOP:", round(mean(top_sel5$LOEUF, na.rm = TRUE), 4), "\n")
+  cat("  Mean LOEUF CTRL:", round(mean(ctrl_sel5$LOEUF, na.rm = TRUE), 4), "\n")
   cat("  Disagreement TOP: [", round(min(top_sel5$disagreement), 2), ", ", 
       round(max(top_sel5$disagreement), 2), "]\n", sep = "")
   cat("  Disagreement CTRL: [", round(min(ctrl_sel5$disagreement), 2), ", ", 
@@ -1008,7 +1008,7 @@ cat(strrep("-", 50), "\n\n")
 
 # Build one fetal boxplot
 generate_fetal_boxplot <- function(top_data, ctrl_data, output_filename, plot_title = NULL) {
-  # Labels dynamiques
+  # Dynamic labels
   mean_loeuf_top <- round(mean(top_data$LOEUF, na.rm = TRUE), 3)
   mean_loeuf_ctrl <- round(mean(ctrl_data$LOEUF, na.rm = TRUE), 3)
   mean_disagr_top <- round(mean(top_data$disagreement, na.rm = TRUE), 1)
@@ -1035,7 +1035,7 @@ generate_fetal_boxplot <- function(top_data, ctrl_data, output_filename, plot_ti
                  values_to = "Expression") %>%
     mutate(Tissue = factor(Tissue, levels = all_tissue_cols))
   
-  # Limites Y
+  # Y limits
   y_limits <- plot_data %>%
     group_by(Tissue) %>%
     summarise(
@@ -1130,7 +1130,7 @@ generate_fetal_boxplot <- function(top_data, ctrl_data, output_filename, plot_ti
   
   output_path <- file.path(run_path, sfx(output_filename))
   ggsave(output_path, p_boxplot, width = 14, height = 13, dpi = 300)
-  cat("  Boxplot saved:", output_filename, "(", nrow(top_data), "paires )\n")
+  cat("  Boxplot saved:", output_filename, "(", nrow(top_data), "pairs )\n")
 }
 
 # Generate the 4 boxplots
@@ -1168,7 +1168,7 @@ cat("9. COMPUTING THE ENRICHMENTS\n")
 cat(strrep("-", 50), "\n\n")
 t_start_section9 <- Sys.time()
 
-# Fonction d'enrichment
+# Enrichment function
 calculate_enrichment <- function(top_data, ctrl_data, column_name, feature_name) {
   top_positive <- sum(top_data[[column_name]], na.rm = TRUE)
   top_negative <- nrow(top_data) - top_positive
@@ -1338,49 +1338,49 @@ print_enrichment <- function(res, selection_name) {
 }
 
 cat("--- SYN DEPLETED (Selection 0: no excl.) ---\n\n")
-print_enrichment(res_syn, paste0("N=", nrow(top_sel0), " paires"))
+print_enrichment(res_syn, paste0("N=", nrow(top_sel0), " pairs"))
 
 cat("--- TESTIS EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_testis, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_testis, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- OVARY EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_ovary, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_ovary, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- TESTIS AND OVARY EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_testis_and_ovary, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_testis_and_ovary, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- TESTIS NOT BLOOD EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_testis_not_blood, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_testis_not_blood, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- TESTIS NOT BLOOD NOT FETAL EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_testis_not_blood_not_fetal, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_testis_not_blood_not_fetal, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- OVARY NOT BLOOD EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_ovary_not_blood, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_ovary_not_blood, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- UTERUS EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_uterus, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_uterus, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- STOMACH EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_stomach, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_stomach, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- WHOLE BLOOD EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_blood, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_blood, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- REPRO EXPR (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_repro, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_repro, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- FETAL EXPR incl. repro (Selection 1: excl. syn) ---\n\n")
-print_enrichment(res_fetal_sel1, paste0("N=", nrow(top_sel1), " paires"))
+print_enrichment(res_fetal_sel1, paste0("N=", nrow(top_sel1), " pairs"))
 
 cat("--- FETAL NOT TESTIS (Selection 2: excl. syn + testis) ---\n\n")
-print_enrichment(res_fetal_not_testis, paste0("N=", nrow(top_sel2), " paires"))
+print_enrichment(res_fetal_not_testis, paste0("N=", nrow(top_sel2), " pairs"))
 
 cat("--- FETAL NOT BLOOD NOT TESTIS (Selection 3: excl. syn + testis + blood) ---\n\n")
-print_enrichment(res_fetal_not_blood_not_testis, paste0("N=", nrow(top_sel3), " paires"))
+print_enrichment(res_fetal_not_blood_not_testis, paste0("N=", nrow(top_sel3), " pairs"))
 
 cat("--- FETAL NOT OTHERS retain TESTIS (Selection 5: excl. syn + others) ---\n\n")
-print_enrichment(res_fetal_not_others_no_testis, paste0("N=", nrow(top_sel5), " paires"))
+print_enrichment(res_fetal_not_others_no_testis, paste0("N=", nrow(top_sel5), " pairs"))
 
 # ==============================================================================
 # 9b. GTEx ALL-TISSUE ENRICHMENTS
@@ -1407,11 +1407,11 @@ if (!is.null(gtex_full)) {
   # Identify the exclusion genes according to the mode
   if (!is.null(args$excl_mode)) {
     # Mode excl_avg/excl_median : "Others" is computed per tissue inside the loop
-    exclusion_top_genes <- list()  # Sera rempli par tissu
+    exclusion_top_genes <- list()  # Filled in per tissue
     stat_name <- if (args$excl_mode == "median") "median" else "mean"
     cat("  Mode excl_", args$excl_mode, ": computing 'Others' (", stat_name, " of the other tissues) for each tissue\n", sep = "")
   } else {
-    # Mode standard : utiliser Blood
+    # Standard mode: use Blood
     blood_col <- "Whole Blood"
     if (blood_col %in% colnames(gtex_full)) {
       # Percentile computed the fast way, with rank()
@@ -1494,7 +1494,7 @@ if (!is.null(gtex_full)) {
       top_not_exclusion_genes <- setdiff(top_genes, exclusion_top_genes_tissue)
       exclusion_label <- "Others"
     } else {
-      # Mode standard : utiliser Blood
+      # Standard mode: use Blood
       top_not_exclusion_genes <- setdiff(top_genes, exclusion_top_genes)
       exclusion_label <- "Blood"
     }
@@ -1833,7 +1833,7 @@ plot_or_data <- results_df %>%
       Feature == "Fetal NOT Testis" ~ "Fetal NOT Testis",
       TRUE ~ Feature
     ),
-    # Formater les p-values
+    # Format the p-values
     p_label = case_when(
       P_value < 0.001 ~ paste0("p=", formatC(P_value, format = "e", digits = 1)),
       P_value < 0.01 ~ paste0("p=", sprintf("%.3f", P_value)),
@@ -1856,14 +1856,14 @@ plot_or_data <- results_df %>%
 p_forest <- ggplot(plot_or_data, aes(x = Odds_Ratio, y = Feature_short)) +
   # Reference line at OR = 1
   geom_vline(xintercept = 1, linetype = "dashed", color = "gray50", linewidth = 0.8) +
-  # Barres d'erreur (IC 95%)
+  # Error bars (95% CI)
   geom_errorbarh(aes(xmin = CI_low, xmax = CI_high_plot), height = 0.2, linewidth = 0.8, color = "gray30") +
   # Points for the ORs
   geom_point(aes(color = P_value < 0.05), size = 4) +
-  # P-values au-dessus des points
+  # P-values above the points
   geom_text(aes(label = p_label, y = as.numeric(Feature_short) + 0.35), 
             size = 3.5, hjust = 0.5) +
-  # Couleurs
+  # Colours
   scale_color_manual(values = c("TRUE" = "#E53935", "FALSE" = "gray50"),
                      guide = "none") +
   # Axes
@@ -1883,13 +1883,13 @@ p_forest <- ggplot(plot_or_data, aes(x = Odds_Ratio, y = Feature_short)) +
     panel.grid.major.x = element_line(color = "gray90", linewidth = 0.3)
   )
 
-# Sauvegarder l'ancien plot d'abord
+# Save the previous plot first
 output_forest_old <- file.path(run_path, sfx("enrichment_forest_plot_old.png"))
 output_forest_current <- file.path(run_path, sfx("enrichment_forest_plot.png"))
 ggsave(output_forest_old, p_forest, width = 8, height = 8, dpi = 300)
 cat("  Former forest plot saved to: enrichment_forest_plot_old.png\n")
 
-# --- Nouveau forest plot : Fetal NOT Others/Blood NOT Testis + GTEx positifs ---
+# --- New forest plot: Fetal NOT Others/Blood NOT Testis + positive GTEx ---
 cat("  Generating the new forest plot...\n")
 
 # Prepare the data for the new plot
@@ -1909,7 +1909,7 @@ fetal_not_testis_data <- results_df %>%
     Ctrl_n = N_pairs
   )
 
-# 2. GTEx enrichments positifs (NOT Others/Blood)
+# 2. Positive GTEx enrichments (NOT Others/Blood)
 gtex_positive_data <- tibble()
 # Load the GTEx data when available
 gtex_not_blood_file <- file.path(run_path, sfx("gtex_all_tissues_not_blood_enrichment.tsv"))
@@ -1965,14 +1965,14 @@ if (nrow(plot_new_data) > 0) {
   p_forest_new <- ggplot(plot_new_data, aes(x = Odds_Ratio, y = Tissue_label)) +
     # Reference line at OR = 1
     geom_vline(xintercept = 1, linetype = "dashed", color = "gray50", linewidth = 0.8) +
-    # Barres d'erreur (IC 95%)
+    # Error bars (95% CI)
     geom_errorbarh(aes(xmin = CI_low, xmax = CI_high_plot), height = 0.2, linewidth = 0.8, color = "gray30") +
     # Points for the ORs
     geom_point(aes(color = P_value < 0.05), size = 4) +
-    # P-values au-dessus des points
+    # P-values above the points
     geom_text(aes(label = p_label, y = as.numeric(Tissue_label) + 0.35), 
               size = 4.9, hjust = 0.5, family = "Helvetica") +
-    # Couleurs
+    # Colours
     scale_color_manual(values = c("TRUE" = "#E53935", "FALSE" = "gray50"),
                        guide = "none") +
     # Axes
@@ -2121,7 +2121,7 @@ if (args$use_diff_pct) {
 }
 
 t_end_section10 <- Sys.time()
-cat("\n  Section 10 (Sauvegarde):", round(as.numeric(difftime(t_end_section10, t_start_section10, units = "secs")), 2), "seconds\n")
+cat("\n  Section 10 (Saving):", round(as.numeric(difftime(t_end_section10, t_start_section10, units = "secs")), 2), "seconds\n")
 
 t_total <- Sys.time()
 total_secs <- round(as.numeric(difftime(t_total, t_start_section1, units = "secs")), 2)
@@ -2159,7 +2159,7 @@ timing_report <- c(
   paste("  Section 8 (Boxplots):", round(as.numeric(difftime(t_end_section8, t_start_section8, units = "secs")), 2), "seconds"),
   paste("  Section 9b (GTEx all tissues):", round(as.numeric(difftime(t_end_section9b, t_start_section9b, units = "secs")), 2), "seconds"),
   paste("  Section 9 (Enrichments):", round(as.numeric(difftime(t_end_section9, t_start_section9, units = "secs")), 2), "seconds"),
-  paste("  Section 10 (Sauvegarde):", round(as.numeric(difftime(t_end_section10, t_start_section10, units = "secs")), 2), "seconds"),
+  paste("  Section 10 (Saving):", round(as.numeric(difftime(t_end_section10, t_start_section10, units = "secs")), 2), "seconds"),
   "",
   "TOTAL:",
   paste("  Temps total:", total_secs, "seconds (", total_mins, "minutes)"),

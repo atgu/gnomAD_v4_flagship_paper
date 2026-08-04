@@ -43,7 +43,7 @@ parser$add_argument("--suffix", type = "character", default = "",
                     help = "Suffix inserted before the extension of the managed input/output files (e.g. _new)")
 args <- parser$parse_args()
 
-# --- Chemins ---
+# --- Paths ---
 run_path <- file.path(PROJECT_ROOT, "app", "agent_runs", args$run)
 
 cat("\n")
@@ -101,7 +101,7 @@ gencc_first_submission <- gencc_with_year %>%
 
 cat("   ", n_distinct(gencc_first_submission$gene_symbol), "unique GenCC genes (first submission)\n")
 
-# Joindre
+# Join
 data_joined <- gencc_first_submission %>%
   inner_join(mc_scores, by = "gene_symbol")
 
@@ -165,7 +165,7 @@ p <- ggplot(stats_by_year, aes(x = year_label, y = mean_score, group = 1)) +
     aspect.ratio = 1
   )
 
-# Sauvegarder
+# Save
 output_file <- file.path(run_path, paste0("discovery_score_by_year", args$suffix, ".png"))
 ggsave(output_file, p, width = 8, height = 8, dpi = 300)
 cat("   Plot saved:", output_file, "\n")

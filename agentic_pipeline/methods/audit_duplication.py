@@ -120,15 +120,15 @@ def main() -> None:
         else:
             drifted.append((name, found))
 
-    print(f"  identiques a l'amont      : {len(identical)}")
-    print(f"  divergentes               : {len(drifted)}")
-    print(f"  absentes de l'amont       : {len(absent)}")
+    print(f"  identical to upstream     : {len(identical)}")
+    print(f"  drifted from upstream     : {len(drifted)}")
+    print(f"  absent from upstream      : {len(absent)}")
     print(f"  duplicated upstream       : {len(duplicated_upstream)}\n")
 
     if duplicated_upstream:
         print("Functions present in more than one copy inside the pipeline:")
         for name, n_files, n_bodies in sorted(duplicated_upstream):
-            flag = "  <-- corps differents" if n_bodies > 1 else ""
+            flag = "  <-- differing bodies" if n_bodies > 1 else ""
             print(f"  {name:38s} {n_files} files, {n_bodies} version(s){flag}")
         print()
 
@@ -137,7 +137,7 @@ def main() -> None:
         for name, found in drifted:
             print(f"  {name}")
             for path, _ in found[:3]:
-                print(f"      amont: {path.relative_to(upstream)}")
+                print(f"      upstream: {path.relative_to(upstream)}")
         print()
 
     if absent:

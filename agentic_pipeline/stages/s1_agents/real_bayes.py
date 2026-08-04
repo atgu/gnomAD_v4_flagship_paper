@@ -161,11 +161,11 @@ def compute_real_bayes(O, E, level, kappa=100, min_p=0.05, max_p=0.95,
         
         # --- Agreement prior ↔ likelihood (mean-based, variance-weighted) ---
         if np.sum(prior_normalized) > 0 and np.sum(likelihood_normalized) > 0:
-            # Centres de masse
+            # Centres of mass
             prior_mean = np.sum(theta_grid * prior_normalized)
             likelihood_mean = np.sum(theta_grid * likelihood_normalized)
             
-            # Variances (mesure de confiance)
+            # Variances (confidence measure)
             prior_var = np.sum((theta_grid - prior_mean) ** 2 * prior_normalized)
             likelihood_var = np.sum((theta_grid - likelihood_mean) ** 2 * likelihood_normalized)
             

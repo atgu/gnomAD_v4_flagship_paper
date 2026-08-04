@@ -323,7 +323,7 @@ class GCSBucketClient:
             if name == "summary.csv" or not name.endswith(".json"):
                 continue
             # Extract the gene name (without .json)
-            gene_name = name[:-5]  # Enlever ".json"
+            gene_name = name[:-5]  # Strip ".json"
             existing.add(gene_name)
         return existing
 
@@ -784,10 +784,10 @@ def run_pipeline(args):
     defaults = load_app_defaults()
     worker_config = build_worker_config(args, defaults)
     
-    # Mode bucket GCS optionnel
+    # Optional GCS bucket mode
     bucket_client = None
     if getattr(args, "google_bucket", None):
-        print(f"[INFO] Connexion au bucket GCS: {args.google_bucket}")
+        print(f"[INFO] Connecting to GCS bucket: {args.google_bucket}")
         try:
             bucket_client = GCSBucketClient(args.google_bucket)
             print(f"[INFO] GCS bucket mode on, results written to {args.google_bucket}")
@@ -845,7 +845,7 @@ def run_pipeline(args):
     json_dir = None
     processed_genes = set()
 
-    # En mode run local, on garde le comportement existant (runs + summary.csv)
+    # In local-run mode, keep the existing behaviour (runs + summary.csv)
     if bucket_client is None:
         print("[INFO] Preparing the output paths (local run mode)...")
         run_path, csv_path, json_dir = prepare_output_paths_and_run(args, worker_config)
@@ -1026,7 +1026,7 @@ def run_pipeline(args):
     else:
         print(f"[INFO] Done in {elapsed:.1f} seconds. Results in {csv_path}")
         
-        # Write token usage report (run local uniquement)
+        # Write token usage report (local run only)
         run_name = os.path.basename(run_path)
         token_report_path = os.path.join(run_path, "token_usage.txt")
         tracker.write_report(token_report_path, run_name)
@@ -1162,7 +1162,7 @@ def parse_args():
         "--gemini_flex",
         action="store_true",
         help="(Gemini only) Use Vertex AI Flex PayGo (50%% off the price, "
-             "latence plus longue, best-effort SLA). Verifie a posteriori via traffic_type.",
+             "longer latency, best-effort SLA). Verified after the fact via traffic_type.",
     )
     return parser.parse_args()
 

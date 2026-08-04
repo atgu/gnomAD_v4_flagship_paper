@@ -41,12 +41,12 @@ if ! timeout 30 gcloud auth application-default print-access-token >/dev/null 2>
   echo "  [SKIP] no ADC credentials — 'gcloud auth application-default login'"
   exit 0
 fi
-check "identifiants Vertex (ADC) disponibles" 0
+check "Vertex credentials (ADC) available" 0
 
 export GOOGLE_CLOUD_PROJECT="${GOOGLE_CLOUD_PROJECT:-$(gcloud config get-value project 2>/dev/null)}"
 export PEPPER_MECHANISM_PROMPT_VERSION="${PEPPER_MECHANISM_PROMPT_VERSION:-v2}"
-echo "  projet  : $GOOGLE_CLOUD_PROJECT"
-echo "  prompt mecanisme : $PEPPER_MECHANISM_PROMPT_VERSION"
+echo "  project : $GOOGLE_CLOUD_PROJECT"
+echo "  mechanism prompt : $PEPPER_MECHANISM_PROMPT_VERSION"
 
 # Snapshot of the frozen outputs, to prove afterwards that nothing moved.
 before=""
@@ -101,7 +101,7 @@ if missing:
     print(f"  [FAIL] missing top-level keys: {sorted(missing)}")
     sys.exit(1)
 print(f"  [PASS] schema compatible with the frozen run ({gene}, {len(ref)} keys"
-      + (f", {len(extra)} nouvelle(s)" if extra else "") + ")")
+      + (f", {len(extra)} new" if extra else "") + ")")
 PY
   [ $? -eq 0 ] || fail=$((fail+1))
 fi

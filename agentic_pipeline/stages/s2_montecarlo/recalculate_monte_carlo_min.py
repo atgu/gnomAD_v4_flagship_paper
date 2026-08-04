@@ -31,14 +31,14 @@ try:
 except ImportError:
     GCS_AVAILABLE = False
 
-# Constantes
+# Constants
 MONTE_CARLO_SEED = 42
 MONTE_CARLO_SAMPLES = 10000
 DEFAULT_ALGO_LEVEL = 7
 KAPPA_MIN = 20
 KAPPA_MAX = 300
 
-# Colonnes LOEUF missense (p_misannot_80)
+# LOEUF missense columns (p_misannot_80)
 LOEUF_OBS_COL = "obs_p_misannot_80"
 LOEUF_EXP_COL = "exp_p_misannot_80"
 LOEUF_FILE_NAME = "obs_exp_for_loeuf_missense.tsv"
@@ -858,7 +858,7 @@ def get_expected_level_and_variance(disease: dict, n_samples: int = MONTE_CARLO_
     ])
     
     if has_distributions:
-        # Recalculer le Monte Carlo
+        # Recompute the Monte Carlo
         try:
             mc_result = compute_algorithmic_level_distribution(
                 disease,
@@ -907,7 +907,7 @@ def get_v2_score_and_variance(disease: dict, n_samples: int = MONTE_CARLO_SAMPLE
     ])
     
     if has_distributions:
-        # Recalculer le Monte Carlo
+        # Recompute the Monte Carlo
         try:
             v2_result = compute_v2_score_distribution(
                 disease,
@@ -1026,7 +1026,7 @@ def process_gene_data(data: dict, n_samples: int = MONTE_CARLO_SAMPLES, enable_v
     if not all_levels:
         return result
     
-    # Trouver le minimum global (v1)
+    # Find the global minimum (v1)
     min_entry = min(all_levels, key=lambda x: x[0])
     result['MC_min'] = min_entry[0]
     result['MC_min_variance'] = min_entry[1]
@@ -1069,7 +1069,7 @@ def process_gene_data(data: dict, n_samples: int = MONTE_CARLO_SAMPLES, enable_v
         # Per-mechanism rule, reproducing run_016:
         #   - pure match (mech == tag)              -> value (max of the pure scores)
         #   - tag only present in a composite (e.g. 'GoF/LoF/DN'), no pure match,
-        #     en mode strict                     -> NA (exclu du DP)
+        #     en mode strict                     -> NA (excluded from DP)
         #   - tag entirely absent / no disease      -> benign default 0.0
         for tag, key in (('GOF', 'MC_GoF_v2'), ('DN', 'MC_DN_v2'), ('LOF', 'MC_LoF_v2')):
             pure_scores = [(score, var, name) for score, var, name, mech in all_v2_scores if _mech_match(mech, tag)]
@@ -1154,7 +1154,7 @@ def update_gene_data_mc(data: dict, n_samples: int = MONTE_CARLO_SAMPLES) -> int
         is_protective = disease.get('association_is_protective', False)
         is_neutral = disease.get('association_is_neutral', False)
         
-        # Recalculer le Monte Carlo
+        # Recompute the Monte Carlo
         mc_result = compute_algorithmic_level_distribution(
             disease,
             n_samples=n_samples,
@@ -1165,7 +1165,7 @@ def update_gene_data_mc(data: dict, n_samples: int = MONTE_CARLO_SAMPLES) -> int
         disease['expected_level'] = mc_result['expected_level']
         disease['level_variance'] = mc_result['level_variance']
         disease['level_distribution'] = mc_result['level_distribution']
-        disease['level_samples'] = mc_result['samples']  # Renommer samples -> level_samples
+        disease['level_samples'] = mc_result['samples']  # Rename samples -> level_samples
         disease['kappa'] = compute_kappa_from_variance(
             mc_result['expected_level'],
             mc_result['level_variance']
@@ -1258,7 +1258,7 @@ def load_loeuf_data(loeuf_filename: str = LOEUF_FILE_NAME) -> dict:
         # Try multiple possible paths (local vs cloud structure)
         script_dir = Path(__file__).parent
         possible_paths = [
-            project_root / 'app' / 'data' / loeuf_filename,  # local: racine/app/data
+            project_root / 'app' / 'data' / loeuf_filename,  # local: root/app/data
             script_dir.parent.parent.parent / 'app' / 'data' / loeuf_filename,  # local: app/benchmark/scripts -> app/data
             script_dir.parent.parent / 'data' / loeuf_filename,  # cloud: benchmark/scripts -> data
             project_root / 'data' / loeuf_filename,  # fallback
@@ -1462,7 +1462,7 @@ def main():
     # =========================================================================
     if args.google_bucket:
         if not GCS_AVAILABLE:
-            print("Erreur: GCS support not available. Install google-cloud-storage.", file=sys.stderr)
+            print("Error: GCS support not available. Install google-cloud-storage.", file=sys.stderr)
             sys.exit(1)
         
         print(f"GCS Mode: {args.google_bucket}", file=sys.stderr)
@@ -1710,7 +1710,7 @@ def main():
                 rows.append(new_results_dict[gene])
                 updated_genes.add(gene)
             else:
-                # Garder l'ancienne ligne
+                # Keep the previous line
                 rows.append(row.to_dict())
         
         # Append the genes that were absent from the TSV

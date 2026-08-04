@@ -426,7 +426,7 @@ class TokenTracker:
             # Totals section
             lines.extend([
                 "-" * 50,
-                "TOTAUX:",
+                "TOTALS:",
                 "-" * 50,
                 f"Total calls:         {total_calls:,}",
                 f"Total tokens input:  {total_input:,}",

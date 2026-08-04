@@ -58,7 +58,7 @@ args <- parser$parse_args()
 
 # --- Suffix robustness: align the input and the v2 mode automatically ---
 # When a suffix is given (e.g. _new), the boxplot must read the suffixed MC
-# (monte_carlo_min<suffix>.tsv) en mode v2 (MC_LoF_v2_signed_dis), comme l'exige
+# (monte_carlo_min<suffix>.tsv) in v2 mode (MC_LoF_v2_signed_dis), as required by
 # generate_main_figure2.R. Without a suffix, the behaviour is unchanged.
 if (args$suffix != "") {
   if (args$input_file == "monte_carlo_min.tsv") {
@@ -213,7 +213,7 @@ if (length(min_level_idx) == 0) {
 accepted_classifications <- classification_levels[1:min_level_idx]
 
 cat("  Minimum classification accepted:", args$min_classification, "\n")
-cat("  Classifications incluses:", paste(accepted_classifications, collapse = ", "), "\n")
+cat("  Classifications included:", paste(accepted_classifications, collapse = ", "), "\n")
 
 # Filter on the minimum level
 gencc_data_filtered <- gencc_data %>%
@@ -308,8 +308,8 @@ if (nrow(loeuf_mouse) > 0 && nrow(loeuf_gencc) > 0) {
   cat(sprintf("  P-value: %.4f\n", wilcoxon_test_loeuf_fertility$p.value))
   cat(sprintf("  N mouse fertility genes: %d\n", nrow(loeuf_mouse)))
   cat(sprintf("  N GenCC genes (excluding fertility-only): %d\n", nrow(loeuf_gencc)))
-  cat(sprintf("  Moyenne mouse fertility: %.4f\n", mean(loeuf_mouse$loeuf_v4, na.rm = TRUE)))
-  cat(sprintf("  Moyenne GenCC (excluding fertility-only): %.4f\n", mean(loeuf_gencc$loeuf_v4, na.rm = TRUE)))
+  cat(sprintf("  Mean mouse fertility: %.4f\n", mean(loeuf_mouse$loeuf_v4, na.rm = TRUE)))
+  cat(sprintf("  Mean GenCC (excluding fertility-only): %.4f\n", mean(loeuf_gencc$loeuf_v4, na.rm = TRUE)))
 } else {
   cat("  ! Insufficient data for the test LOEUF fertility\n")
   wilcoxon_test_loeuf_fertility <- NULL
@@ -326,8 +326,8 @@ if (nrow(loeuf_embryonic) > 0 && nrow(loeuf_gencc) > 0) {
   cat(sprintf("  P-value: %.4f\n", wilcoxon_test_loeuf_embryonic$p.value))
   cat(sprintf("  N mouse embryonic lethal genes: %d\n", nrow(loeuf_embryonic)))
   cat(sprintf("  N GenCC genes (excluding fertility-only): %d\n", nrow(loeuf_gencc)))
-  cat(sprintf("  Moyenne mouse embryonic lethal: %.4f\n", mean(loeuf_embryonic$loeuf_v4, na.rm = TRUE)))
-  cat(sprintf("  Moyenne GenCC (excluding fertility-only): %.4f\n", mean(loeuf_gencc$loeuf_v4, na.rm = TRUE)))
+  cat(sprintf("  Mean mouse embryonic lethal: %.4f\n", mean(loeuf_embryonic$loeuf_v4, na.rm = TRUE)))
+  cat(sprintf("  Mean GenCC (excluding fertility-only): %.4f\n", mean(loeuf_gencc$loeuf_v4, na.rm = TRUE)))
 } else {
   cat("\n  ! Insufficient data for the test LOEUF embryonic\n")
   wilcoxon_test_loeuf_embryonic <- NULL
@@ -353,8 +353,8 @@ if (nrow(mc_mouse) > 0 && nrow(mc_gencc) > 0) {
   cat(sprintf("  P-value: %.4f\n", wilcoxon_test_mc_fertility$p.value))
   cat(sprintf("  N mouse fertility genes: %d\n", nrow(mc_mouse)))
   cat(sprintf("  N GenCC genes (excluding fertility-only): %d\n", nrow(mc_gencc)))
-  cat(sprintf("  Moyenne mouse fertility: %.4f\n", mean(mc_mouse$MC_value, na.rm = TRUE)))
-  cat(sprintf("  Moyenne GenCC (excluding fertility-only): %.4f\n", mean(mc_gencc$MC_value, na.rm = TRUE)))
+  cat(sprintf("  Mean mouse fertility: %.4f\n", mean(mc_mouse$MC_value, na.rm = TRUE)))
+  cat(sprintf("  Mean GenCC (excluding fertility-only): %.4f\n", mean(mc_gencc$MC_value, na.rm = TRUE)))
 } else {
   cat("\n  ! Insufficient data for the test MC fertility\n")
   wilcoxon_test_mc_fertility <- NULL
@@ -371,8 +371,8 @@ if (nrow(mc_embryonic) > 0 && nrow(mc_gencc) > 0) {
   cat(sprintf("  P-value: %.4f\n", wilcoxon_test_mc_embryonic$p.value))
   cat(sprintf("  N mouse embryonic lethal genes: %d\n", nrow(mc_embryonic)))
   cat(sprintf("  N GenCC genes (excluding fertility-only): %d\n", nrow(mc_gencc)))
-  cat(sprintf("  Moyenne mouse embryonic lethal: %.4f\n", mean(mc_embryonic$MC_value, na.rm = TRUE)))
-  cat(sprintf("  Moyenne GenCC (excluding fertility-only): %.4f\n", mean(mc_gencc$MC_value, na.rm = TRUE)))
+  cat(sprintf("  Mean mouse embryonic lethal: %.4f\n", mean(mc_embryonic$MC_value, na.rm = TRUE)))
+  cat(sprintf("  Mean GenCC (excluding fertility-only): %.4f\n", mean(mc_gencc$MC_value, na.rm = TRUE)))
 } else {
   cat("\n  ! Insufficient data for the test MC embryonic\n")
   wilcoxon_test_mc_embryonic <- NULL
@@ -395,8 +395,8 @@ if (nrow(diff_pct_mouse) > 0 && nrow(diff_pct_gencc) > 0) {
   cat(sprintf("  P-value: %.4f\n", wilcoxon_test_diff_pct$p.value))
   cat(sprintf("  N mouse fertility genes: %d\n", nrow(diff_pct_mouse)))
   cat(sprintf("  N GenCC genes (excluding fertility-only): %d\n", nrow(diff_pct_gencc)))
-  cat(sprintf("  Moyenne mouse fertility: %.4f\n", mean(diff_pct_mouse$diff_pct, na.rm = TRUE)))
-  cat(sprintf("  Moyenne GenCC (excluding fertility-only): %.4f\n", mean(diff_pct_gencc$diff_pct, na.rm = TRUE)))
+  cat(sprintf("  Mean mouse fertility: %.4f\n", mean(diff_pct_mouse$diff_pct, na.rm = TRUE)))
+  cat(sprintf("  Mean GenCC (excluding fertility-only): %.4f\n", mean(diff_pct_gencc$diff_pct, na.rm = TRUE)))
 } else {
   cat("\n  ! Insufficient data for the test diff_pct\n")
 }
@@ -480,7 +480,7 @@ if (nrow(plot_data_all) > 0) {
   p <- ggplot(plot_data_all, aes(x = x_pos, y = percentile, fill = category, group = interaction(x_pos, category))) +
     # The 6 violin plots (trim = TRUE so they stop at the observed data)
     geom_violin(alpha = 0.7, width = 0.6, position = position_identity(), trim = TRUE) +
-    # Couleurs
+    # Colours
     scale_fill_manual(values = c(
       "Mouse Fertility" = "#E74C3C", 
       "Mouse Embryonic Lethal" = "#F39C12",
@@ -505,7 +505,7 @@ if (nrow(plot_data_all) > 0) {
       x = "",
       y = "Score percentile"
     ) +
-    # Theme classique
+    # Classic theme
     theme_classic() +
     theme(
       legend.position = "none",
@@ -644,7 +644,7 @@ if (nrow(plot_data_all) > 0) {
                                 hjust = 0, vjust = 0.5, size = 4.2, fontface = "italic", family = "Helvetica",
                                 inherit.aes = FALSE, direction = "y", force = 5, max.overlaps = Inf,
                                 box.padding = 1.5, point.padding = 1.3, segment.size = 0.3) +
-      # Couleurs
+      # Colours
       scale_fill_manual(values = c(
         "Mouse Fertility" = "#E74C3C", 
         "Mouse Embryonic Lethal" = "#F39C12",
@@ -662,7 +662,7 @@ if (nrow(plot_data_all) > 0) {
         x = "",
         y = "DisPo percentile"
       ) +
-      # Theme classique
+      # Classic theme
       theme_classic(base_family = "Helvetica") +
       theme(
         legend.position = "none",
@@ -699,8 +699,8 @@ if (nrow(plot_data_all) > 0) {
     stats_by_category <- plot_data_mc_only %>%
       group_by(category) %>%
       summarise(
-        mediane = median(percentile, na.rm = TRUE),
-        moyenne = mean(percentile, na.rm = TRUE),
+        median_value = median(percentile, na.rm = TRUE),
+        mean_value = mean(percentile, na.rm = TRUE),
         n = n(),
         .groups = "drop"
       )
@@ -711,8 +711,8 @@ if (nrow(plot_data_all) > 0) {
       cat(sprintf("    %s (n=%d): Median = %.4f, Mean = %.4f\n", 
                   as.character(stats_by_category$category[i]),
                   stats_by_category$n[i],
-                  stats_by_category$mediane[i],
-                  stats_by_category$moyenne[i]))
+                  stats_by_category$median_value[i],
+                  stats_by_category$mean_value[i]))
     }
     
     # Save the plot
@@ -788,7 +788,7 @@ if (nrow(plot_data_all) > 0) {
         n_top_10pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.1))
         n_bottom_10pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.1))
         
-        # Top 10% (plus haut Potential Discovery score)
+        # Top 10% (highest Potential Discovery score)
         top_10pct_fertility_mc <- mouse_fertility_with_testis %>%
           slice_head(n = n_top_10pct_fertility_mc)
         
@@ -807,15 +807,15 @@ if (nrow(plot_data_all) > 0) {
                                                    exact = FALSE)
         
         cat("\n  Results (Top 10% vs Bottom 10%):\n")
-        cat(sprintf("    Top 10%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_10pct_fertility_mc, mean_tpm_top_10pct_fertility_mc))
-        cat(sprintf("    Bottom 10%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_10pct_fertility_mc, mean_tpm_bottom_10pct_fertility_mc))
+        cat(sprintf("    Top 10%% (n=%d): Mean testis TPM = %.4f\n", n_top_10pct_fertility_mc, mean_tpm_top_10pct_fertility_mc))
+        cat(sprintf("    Bottom 10%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_10pct_fertility_mc, mean_tpm_bottom_10pct_fertility_mc))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_10pct$p.value))
         
         # Take the top 30% and bottom 30% of genes
         n_top_30pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.3))
         n_bottom_30pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.3))
         
-        # Top 30% (plus haut Potential Discovery score)
+        # Top 30% (highest Potential Discovery score)
         top_30pct_fertility_mc <- mouse_fertility_with_testis %>%
           slice_head(n = n_top_30pct_fertility_mc)
         
@@ -834,15 +834,15 @@ if (nrow(plot_data_all) > 0) {
                                                    exact = FALSE)
         
         cat("\n  Results (Top 30% vs Bottom 30%):\n")
-        cat(sprintf("    Top 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_30pct_fertility_mc, mean_tpm_top_30pct_fertility_mc))
-        cat(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_30pct_fertility_mc, mean_tpm_bottom_30pct_fertility_mc))
+        cat(sprintf("    Top 30%% (n=%d): Mean testis TPM = %.4f\n", n_top_30pct_fertility_mc, mean_tpm_top_30pct_fertility_mc))
+        cat(sprintf("    Bottom 30%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_30pct_fertility_mc, mean_tpm_bottom_30pct_fertility_mc))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_30pct$p.value))
         
         # Test with top 50% vs bottom 50%
         n_top_50pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.5))
         n_bottom_50pct_fertility_mc <- max(1, floor(n_fertility_with_testis * 0.5))
         
-        # Top 50% (plus haut Potential Discovery score)
+        # Top 50% (highest Potential Discovery score)
         top_50pct_fertility_mc <- mouse_fertility_with_testis %>%
           slice_head(n = n_top_50pct_fertility_mc)
         
@@ -861,8 +861,8 @@ if (nrow(plot_data_all) > 0) {
                                                    exact = FALSE)
         
         cat("\n  Results (Top 50% vs Bottom 50%):\n")
-        cat(sprintf("    Top 50%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_50pct_fertility_mc, mean_tpm_top_50pct_fertility_mc))
-        cat(sprintf("    Bottom 50%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_50pct_fertility_mc, mean_tpm_bottom_50pct_fertility_mc))
+        cat(sprintf("    Top 50%% (n=%d): Mean testis TPM = %.4f\n", n_top_50pct_fertility_mc, mean_tpm_top_50pct_fertility_mc))
+        cat(sprintf("    Bottom 50%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_50pct_fertility_mc, mean_tpm_bottom_50pct_fertility_mc))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_50pct$p.value))
       } else {
         cat("  ! Not enough genes (10 required)\n")
@@ -913,7 +913,7 @@ if (nrow(plot_data_all) > 0) {
         top_10pct_fertility_loeuf <- mouse_fertility_with_testis_loeuf %>%
           slice_head(n = n_top_10pct_fertility_loeuf)
         
-        # Bottom 10% (plus bas LOEUF percentile = moins contraint)
+        # Bottom 10% (lowest LOEUF percentile = least constrained)
         bottom_10pct_fertility_loeuf <- mouse_fertility_with_testis_loeuf %>%
           slice_tail(n = n_bottom_10pct_fertility_loeuf)
         
@@ -928,8 +928,8 @@ if (nrow(plot_data_all) > 0) {
                                                          exact = FALSE)
         
         cat("\n  Results based on the LOEUF v4 percentile (Top 10% vs Bottom 10%):\n")
-        cat(sprintf("    Top 10%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_10pct_fertility_loeuf, mean_tpm_top_10pct_fertility_loeuf))
-        cat(sprintf("    Bottom 10%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_10pct_fertility_loeuf, mean_tpm_bottom_10pct_fertility_loeuf))
+        cat(sprintf("    Top 10%% (n=%d): Mean testis TPM = %.4f\n", n_top_10pct_fertility_loeuf, mean_tpm_top_10pct_fertility_loeuf))
+        cat(sprintf("    Bottom 10%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_10pct_fertility_loeuf, mean_tpm_bottom_10pct_fertility_loeuf))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_10pct_loeuf$p.value))
         
         # Test with top 30% vs bottom 30%
@@ -951,8 +951,8 @@ if (nrow(plot_data_all) > 0) {
                                                          exact = FALSE)
         
         cat("\n  Results based on the LOEUF v4 percentile (Top 30% vs Bottom 30%):\n")
-        cat(sprintf("    Top 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_30pct_fertility_loeuf, mean_tpm_top_30pct_fertility_loeuf))
-        cat(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_30pct_fertility_loeuf, mean_tpm_bottom_30pct_fertility_loeuf))
+        cat(sprintf("    Top 30%% (n=%d): Mean testis TPM = %.4f\n", n_top_30pct_fertility_loeuf, mean_tpm_top_30pct_fertility_loeuf))
+        cat(sprintf("    Bottom 30%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_30pct_fertility_loeuf, mean_tpm_bottom_30pct_fertility_loeuf))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_30pct_loeuf$p.value))
         
         # Test with top 50% vs bottom 50%
@@ -974,8 +974,8 @@ if (nrow(plot_data_all) > 0) {
                                                          exact = FALSE)
         
         cat("\n  Results based on the LOEUF v4 percentile (Top 50% vs Bottom 50%):\n")
-        cat(sprintf("    Top 50%% (n=%d): Moyenne TPM testis = %.4f\n", n_top_50pct_fertility_loeuf, mean_tpm_top_50pct_fertility_loeuf))
-        cat(sprintf("    Bottom 50%% (n=%d): Moyenne TPM testis = %.4f\n", n_bottom_50pct_fertility_loeuf, mean_tpm_bottom_50pct_fertility_loeuf))
+        cat(sprintf("    Top 50%% (n=%d): Mean testis TPM = %.4f\n", n_top_50pct_fertility_loeuf, mean_tpm_top_50pct_fertility_loeuf))
+        cat(sprintf("    Bottom 50%% (n=%d): Mean testis TPM = %.4f\n", n_bottom_50pct_fertility_loeuf, mean_tpm_bottom_50pct_fertility_loeuf))
         cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4f\n", wilcoxon_test_testis_50pct_loeuf$p.value))
       } else {
         cat("  ! Not enough genes (10 required)\n")
@@ -1060,7 +1060,7 @@ if (nrow(plot_data_all) > 0) {
           n_top_10pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.1))
           n_bottom_10pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.1))
           
-          # Top 10% (plus haut Potential Discovery score)
+          # Top 10% (highest Potential Discovery score)
           top_10pct_embryonic <- mouse_embryonic_with_fetal %>%
             slice_head(n = n_top_10pct_embryonic_mc)
           
@@ -1087,7 +1087,7 @@ if (nrow(plot_data_all) > 0) {
           n_top_30pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.3))
           n_bottom_30pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.3))
           
-          # Top 30% (plus haut Potential Discovery score)
+          # Top 30% (highest Potential Discovery score)
           top_30pct_embryonic <- mouse_embryonic_with_fetal %>%
             slice_head(n = n_top_30pct_embryonic_mc)
           
@@ -1114,7 +1114,7 @@ if (nrow(plot_data_all) > 0) {
           n_top_50pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.5))
           n_bottom_50pct_embryonic_mc <- max(1, floor(n_embryonic_with_fetal * 0.5))
           
-          # Top 50% (plus haut Potential Discovery score)
+          # Top 50% (highest Potential Discovery score)
           top_50pct_embryonic <- mouse_embryonic_with_fetal %>%
             slice_head(n = n_top_50pct_embryonic_mc)
           
@@ -1198,7 +1198,7 @@ if (nrow(plot_data_all) > 0) {
           top_10pct_embryonic_loeuf <- mouse_embryonic_with_fetal_loeuf %>%
             slice_head(n = n_top_10pct_loeuf)
           
-          # Bottom 10% (plus bas LOEUF percentile = moins contraint)
+          # Bottom 10% (lowest LOEUF percentile = least constrained)
           bottom_10pct_embryonic_loeuf <- mouse_embryonic_with_fetal_loeuf %>%
             slice_tail(n = n_bottom_10pct_loeuf)
           
@@ -1358,9 +1358,9 @@ if (nrow(plot_data_all) > 0) {
                                                  exact = FALSE)
           
           cat("\n  Fetal-adult difference results (Top 10% vs Bottom 10% MC):\n")
-          cat(sprintf("    Top 10%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Top 10%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_top_10pct, mean_diff_top_10pct, mean_diff_pct_top_10))
-          cat(sprintf("    Bottom 10%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Bottom 10%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_bottom_10pct, mean_diff_bottom_10pct, mean_diff_pct_bottom_10))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4e\n", wilcoxon_test_fa_10pct$p.value))
           
@@ -1382,9 +1382,9 @@ if (nrow(plot_data_all) > 0) {
                                                  exact = FALSE)
           
           cat("\n  Fetal-adult difference results (Top 30% vs Bottom 30% MC):\n")
-          cat(sprintf("    Top 30%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Top 30%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_top_30pct, mean_diff_top_30pct, mean_diff_pct_top_30))
-          cat(sprintf("    Bottom 30%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Bottom 30%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_bottom_30pct, mean_diff_bottom_30pct, mean_diff_pct_bottom_30))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4e\n", wilcoxon_test_fa_30pct$p.value))
           
@@ -1406,9 +1406,9 @@ if (nrow(plot_data_all) > 0) {
                                                  exact = FALSE)
           
           cat("\n  Fetal-adult difference results (Top 50% vs Bottom 50% MC):\n")
-          cat(sprintf("    Top 50%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Top 50%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_top_50pct, mean_diff_top_50pct, mean_diff_pct_top_50))
-          cat(sprintf("    Bottom 50%% (n=%d): Moyenne diff = %.2f, Percentile moyen = %.1f\n", 
+          cat(sprintf("    Bottom 50%% (n=%d): Mean diff = %.2f, Mean percentile = %.1f\n", 
                       n_bottom_50pct, mean_diff_bottom_50pct, mean_diff_pct_bottom_50))
           cat(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.4e\n", wilcoxon_test_fa_50pct$p.value))
         } else {
@@ -1438,7 +1438,7 @@ if (nrow(plot_data_all) > 0) {
   cat(strrep("-", 50), "\n\n")
   
   # Prepare the data for the PR curves
-  # On veut identifier Mouse Fertility (classe positive)
+  # We want to identify Mouse Fertility (positive class)
   pr_data <- all_genes %>%
     filter(!is.na(loeuf_percentile) & !is.na(mc_value_percentile) & !is.na(mc_percentile)) %>%
     mutate(
@@ -1660,22 +1660,22 @@ if (nrow(plot_data_all) > 0) {
   writeLines("Based on MC_LoF_v2_signed_dis percentile:", file_conn)
   if (exists("wilcoxon_test_testis_10pct") && !is.null(wilcoxon_test_testis_10pct)) {
     writeLines("  Top 10% vs Bottom 10%:", file_conn)
-    writeLines(sprintf("    Top 10%% (n=%d): Moyenne TPM testis = %.10f", n_top_10pct_fertility_mc, mean_tpm_top_10pct_fertility_mc), file_conn)
-    writeLines(sprintf("    Bottom 10%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_10pct_fertility_mc, mean_tpm_bottom_10pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Top 10%% (n=%d): Mean testis TPM = %.10f", n_top_10pct_fertility_mc, mean_tpm_top_10pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Bottom 10%% (n=%d): Mean testis TPM = %.10f", n_bottom_10pct_fertility_mc, mean_tpm_bottom_10pct_fertility_mc), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_10pct$p.value), file_conn)
     writeLines("", file_conn)
   }
   if (exists("wilcoxon_test_testis_30pct") && !is.null(wilcoxon_test_testis_30pct)) {
     writeLines("  Top 30% vs Bottom 30%:", file_conn)
-    writeLines(sprintf("    Top 30%% (n=%d): Moyenne TPM testis = %.10f", n_top_30pct_fertility_mc, mean_tpm_top_30pct_fertility_mc), file_conn)
-    writeLines(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_30pct_fertility_mc, mean_tpm_bottom_30pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Top 30%% (n=%d): Mean testis TPM = %.10f", n_top_30pct_fertility_mc, mean_tpm_top_30pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Bottom 30%% (n=%d): Mean testis TPM = %.10f", n_bottom_30pct_fertility_mc, mean_tpm_bottom_30pct_fertility_mc), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_30pct$p.value), file_conn)
     writeLines("", file_conn)
   }
   if (exists("wilcoxon_test_testis_50pct") && !is.null(wilcoxon_test_testis_50pct)) {
     writeLines("  Top 50% vs Bottom 50%:", file_conn)
-    writeLines(sprintf("    Top 50%% (n=%d): Moyenne TPM testis = %.10f", n_top_50pct_fertility_mc, mean_tpm_top_50pct_fertility_mc), file_conn)
-    writeLines(sprintf("    Bottom 50%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_50pct_fertility_mc, mean_tpm_bottom_50pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Top 50%% (n=%d): Mean testis TPM = %.10f", n_top_50pct_fertility_mc, mean_tpm_top_50pct_fertility_mc), file_conn)
+    writeLines(sprintf("    Bottom 50%% (n=%d): Mean testis TPM = %.10f", n_bottom_50pct_fertility_mc, mean_tpm_bottom_50pct_fertility_mc), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_50pct$p.value), file_conn)
     writeLines("", file_conn)
   }
@@ -1684,22 +1684,22 @@ if (nrow(plot_data_all) > 0) {
   writeLines("Based on LOEUF v4 percentile:", file_conn)
   if (exists("wilcoxon_test_testis_10pct_loeuf") && !is.null(wilcoxon_test_testis_10pct_loeuf)) {
     writeLines("  Top 10% vs Bottom 10%:", file_conn)
-    writeLines(sprintf("    Top 10%% (n=%d): Moyenne TPM testis = %.10f", n_top_10pct_fertility_loeuf, mean_tpm_top_10pct_fertility_loeuf), file_conn)
-    writeLines(sprintf("    Bottom 10%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_10pct_fertility_loeuf, mean_tpm_bottom_10pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Top 10%% (n=%d): Mean testis TPM = %.10f", n_top_10pct_fertility_loeuf, mean_tpm_top_10pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Bottom 10%% (n=%d): Mean testis TPM = %.10f", n_bottom_10pct_fertility_loeuf, mean_tpm_bottom_10pct_fertility_loeuf), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_10pct_loeuf$p.value), file_conn)
     writeLines("", file_conn)
   }
   if (exists("wilcoxon_test_testis_30pct_loeuf") && !is.null(wilcoxon_test_testis_30pct_loeuf)) {
     writeLines("  Top 30% vs Bottom 30%:", file_conn)
-    writeLines(sprintf("    Top 30%% (n=%d): Moyenne TPM testis = %.10f", n_top_30pct_fertility_loeuf, mean_tpm_top_30pct_fertility_loeuf), file_conn)
-    writeLines(sprintf("    Bottom 30%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_30pct_fertility_loeuf, mean_tpm_bottom_30pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Top 30%% (n=%d): Mean testis TPM = %.10f", n_top_30pct_fertility_loeuf, mean_tpm_top_30pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Bottom 30%% (n=%d): Mean testis TPM = %.10f", n_bottom_30pct_fertility_loeuf, mean_tpm_bottom_30pct_fertility_loeuf), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_30pct_loeuf$p.value), file_conn)
     writeLines("", file_conn)
   }
   if (exists("wilcoxon_test_testis_50pct_loeuf") && !is.null(wilcoxon_test_testis_50pct_loeuf)) {
     writeLines("  Top 50% vs Bottom 50%:", file_conn)
-    writeLines(sprintf("    Top 50%% (n=%d): Moyenne TPM testis = %.10f", n_top_50pct_fertility_loeuf, mean_tpm_top_50pct_fertility_loeuf), file_conn)
-    writeLines(sprintf("    Bottom 50%% (n=%d): Moyenne TPM testis = %.10f", n_bottom_50pct_fertility_loeuf, mean_tpm_bottom_50pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Top 50%% (n=%d): Mean testis TPM = %.10f", n_top_50pct_fertility_loeuf, mean_tpm_top_50pct_fertility_loeuf), file_conn)
+    writeLines(sprintf("    Bottom 50%% (n=%d): Mean testis TPM = %.10f", n_bottom_50pct_fertility_loeuf, mean_tpm_bottom_50pct_fertility_loeuf), file_conn)
     writeLines(sprintf("    Wilcoxon test (top > bottom, one-sided): P-value = %.15e", wilcoxon_test_testis_50pct_loeuf$p.value), file_conn)
     writeLines("", file_conn)
   }

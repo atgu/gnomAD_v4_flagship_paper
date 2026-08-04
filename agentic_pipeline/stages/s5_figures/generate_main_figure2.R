@@ -58,14 +58,14 @@ args <- parser$parse_args()
 # Helper: insert the suffix before the extension
 sfx <- function(name) if (args$suffix == "") name else sub("(\\.[^.]+)$", paste0(args$suffix, "\\1"), name)
 
-# --- Chemins ---
+# --- Paths ---
 run_path <- file.path(PROJECT_ROOT, "app", "agent_runs", args$run)
 
 if (!dir.exists(run_path)) {
   stop("Run path not found: ", run_path)
 }
 
-# Trouver le fold
+# Find the fold
 xgb_path <- file.path(run_path, "xgboost")
 if (!is.null(args$fold)) {
   fold_path <- file.path(xgb_path, args$fold)
@@ -156,16 +156,16 @@ main_figure2 <- r_A + r_B + r_C + r_D +
   plot_annotation(tag_levels = 'a') &
   theme(plot.tag = element_text(face = "bold", size = 20, family = "Helvetica"))
 
-# --- Sauvegarde ---
+# --- Save ---
 main_png_path <- file.path(output_dir, sfx("main_figure2.png"))
 main_pdf_path <- file.path(output_dir, sfx("main_figure2.pdf"))
 
-cat("  Sauvegarde PNG:", main_png_path, "\n")
+cat("  Saving PNG:", main_png_path, "\n")
 ggsave(main_png_path, main_figure2, 
        width = 16, height = 16, units = "in", dpi = 300, bg = "white")
 cat("  PNG saved\n")
 
-cat("  Sauvegarde PDF:", main_pdf_path, "\n")
+cat("  Saving PDF:", main_pdf_path, "\n")
 ggsave(main_pdf_path, main_figure2, 
        width = 16, height = 16, units = "in", bg = "white")
 cat("  PDF saved\n")

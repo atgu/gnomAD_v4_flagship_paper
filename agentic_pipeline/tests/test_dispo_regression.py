@@ -42,7 +42,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workdir", default=None,
                     help="Working directory. Defaults to a temporary "
-                         "temporaire. Eviter /tmp s'il est monte en RAM.")
+                         "temporary. Avoid /tmp if it is mounted in RAM.")
     args = ap.parse_args()
 
     c = Checks("T2 — DisPo regression, bit-identical reproduction")
@@ -50,7 +50,7 @@ def main() -> None:
     src = results_dir()
     if src is None:
         c.skip("Monte Carlo recomputation",
-               "JSON de l'agent introuvables; definir PEPPER_RUN_016_RESULTS "
+               "Agent JSON files not found; set PEPPER_RUN_016_RESULTS "
                "or extract the GCS archive")
         c.exit()
 

@@ -74,7 +74,7 @@ AMBIGUOUS_GENE_NAMES = {
     "JUN", "MTOR", "MYC", "NGF", "PIP", "SRC", "TNF", "VHL",
     # Disease and syndrome names
     "CAD", "DMD", "FAP", "SCD",
-    # Mots anglais courants en science
+    # Common English words in scientific writing
     "APP", "ARC", "CAT", "IMPACT", "KIN", "KIT", "MAG", "MAX", "MET",
     "NODAL", "RAN", "REST", "SET", "SON", "TANK", "TUB", "VIM",
     # Two-character genes (far too ambiguous)

@@ -12,7 +12,7 @@ do_install <- "--install" %in% args
 
 req_file <- file.path(dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1])),
                       "r-requirements.txt")
-if (!file.exists(req_file)) stop("r-requirements.txt introuvable: ", req_file)
+if (!file.exists(req_file)) stop("r-requirements.txt not found: ", req_file)
 
 lines <- readLines(req_file, warn = FALSE)
 lines <- trimws(lines)
@@ -33,7 +33,7 @@ for (pkg in names(req)) {
   } else if (identical(have, want)) {
     status <- c(status, sprintf("%-14s %-10s OK", pkg, want))
   } else {
-    status <- c(status, sprintf("%-14s %-10s INSTALLE: %s", pkg, want, have))
+    status <- c(status, sprintf("%-14s %-10s INSTALLED: %s", pkg, want, have))
     mismatch <- c(mismatch, pkg)
   }
 }
