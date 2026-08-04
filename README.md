@@ -312,22 +312,13 @@ them pass; the smoke test is separate because it costs money to run.
 | XGBoost out-of-fold | Figure 5 | Bit-identical |
 | OMELET | Figure 5 | Independent Python reimplementation agrees with the R original to 1e-14 over 17,167 genes |
 | Assembled Figure 6 | — | Bit-identical |
-| Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any |
+| Assembled Figure 5 | — | Bit-identical on this graphics stack; numbers exact on any ([why](agentic_pipeline/README.md#why-figure-5s-pixels-travel-badly)) |
 
 ```bash
 agentic_pipeline/tests/run_tests.sh            # fast checks, seconds
 agentic_pipeline/tests/run_tests.sh --full     # + four regressions, ~6 min
 agentic_pipeline/tests/run_tests.sh --smoke    # + 5 genes through Vertex (billed)
 ```
-
-Figure 5's assembled PNG is the one caveat. It reproduces exactly here, but not
-across machines: `ragg`, `systemfonts` and `textshaping` were updated in April
-2026 and rasterise text with slightly more weight, which makes ggplot reserve
-more room for rotated axis labels and draw each panel 0.27% smaller. 6.90% of
-pixels change without a single plotted point moving — bar height ratios still
-agree to 0.03%. The test therefore compares the **numbers** exactly and the
-**pixels** against a band calibrated on that measurement. The reasoning is set
-out in [`agentic_pipeline/README.md`](agentic_pipeline/README.md).
 
 Figure 4 is not covered by this harness. It is a self-contained visualisation
 layer reading pre-computed tables, including a cached `df_pair_cached.rds` whose
