@@ -19,6 +19,8 @@ FIG5_DATA = REPO_ROOT / "Figure_5" / "data"
 
 S2_RECALC = PIPELINE / "stages" / "s2_montecarlo" / "recalculate_monte_carlo_min.py"
 S2_MERGE = PIPELINE / "stages" / "s2_montecarlo" / "merge_monte_carlo_with_fetal.py"
+S3_RUN = PIPELINE / "stages" / "s3_xgboost" / "run_xgboost.sh"
+OMELET_DUMP = PIPELINE / "methods" / "dump_omelet_reference.R"
 
 # Reference artefacts. These are the "_new" variants, which are the target:
 # the published Figure 6 is being replaced by the _new one.
@@ -33,6 +35,23 @@ SHA_FETAL = "a34df6f3d9e2323f0f85544a7d15813f89de7bc5db3a1cd4baa74d9da85f36b9"
 N_GENES = 21955
 N_DISPO_NON_NA = 18124
 DISPO_COLUMN = "MC_LoF_v2_signed_dis"
+
+# --- Figure 5 -------------------------------------------------------------
+# The out-of-fold XGBoost predictions, and the Monte Carlo table they were
+# actually trained on. That table is the February one, not the March one the
+# repository ships as monte_carlo_min.tsv; see CORRIGENDA.md.
+ORACLE_PREDICTIONS = FIG5_DATA / "predictions_no_go.csv"
+XGB_TARGET_TABLE = FIG5_DATA / "monte_carlo_min_pre_divisor.tsv"
+XGB_FEATURES = FIG5_DATA / "gene_features_for_s_het.tsv.gz"
+FIG5_REFERENCE = REPO_ROOT / "Figure_5" / "figures" / "main_figure.png"
+
+SHA_PREDICTIONS = "ddd54bdb67aa3f2829b6a653c296d0bc0d074245e5d231b664ec0c02dabcbcf8"
+SHA_XGB_TARGET = "86d9e9722604a52c2ea75a97b8e7d8a624348f7b87e31b6bb38cd1ce9680deb7"
+SHA_XGB_FEATURES = "bb3eb98e9f177d894f15c7dac928af591e09dd7351c0e3b6a1448eaccbce59a4"
+SHA_FIG5_PUBLISHED = "099d4e91d7922f35b6e65e1baa54afee4bbfcc9a8496b42e97d9258e3474130d"
+
+N_FIG5_GENES = 17700       # rows in predictions_no_go.csv
+N_FIG5_COMPLETE = 17167    # after the LOEUF join, the set the figure scores
 
 
 def results_dir() -> Path | None:

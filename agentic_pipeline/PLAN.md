@@ -1,10 +1,19 @@
 # Plan — reproducible PEPPER / DisPo pipeline (figures 5 and 6)
 
-> **Status: plan executed.** This document served as the specification; it is
-> kept for traceability of the decisions taken. For day-to-day use, read
-> [`README.md`](README.md), which describes the pipeline as actually built, and
-> [`CORRIGENDA.md`](CORRIGENDA.md) for the corrections to the preprint. Stages 2
-> and 5 are reproduced bit-for-bit and covered by `tests/run_tests.sh`.
+> **Status: plan executed, for both figures.** This document served as the
+> specification; it is kept for traceability of the decisions taken. For
+> day-to-day use, read [`README.md`](README.md), which describes the pipeline as
+> actually built, and [`CORRIGENDA.md`](CORRIGENDA.md) for the corrections to
+> the preprint.
+>
+> Two points where the result departed from this plan. Stage 3 (XGBoost) was
+> built and reproduces bit-for-bit, but only once it emerged that the published
+> predictions had been trained on the February Monte Carlo table rather than the
+> March one the repository ships; see CORRIGENDA item 11. And there is no
+> `s4_omelet/` stage: OMELET lives inside `Figure_5.R` at plotting time, and
+> moving it would have risked changing a published figure while claiming to
+> reproduce it. It is instead reimplemented and validated in
+> `methods/omelet.py`, which agrees with the R code on all 17,167 genes.
 
 Originally a working document: this file fixes the architecture, the parameters,
 the reproducibility policy, the tests, and the list of corrections to carry over

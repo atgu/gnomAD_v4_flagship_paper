@@ -24,7 +24,7 @@ WORK="${1:-$REPO_ROOT/agentic_pipeline/work/figure6}"
 RUN_PATH="$WORK/app/agent_runs/$RUN"
 
 echo "Repository: $REPO_ROOT"
-echo "Travail   : $WORK"
+echo "Work dir  : $WORK"
 echo
 
 # --- rebuild the expected layout ------------------------------------------
@@ -76,15 +76,15 @@ step() {
 }
 
 step "Panel A — discovery score by year"          plot_discovery_score_by_year.R
-step "Panneau B — fertilite souris vs GenCC"     test_mouse_fertility_vs_gencc.R
-step "Panneaux C/D — expression foetale"          unified_fetal_analysis.R
+step "Panel B — mouse fertility vs GenCC"        test_mouse_fertility_vs_gencc.R
+step "Panels C/D — fetal expression"              unified_fetal_analysis.R
 step "Figure assembly"                            generate_main_figure2.R
 
 echo
 FIG="$RUN_PATH/xgboost/fold_5/figures/main_figure2${SUFFIX}.pdf"
 if [ -f "$FIG" ]; then
-  echo "Figure produite : $FIG"
+  echo "Figure produced: $FIG"
 else
-  echo "ATTENTION: figure attendue introuvable: $FIG" >&2
+  echo "WARNING: expected figure not found: $FIG" >&2
   exit 1
 fi
