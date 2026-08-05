@@ -36,21 +36,22 @@ from _context import (DISPO_COLUMN, FIG6_DATA, PIPELINE,  # noqa: E402
 DRIVER = PIPELINE / "stages" / "s5_figures" / "run_figure6.sh"
 FIG6_DIR = REPO_ROOT / "Figure_6" / "figures"
 REFERENCE_PNG = FIG6_DIR / "main_figure2.png"
-SHA_FIGURE = "b8bd321f963b8ae4290569f1bdb2bf6a712bb81910fe7b6313ec305f65697e5a"
+SHA_FIGURE = "4ded61770e771adf59f60ad93c364891b88f3e388ea4cec245de8b6f647b1b72"
 
 PANELS = ["panel_a.png", "panel_b.png", "panel_c.png", "panel_d.png"]
 
 # Acceptance criterion for panel b: the median DisPo percentile of the GenCC
-# disease genes. A value near 25 rather than 42 means the v1 DisPo column was
-# read instead of the v2 one, so this is a genuine guard rather than a tautology.
-PANEL_B_GENCC_MEDIAN = 42.0
-PANEL_B_TOLERANCE = 1.0
+# disease genes. A value near 25 rather than 41 means the v1 DisPo column was
+# read instead of the v2 one, and a value near 42 means moderate-confidence GenCC
+# genes were admitted. So this is a genuine guard rather than a tautology.
+PANEL_B_GENCC_MEDIAN = 41.3
+PANEL_B_TOLERANCE = 0.5
 
 # The confidence levels panel b admits, and the gene lists that get their own box
 # and are therefore excluded from the GenCC one.
-GENCC_LEVELS = {"Definitive", "Strong", "Moderate"}
-GENCC_SET_SIZE = 4311
-GENCC_BOX_SIZE = 2828
+GENCC_LEVELS = {"Definitive", "Strong"}
+GENCC_SET_SIZE = 3980
+GENCC_BOX_SIZE = 2616
 
 
 def main() -> None:
@@ -131,7 +132,7 @@ def _check_panel_b_median(c: Checks) -> None:
                         low_memory=False)
     curated = set(_norm(gencc[gencc.classification_title.isin(GENCC_LEVELS)]
                         .gene_symbol))
-    c.equal("GenCC genes at definitive, strong or moderate confidence",
+    c.equal("GenCC genes at definitive or strong confidence",
             len(curated), GENCC_SET_SIZE)
 
     fertility_only = set(_norm(pd.read_csv(

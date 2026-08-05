@@ -168,10 +168,10 @@ pipeline adds is everything upstream of the script: stages 1 to 3.
 Two constants at the top of `Figure_6.R` are worth knowing, because a reader
 would not guess either and both change the figure:
 
-- `MIN_CLASSIFICATION <- "Moderate"` sets which GenCC confidence levels enter
-  panel b, and therefore the size of its comparison set, 2,828 genes. Restricting
-  to definitive and strong moves both Wilcoxon p-values by four orders of
-  magnitude.
+- `MIN_CLASSIFICATION <- "Strong"` sets which GenCC confidence levels enter
+  panel b, and therefore the size of its comparison set, 2,616 genes. Admitting
+  moderate confidence as well moves both Wilcoxon p-values by four orders of
+  magnitude ([`CORRIGENDA.md`](CORRIGENDA.md) item 17).
 - `V2 <- TRUE` selects the corrected DisPo columns. On the v1 ones the median of
   panel b's GenCC box drops from 42 to around 25, which is what
   `test_figure6_regression.py` recomputes from the table to check.

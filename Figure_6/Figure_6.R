@@ -33,9 +33,10 @@ CONTROL_RANGE          <- 6.0
 EXCL_MODE              <- "median"
 V2                     <- TRUE
 # Lowest GenCC confidence level admitted into the panel b comparison set:
-# 4,311 genes, of which 2,828 reach the boxplot. Restricting to definitive and
-# strong shifts both Wilcoxon p-values by four orders of magnitude.
-MIN_CLASSIFICATION     <- "Moderate"
+# 3,980 genes, of which 2,616 reach the boxplot. Admitting moderate as well
+# shifts both Wilcoxon p-values by four orders of magnitude, so this is the one
+# constant of the panel a reader has to know. See CORRIGENDA item 17.
+MIN_CLASSIFICATION     <- "Strong"
 
 FETAL_TISSUE_COLS <- c("Thymus", "Adrenal", "Cerebellum", "Cerebrum", "Eye", "Heart",
                        "Intestine", "Kidney", "Liver", "Lung", "Muscle", "Pancreas",

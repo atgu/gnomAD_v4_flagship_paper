@@ -153,8 +153,8 @@ The figure asks whether high-DisPo genes behave like undiscovered disease genes.
 - **Panel b** compares DisPo across gene sets. Mouse fertility genes and mouse
   embryonic-lethal genes score higher than established GenCC disease genes
   (p = 1.6 × 10⁻¹⁴ and 8.6 × 10⁻⁵⁴) — phenotypes that are severe but, in humans,
-  invisible to clinical ascertainment. The GenCC set is the 2,828 genes curated
-  at definitive, strong or moderate confidence, minus those that get their own
+  invisible to clinical ascertainment. The GenCC set is the 2,616 genes curated
+  at definitive or strong confidence, minus those that get their own
   box.
 - **Panel c** tests tissue-specific expression among high-DisPo genes across
   every GTEx tissue. Two are enriched and only two: **testis** (OR = 1.86,
@@ -354,7 +354,7 @@ figure's data directory so either can run on its own.
 | Document | What it covers |
 |---|---|
 | [`agentic_pipeline/README.md`](agentic_pipeline/README.md) | the pipelines in detail: stages, parameters, tests, reproducibility |
-| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 17 corrections to carry over to the preprint, each measured |
+| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 21 corrections to carry over to the preprint, each measured |
 | [`agentic_pipeline/config/run_016.yaml`](agentic_pipeline/config/run_016.yaml) | every parameter of the published run — the authoritative record |
 | [`agentic_pipeline/methods/dispo.py`](agentic_pipeline/methods/dispo.py) | DisPo, reimplemented to be read rather than run |
 | [`agentic_pipeline/methods/omelet.py`](agentic_pipeline/methods/omelet.py) | OMELET, likewise |

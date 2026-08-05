@@ -157,8 +157,9 @@ stage5_figures:
   # Constants at the top of Figure_6.R that change the figure.
   v2: true                   # the corrected DisPo columns
   # Lowest GenCC confidence admitted into panel b, which sets the comparison set
-  # to 2,828 genes. See CORRIGENDA item 17.
-  gencc_min_classification: Moderate
+  # to 2,616 genes. See CORRIGENDA item 17.
+  gencc_min_classification: Strong
   expected:
-    # A median near 25 instead of 42 means the v1 columns were read.
-    panel_b_gencc_median: 42
+    # A median near 25 means the v1 columns were read; near 42, that moderate
+    # confidence GenCC genes were admitted too.
+    panel_b_gencc_median: 41.3
