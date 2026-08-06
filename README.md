@@ -354,7 +354,7 @@ figure's data directory so either can run on its own.
 | Document | What it covers |
 |---|---|
 | [`agentic_pipeline/README.md`](agentic_pipeline/README.md) | the pipelines in detail: stages, parameters, tests, reproducibility |
-| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 21 corrections to carry over to the preprint, each measured |
+| [`agentic_pipeline/CORRIGENDA.md`](agentic_pipeline/CORRIGENDA.md) | 22 corrections to carry over to the preprint, each measured |
 | [`agentic_pipeline/config/run_016.yaml`](agentic_pipeline/config/run_016.yaml) | every parameter of the published run — the authoritative record |
 | [`agentic_pipeline/methods/dispo.py`](agentic_pipeline/methods/dispo.py) | DisPo, reimplemented to be read rather than run |
 | [`agentic_pipeline/methods/omelet.py`](agentic_pipeline/methods/omelet.py) | OMELET, likewise |

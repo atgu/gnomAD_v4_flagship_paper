@@ -106,7 +106,7 @@ generate_fetal_boxplot <- function(top_data, ctrl_data, tissue_cols, output_path
   mean_disagr_ctrl <- round(mean(ctrl_data$disagreement, na.rm = TRUE), 1)
 
   label_top <- paste0("Top Positive DisPo Score\n(mean LOEUF=", mean_loeuf_top, ", mean DisPo=", mean_disagr_top, ")")
-  label_ctrl <- paste0("LOEUF Matched Controls\n(mean LOEUF=", mean_loeuf_ctrl, ", mean DPS=", mean_disagr_ctrl, ")")
+  label_ctrl <- paste0("LOEUF Matched Controls\n(mean LOEUF=", mean_loeuf_ctrl, ", mean DisPo=", mean_disagr_ctrl, ")")
 
   combined <- bind_rows(
     top_data %>% mutate(group = label_top),
@@ -175,7 +175,9 @@ generate_fetal_boxplot <- function(top_data, ctrl_data, tissue_cols, output_path
       axis.text.x = element_text(size = 28), axis.text.y = element_text(size = 26),
       axis.title = element_text(size = 32),
       legend.position = "top", legend.justification = "left",
-      legend.title = element_blank(), legend.text = element_text(size = 26),
+      # 24, not 26: at 26 the second key's label runs past the right edge of the
+      # panel and loses its closing parenthesis.
+      legend.title = element_blank(), legend.text = element_text(size = 24),
       legend.margin = margin(t = 0, r = 0, b = -5, l = -150),
       panel.grid.major.x = element_line(color = "gray90", linewidth = 0.3))
 

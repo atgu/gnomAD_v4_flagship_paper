@@ -8,7 +8,7 @@ how the discrepancy was established.
 Items 1 to 4 change values or figures. Items 5 to 10 fill gaps that currently
 prevent a third party from reproducing Figure 6, and items 11 to 13 do the same
 for Figure 5. Items 14 to 16 do not concern the argument of the paper but must be
-dealt with before the code is published. Items 17 to 21 are discrepancies between
+dealt with before the code is published. Items 17 to 22 are discrepancies between
 the preprint and its own figures or supplement.
 
 Item 17 is the one to read if you only read one: the panel of Figure 6b was drawn
@@ -447,6 +447,29 @@ The repository gives **67.07**, and 96.43 against the supplement's 95.9 for
 PEPPER_XGB. The supplement is right and the main text is not.
 
 **Correction**: 72nd → 67th in the main text.
+
+## 22. The Discovery Potential score goes by three names
+
+The main text names it once and unambiguously:
+
+> We refer to this metric as the Discovery Potential (DisPo) score
+
+Two other names then appear, neither defined nor reused:
+
+- **DP**, in the title of the Figure 6 caption: "Figure 6. Discovery Potential
+  (DP) across gene sets and tissues." An abbreviation introduced in a figure
+  title and used nowhere, while the panels themselves are labelled DisPo.
+- **DPS**, in the panel 6d legend: "LOEUF Matched Controls (mean LOEUF=0.427,
+  mean **DPS**=3)", sitting beside "Top Positive DisPo Score (mean LOEUF=0.425,
+  mean **DisPo**=11.2)". The same quantity, two names, one legend.
+
+**Resolved here** for the figure: the two labels are built on adjacent lines of
+`generate_fetal_boxplot`, and the second now reads DisPo like the first. Widening
+that label pushed the legend past the panel edge, where it had been losing its
+closing parenthesis already, so the legend text drops from 26 pt to 24 pt.
+
+**Correction**: use DisPo throughout, and drop "(DP)" from the Figure 6 caption
+title.
 
 ---
 

@@ -36,7 +36,7 @@ from _context import (DISPO_COLUMN, FIG6_DATA, PIPELINE,  # noqa: E402
 DRIVER = PIPELINE / "stages" / "s5_figures" / "run_figure6.sh"
 FIG6_DIR = REPO_ROOT / "Figure_6" / "figures"
 REFERENCE_PNG = FIG6_DIR / "main_figure2.png"
-SHA_FIGURE = "4ded61770e771adf59f60ad93c364891b88f3e388ea4cec245de8b6f647b1b72"
+SHA_FIGURE = "866a39b1d56c5bf46aca8a1e59660784a909f3ed00a6445fab36f57c7fbbd86a"
 
 PANELS = ["panel_a.png", "panel_b.png", "panel_c.png", "panel_d.png"]
 
